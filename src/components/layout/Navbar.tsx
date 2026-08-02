@@ -7,12 +7,15 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { MobileMenu } from "./MobileMenu";
 
 export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuPath, setMenuPath] = useState<string | null>(null);
+
+  const mobileOpen = menuPath === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -22,18 +25,18 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
 
-  const isSolid = scrolled || !isHome;
+  const isSolid = scrolled || !isHome || mobileOpen;
   const navLinks = siteConfig.nav.filter((item) => item.href !== "/");
+
+  const openMenu = () => setMenuPath(pathname);
+  const closeMenu = () => setMenuPath(null);
+  const toggleMenu = () => (mobileOpen ? closeMenu() : openMenu());
 
   return (
     <>
@@ -86,7 +89,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="relative z-50 flex items-center gap-3">
             <Button
               href="/contact"
               size="sm"
@@ -110,7 +113,7 @@ export function Navbar() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              onClick={() => setMobileOpen((open) => !open)}
+              onClick={toggleMenu}
             >
               {mobileOpen ? (
                 <svg
@@ -140,48 +143,7 @@ export function Navbar() {
         </div>
       </header>
 
-      <div
-        id="mobile-navigation"
-        className={cn(
-          "fixed inset-0 z-40 bg-text/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden",
-          mobileOpen ? "opacity-100" : "pointer-events-none opacity-0",
-        )}
-        onClick={() => setMobileOpen(false)}
-        aria-hidden={!mobileOpen}
-      />
-
-      <nav
-        className={cn(
-          "fixed inset-y-0 right-0 z-40 flex w-full max-w-sm flex-col bg-surface px-8 pb-10 pt-24 shadow-luxury transition-transform duration-300 lg:hidden",
-          mobileOpen ? "translate-x-0" : "translate-x-full",
-        )}
-        aria-label="Mobile navigation"
-        aria-hidden={!mobileOpen}
-      >
-        <div className="flex flex-col gap-1">
-          {siteConfig.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "rounded-lg px-3 py-3 text-lg transition-colors",
-                pathname === item.href
-                  ? "bg-accent/10 text-accent"
-                  : "text-text hover:bg-text/5",
-              )}
-              onClick={() => setMobileOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-auto border-t border-text/10 pt-6">
-          <Button href="/contact" className="w-full">
-            Inquire Now
-          </Button>
-        </div>
-      </nav>
+      <MobileMenu open={mobileOpen} pathname={pathname} onClose={closeMenu} />
     </>
   );
 }
