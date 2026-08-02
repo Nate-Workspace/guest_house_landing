@@ -1,7 +1,10 @@
+import { PageStub } from "@/components/layout";
+
 export default function AmenitiesPage() {
   return (
-    <div className="flex min-h-[60vh] items-center justify-center px-6 pb-20 pt-28">
-      <h1 className="text-2xl font-medium">Amenities</h1>
-    </div>
+    <PageStub
+      title="Amenities"
+      description="From breakfast on the terrace to EV charging — the complete amenities guide is coming in the next update."
+    />
   );
 }

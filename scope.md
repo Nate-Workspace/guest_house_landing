@@ -5,7 +5,7 @@
 ## Implementation Phases (Checklist)
 
 - [x] **Phase 1 — Foundation:** scaffold, tokens, types, config, layout shell, Navbar, Footer, UI primitives
-- [ ] **Phase 2 — Home page:** demo data, all home sections, conversion components, optional motion
+- [x] **Phase 2 — Home page:** demo data, all home sections, conversion components, optional motion
 - [ ] **Phase 3 — Rooms:** list page, RoomCard, dynamic `[slug]` detail, related rooms
 - [ ] **Phase 4 — Remaining pages:** Gallery, About, Amenities, Attractions, Contact
 - [ ] **Phase 5 — Polish & SEO:** metadata, JSON-LD, sitemap, perf pass, responsive QA
@@ -337,8 +337,8 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 4. [x] Add conversion components: `StickyBookBar` (mobile), `WhatsAppFab`
 5. [x] Build `MobileMenu` (full-screen overlay with nav links)
 6. [x] Add `FadeIn` wrapper and apply to 2–3 key sections (don't over-animate)
-7. Optionally add hero parallax or text stagger — only if base hero needs it
-8. Create stub route files for other pages (empty or minimal) so nav doesn't 404
+7. [x] Optionally add hero parallax or text stagger — only if base hero needs it
+8. [x] Create stub route files for other pages (empty or minimal) so nav doesn't 404
 
 **Done when:** Home page is complete end-to-end, mobile sticky bar + WhatsApp work, site feels luxurious on first impression.
 

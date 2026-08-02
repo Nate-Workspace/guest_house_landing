@@ -1,13 +1,17 @@
+import { PageStub } from "@/components/layout";
+
 type RoomDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
   const { slug } = await params;
+  const roomName = slug.replace(/-/g, " ");
 
   return (
-    <div className="flex min-h-[60vh] items-center justify-center px-6 pb-20 pt-28">
-      <h1 className="text-2xl font-medium capitalize">{slug.replace(/-/g, " ")}</h1>
-    </div>
+    <PageStub
+      title={roomName}
+      description="Individual room galleries, amenities, and inquiry options are coming soon. Contact us to ask about this room."
+    />
   );
 }
