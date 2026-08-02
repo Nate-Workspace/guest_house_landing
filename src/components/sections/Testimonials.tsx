@@ -11,6 +11,7 @@ export function Testimonials() {
           description="Rated 5 stars by travellers who found their perfect Provençal escape."
           align="center"
           className="mx-auto"
+          animate={false}
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -16,6 +16,7 @@ export function FeaturedRooms() {
             eyebrow="Accommodations"
             title="Rooms crafted for rest"
             description="Six individually designed rooms and suites, each offering a distinct perspective on Provençal living — from garden-level serenity to panoramic valley views."
+            animate={false}
           />
           <Button href="/rooms" variant="outline" className="shrink-0 self-start md:self-auto">
             View all rooms

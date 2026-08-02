@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/motion";
 import {
   AmenitiesPreview,
   AttractionsPreview,
@@ -14,11 +15,17 @@ export default function Home() {
   return (
     <>
       <LuxuryHero />
-      <FeaturedRooms />
+      <FadeIn>
+        <FeaturedRooms />
+      </FadeIn>
       <WhyStayHere />
       <AmenitiesPreview />
-      <GalleryPreview />
-      <Testimonials />
+      <FadeIn>
+        <GalleryPreview />
+      </FadeIn>
+      <FadeIn delay={0.1}>
+        <Testimonials />
+      </FadeIn>
       <AttractionsPreview />
       <FAQ />
       <CTABanner />

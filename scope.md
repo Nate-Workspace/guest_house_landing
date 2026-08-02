@@ -336,7 +336,7 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 3. [x] Compose home `page.tsx` with all 10 sections
 4. [x] Add conversion components: `StickyBookBar` (mobile), `WhatsAppFab`
 5. [x] Build `MobileMenu` (full-screen overlay with nav links)
-6. Add `FadeIn` wrapper and apply to 2–3 key sections (don't over-animate)
+6. [x] Add `FadeIn` wrapper and apply to 2–3 key sections (don't over-animate)
 7. Optionally add hero parallax or text stagger — only if base hero needs it
 8. Create stub route files for other pages (empty or minimal) so nav doesn't 404
 

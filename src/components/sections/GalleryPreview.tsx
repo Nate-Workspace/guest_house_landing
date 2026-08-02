@@ -15,6 +15,7 @@ export function GalleryPreview() {
             eyebrow="Gallery"
             title="Moments of serenity"
             description="Sunlit terraces, lavender-scented gardens, and interiors that honour the spirit of Provence."
+            animate={false}
           />
           <Button href="/gallery" variant="outline" className="shrink-0 self-start md:self-auto">
             View gallery
