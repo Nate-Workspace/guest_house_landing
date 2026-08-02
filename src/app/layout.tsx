@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { StickyBookBar, WhatsAppFab } from "@/components/conversion";
 import { Footer, Navbar } from "@/components/layout";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -42,8 +44,17 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-body">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main
+          className={cn(
+            "flex-1",
+            siteConfig.features.stickyBookBar && "pb-20 md:pb-0",
+          )}
+        >
+          {children}
+        </main>
         <Footer />
+        <StickyBookBar />
+        <WhatsAppFab />
       </body>
     </html>
   );

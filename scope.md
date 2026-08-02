@@ -334,7 +334,7 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 1. [x] Populate all demo data files (`rooms`, `amenities`, `testimonials`, `faq`, `attractions`, `gallery`)
 2. [x] Build section components: `LuxuryHero`, `FeaturedRooms`, `WhyStayHere`, `AmenitiesPreview`, `GalleryPreview`, `Testimonials`, `AttractionsPreview`, `FAQ`, `CTABanner`
 3. [x] Compose home `page.tsx` with all 10 sections
-4. Add conversion components: `StickyBookBar` (mobile), `WhatsAppFab`
+4. [x] Add conversion components: `StickyBookBar` (mobile), `WhatsAppFab`
 5. Build `MobileMenu` (full-screen overlay with nav links)
 6. Add `FadeIn` wrapper and apply to 2–3 key sections (don't over-animate)
 7. Optionally add hero parallax or text stagger — only if base hero needs it
