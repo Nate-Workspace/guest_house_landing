@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #faf8f5;
+  --color-surface: #ffffff;
+  --color-text: #1c1c1c;
+  --color-muted: #6b6560;
+  --color-accent: #8b7355;
+  --color-accent-dark: #6b5a42;
+}
+
+@theme inline {
+  /* Colors */
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-text: var(--color-text);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+
+  /* Typography — font CSS vars set in root layout (step 5) */
+  --font-display: var(--font-cormorant), ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Layout */
+  --max-width-content: 80rem;
+
+  /* Section vertical rhythm */
+  --spacing-section: 5rem;
+  --spacing-section-md: 7rem;
+  --spacing-section-lg: 8rem;
+
+  /* Elevation */
+  --shadow-luxury: 0 4px 24px rgb(28 28 28 / 0.08);
+
+  /* Border radius */
+  --radius-card: 0.5rem;
+  --radius-pill: 9999px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 25%, transparent);
+    color: var(--color-text);
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 md:px-12 lg:px-20;
+  }
+
+  .section-padding {
+    @apply py-section md:py-section-md lg:py-section-lg;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
