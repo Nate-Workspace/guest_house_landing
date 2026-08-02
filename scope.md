@@ -331,8 +331,8 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 **Goal:** Complete, conversion-ready homepage — the primary sales page.
 
 **Steps:**
-1. Populate all demo data files (`rooms`, `amenities`, `testimonials`, `faq`, `attractions`, `gallery`)
-2. Build section components: `LuxuryHero`, `FeaturedRooms`, `WhyStayHere`, `AmenitiesPreview`, `GalleryPreview`, `Testimonials`, `AttractionsPreview`, `FAQ`, `CTABanner`
+1. [x] Populate all demo data files (`rooms`, `amenities`, `testimonials`, `faq`, `attractions`, `gallery`)
+2. [x] Build section components: `LuxuryHero`, `FeaturedRooms`, `WhyStayHere`, `AmenitiesPreview`, `GalleryPreview`, `Testimonials`, `AttractionsPreview`, `FAQ`, `CTABanner`
 3. Compose home `page.tsx` with all 10 sections
 4. Add conversion components: `StickyBookBar` (mobile), `WhatsAppFab`
 5. Build `MobileMenu` (full-screen overlay with nav links)

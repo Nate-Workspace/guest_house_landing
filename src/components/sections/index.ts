@@ -1,0 +1,9 @@
+export { LuxuryHero } from "./LuxuryHero";
+export { FeaturedRooms } from "./FeaturedRooms";
+export { WhyStayHere } from "./WhyStayHere";
+export { AmenitiesPreview } from "./AmenitiesPreview";
+export { GalleryPreview } from "./GalleryPreview";
+export { Testimonials } from "./Testimonials";
+export { AttractionsPreview } from "./AttractionsPreview";
+export { FAQ } from "./FAQ";
+export { CTABanner } from "./CTABanner";
