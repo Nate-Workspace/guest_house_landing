@@ -1,4 +1,5 @@
 export { LuxuryHero } from "./LuxuryHero";
+export { PageHero } from "./PageHero";
 export { FeaturedRooms } from "./FeaturedRooms";
 export { WhyStayHere } from "./WhyStayHere";
 export { AmenitiesPreview } from "./AmenitiesPreview";

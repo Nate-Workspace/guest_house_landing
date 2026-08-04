@@ -349,9 +349,9 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 **Goal:** Browse all rooms and view individual room details with inquiry path.
 
 **Steps:**
-1. Build `RoomCard` with image, name, description, capacity, optional price, CTA link
-2. Add hover effect (image scale + overlay) — CSS-first
-3. Build rooms list page with responsive grid + short page hero
+1. [x] Build `RoomCard` with image, name, description, capacity, optional price, CTA link
+2. [x] Add hover effect (image scale + overlay) — CSS-first
+3. [x] Build rooms list page with responsive grid + short page hero
 4. Build `rooms/[slug]/page.tsx` with `generateStaticParams` from room data
 5. Room detail layout: image gallery, description, capacity/bed/bath info, amenity list
 6. "Send Inquiry" CTA linking to `/contact?room={slug}`
