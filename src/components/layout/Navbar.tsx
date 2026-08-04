@@ -16,6 +16,8 @@ export function Navbar() {
     pathname === "/gallery" ||
     pathname === "/about" ||
     pathname === "/amenities" ||
+    pathname === "/attractions" ||
+    pathname === "/contact" ||
     pathname === "/rooms" ||
     pathname.startsWith("/rooms/");
   const [scrolled, setScrolled] = useState(false);

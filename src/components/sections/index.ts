@@ -7,6 +7,8 @@ export { AmenitiesGrid } from "./AmenitiesGrid";
 export { GalleryPreview } from "./GalleryPreview";
 export { Testimonials } from "./Testimonials";
 export { AttractionsPreview } from "./AttractionsPreview";
+export { AttractionCard } from "./AttractionCard";
+export { MapSection } from "./MapSection";
 export { FAQ } from "./FAQ";
 export { CTABanner } from "./CTABanner";
 export { AboutStory } from "./AboutStory";

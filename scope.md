@@ -370,8 +370,8 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 1. [x] **Gallery** — `MasonryGallery` (CSS columns) + `Lightbox` (dynamic import); populate from `gallery.ts`
 2. [x] **About** — story/mission/values from config; property highlight blocks with side-by-side layout
 3. [x] **Amenities** — full `AmenitiesGrid` with categories from spec
-4. **Attractions** — `AttractionCard` grid + `MapSection` at bottom
-5. **Contact** — `ContactForm` (name, email, phone, dates, room preference, message); read `?room=` query param
+4. [x] **Attractions** — `AttractionCard` grid + `MapSection` at bottom
+5. [x] **Contact** — `ContactForm` (name, email, phone, dates, room preference, message); read `?room=` query param
 6. Contact page: phone/email/address/hours, WhatsApp + call buttons, map embed
 7. Server Action in `actions/contact.ts` — validate fields, return success/error (console log in V1)
 8. Add `CTABanner` to pages that lack a strong closing CTA
