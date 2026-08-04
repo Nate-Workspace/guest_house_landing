@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import { FadeIn } from "@/components/motion";
 import { RoomDetailContent, RoomGallery, RelatedRooms } from "@/components/rooms";
 import { CTABanner, PageHero } from "@/components/sections";
+import { JsonLd } from "@/components/seo";
 import { getRoomBySlug, rooms } from "@/data/rooms";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildHotelRoomJsonLd, buildPageMetadata } from "@/lib/seo";
 
 type RoomDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -42,6 +43,7 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
 
   return (
     <>
+      <JsonLd data={buildHotelRoomJsonLd(room)} />
       <PageHero
         eyebrow="Room"
         title={room.name}

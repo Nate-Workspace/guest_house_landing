@@ -387,7 +387,7 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 **Steps:**
 1. [x] Build `src/lib/seo.ts` helpers for metadata + JSON-LD
 2. [x] Add `generateMetadata()` to every page (title, description, OG, Twitter)
-3. JSON-LD: `LodgingBusiness` on home, `HotelRoom` on room detail pages
+3. [x] JSON-LD: `LodgingBusiness` on home, `HotelRoom` on room detail pages
 4. Create `sitemap.ts` (static routes + room slugs) and `robots.txt`
 5. Audit all images: `next/image`, `sizes`, `priority` on above-fold, lazy below-fold
 6. Review `'use client'` boundaries — minimize client JS

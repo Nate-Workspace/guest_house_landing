@@ -10,8 +10,9 @@ import {
   Testimonials,
   WhyStayHere,
 } from "@/components/sections";
+import { JsonLd } from "@/components/seo";
 import { siteConfig } from "@/config/site";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildLodgingBusinessJsonLd, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: siteConfig.seo.defaultTitle,
@@ -22,6 +23,7 @@ export const metadata = buildPageMetadata({
 export default function Home() {
   return (
     <>
+      <JsonLd data={buildLodgingBusinessJsonLd()} />
       <LuxuryHero />
       <FadeIn>
         <FeaturedRooms />
