@@ -71,7 +71,7 @@ export function MapSection({
   );
 
   return (
-    <section className="section-padding bg-surface">
+    <section className="section-padding section-divider bg-bg-warm">
       <div className="container-content">
         {layout === "fullWidth" ? (
           <div className="space-y-10">

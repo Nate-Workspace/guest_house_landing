@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Testimonials() {
   return (
-    <section className="section-padding bg-surface">
+    <section className="section-padding section-divider bg-bg-warm bg-grain">
       <div className="container-content">
         <SectionHeading
           eyebrow="Guest Reviews"

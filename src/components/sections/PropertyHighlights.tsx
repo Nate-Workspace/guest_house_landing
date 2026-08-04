@@ -8,7 +8,7 @@ type PropertyHighlightsProps = {
 
 export function PropertyHighlights({ highlights }: PropertyHighlightsProps) {
   return (
-    <section className="section-padding bg-surface">
+    <section className="section-padding section-divider bg-surface">
       <div className="container-content">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
           The property

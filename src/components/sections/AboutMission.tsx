@@ -6,7 +6,7 @@ type AboutMissionProps = {
 
 export function AboutMission({ mission }: AboutMissionProps) {
   return (
-    <section className="section-padding bg-surface">
+    <section className="section-padding section-divider bg-surface">
       <div className="container-content">
         <div className="mx-auto max-w-3xl rounded-lg bg-bg px-8 py-12 text-center shadow-sm ring-1 ring-text/5 md:px-14 md:py-16">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent">

@@ -80,7 +80,9 @@ flowchart LR
 
 ---
 
-## 1A — Surface Depth, Glow & Selective Grain
+## 1A — Surface Depth, Glow & Selective Grain ✅
+
+> **Status:** Complete
 
 ### Expand palette (`src/app/globals.css`)
 

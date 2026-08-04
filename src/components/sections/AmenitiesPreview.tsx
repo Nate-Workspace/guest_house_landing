@@ -18,7 +18,7 @@ export function AmenitiesPreview() {
   );
 
   return (
-    <section className="section-padding bg-surface">
+    <section className="section-padding section-divider bg-surface">
       <div className="container-content">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading

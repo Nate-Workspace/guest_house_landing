@@ -3,20 +3,26 @@
 :root {
   --color-bg: #faf8f5;
   --color-surface: #ffffff;
+  --color-bg-warm: #f3efe8;
+  --color-bg-accent-soft: #f0ebe3;
   --color-text: #1c1c1c;
   --color-muted: #6b6560;
   --color-accent: #8b7355;
   --color-accent-dark: #6b5a42;
+  --color-border-subtle: rgb(28 28 28 / 0.08);
 }
 
 @theme inline {
   /* Colors */
   --color-bg: var(--color-bg);
   --color-surface: var(--color-surface);
+  --color-bg-warm: var(--color-bg-warm);
+  --color-accent-soft: var(--color-bg-accent-soft);
   --color-text: var(--color-text);
   --color-muted: var(--color-muted);
   --color-accent: var(--color-accent);
   --color-accent-dark: var(--color-accent-dark);
+  --color-border-subtle: var(--color-border-subtle);
 
   /* Typography — font CSS vars set in root layout (step 5) */
   --font-display: var(--font-cormorant), ui-serif, Georgia, "Times New Roman", serif;
@@ -68,5 +74,64 @@
 
   .font-display {
     font-family: var(--font-display);
+  }
+
+  /* Selective grain — pseudo-element noise overlay (no image file) */
+  .bg-grain {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .bg-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 180px 180px;
+  }
+
+  .bg-grain > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Lighter grain for footer and subtle surfaces */
+  .bg-grain-light::after {
+    opacity: 0.022;
+  }
+
+  /* Soft ambient glow — extends CTABanner radial pattern */
+  .section-glow {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .section-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 70% 60% at 88% 12%,
+      color-mix(in srgb, var(--color-accent) 5%, transparent) 0%,
+      transparent 65%
+    );
+  }
+
+  .section-glow > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Thin divider between major section bands */
+  .section-divider {
+    border-top: 1px solid var(--color-border-subtle);
   }
 }

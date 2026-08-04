@@ -5,7 +5,7 @@ import { AttractionCard } from "./AttractionCard";
 
 export function AttractionsPreview() {
   return (
-    <section className="section-padding">
+    <section className="section-padding section-divider bg-surface">
       <div className="container-content">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading

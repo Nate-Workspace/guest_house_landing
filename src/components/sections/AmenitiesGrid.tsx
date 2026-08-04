@@ -7,7 +7,7 @@ import { AmenityIcon } from "./AmenityIcon";
 
 export function AmenitiesGrid() {
   return (
-    <section className="section-padding bg-bg">
+    <section className="section-padding section-divider bg-surface bg-grain">
       <div className="container-content">
         <SectionHeading
           eyebrow="At your service"

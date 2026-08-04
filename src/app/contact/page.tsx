@@ -30,7 +30,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         imageAlt="Serenité Guesthouse exterior at golden hour"
       />
 
-      <section className="section-padding bg-bg">
+      <section className="section-padding section-divider bg-surface bg-grain">
         <div className="container-content">
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-3">

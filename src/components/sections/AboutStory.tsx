@@ -7,7 +7,7 @@ type AboutStoryProps = {
 
 export function AboutStory({ story }: AboutStoryProps) {
   return (
-    <section className="section-padding bg-bg">
+    <section className="section-padding bg-bg-warm bg-grain">
       <div className="container-content">
         <SectionHeading
           eyebrow={story.eyebrow}

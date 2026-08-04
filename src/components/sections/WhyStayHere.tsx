@@ -29,7 +29,7 @@ const valueProps = [
 
 export function WhyStayHere() {
   return (
-    <section className="section-padding">
+    <section className="section-padding section-divider bg-bg-warm bg-grain">
       <div className="container-content">
         <SectionHeading
           eyebrow="Why Serenité"

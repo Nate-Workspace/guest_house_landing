@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function FAQ() {
   return (
-    <section className="section-padding bg-surface">
+    <section className="section-padding section-divider bg-bg-warm bg-grain">
       <div className="container-content">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <SectionHeading

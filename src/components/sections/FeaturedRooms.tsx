@@ -5,7 +5,7 @@ import { featuredRooms } from "@/data/rooms";
 
 export function FeaturedRooms() {
   return (
-    <section className="section-padding bg-surface">
+    <section className="section-padding section-divider bg-surface bg-grain">
       <div className="container-content">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
