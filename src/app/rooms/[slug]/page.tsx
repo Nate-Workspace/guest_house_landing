@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { FadeIn } from "@/components/motion";
 import { RoomDetailContent, RoomGallery, RelatedRooms } from "@/components/rooms";
 import { PageHero } from "@/components/sections/PageHero";
 import { getRoomBySlug, rooms } from "@/data/rooms";
@@ -28,9 +29,17 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
         image={room.images[0]}
         imageAlt={room.name}
       />
-      <RoomGallery images={room.images.slice(1)} roomName={room.name} />
-      <RoomDetailContent room={room} />
-      <RelatedRooms currentSlug={slug} />
+      {room.images.length > 1 ? (
+        <FadeIn>
+          <RoomGallery images={room.images.slice(1)} roomName={room.name} />
+        </FadeIn>
+      ) : null}
+      <FadeIn>
+        <RoomDetailContent room={room} />
+      </FadeIn>
+      <FadeIn delay={0.1}>
+        <RelatedRooms currentSlug={slug} />
+      </FadeIn>
     </>
   );
 }

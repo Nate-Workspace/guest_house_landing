@@ -6,7 +6,7 @@
 
 - [x] **Phase 1 — Foundation:** scaffold, tokens, types, config, layout shell, Navbar, Footer, UI primitives
 - [x] **Phase 2 — Home page:** demo data, all home sections, conversion components, optional motion
-- [ ] **Phase 3 — Rooms:** list page, RoomCard, dynamic `[slug]` detail, related rooms
+- [x] **Phase 3 — Rooms:** list page, RoomCard, dynamic `[slug]` detail, related rooms
 - [ ] **Phase 4 — Remaining pages:** Gallery, About, Amenities, Attractions, Contact
 - [ ] **Phase 5 — Polish & SEO:** metadata, JSON-LD, sitemap, perf pass, responsive QA
 
@@ -356,7 +356,7 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 5. [x] Room detail layout: image gallery, description, capacity/bed/bath info, amenity list
 6. [x] "Send Inquiry" CTA linking to `/contact?room={slug}`
 7. [x] Build `RelatedRooms` section (2 other rooms)
-8. Apply scroll fade-ins sparingly on detail page
+8. [x] Apply scroll fade-ins sparingly on detail page
 
 **Done when:** All demo rooms list and detail correctly; inquiry CTA passes room context to contact.
 
