@@ -36,9 +36,7 @@ export default function AboutPage() {
 
       <AboutValues values={about.values} />
 
-      <FadeIn>
-        <PropertyHighlights highlights={about.highlights} />
-      </FadeIn>
+      <PropertyHighlights highlights={about.highlights} />
 
       <CTABanner />
     </>

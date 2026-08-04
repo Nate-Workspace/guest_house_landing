@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { WhatsAppFab } from "@/components/conversion";
 import { Footer, Navbar, StickyBookBar } from "@/components/layout";
+import { MotionProvider } from "@/components/motion";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/seo";
 import { cn } from "@/lib/utils";
@@ -53,18 +54,20 @@ export default function RootLayout({
       className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-body">
-        <Navbar />
-        <main
-          className={cn(
-            "flex-1",
-            siteConfig.features.stickyBookBar && "pb-24 md:pb-0",
-          )}
-        >
-          {children}
-        </main>
-        <Footer />
-        <StickyBookBar />
-        <WhatsAppFab />
+        <MotionProvider>
+          <Navbar />
+          <main
+            className={cn(
+              "flex-1",
+              siteConfig.features.stickyBookBar && "pb-24 md:pb-0",
+            )}
+          >
+            {children}
+          </main>
+          <Footer />
+          <StickyBookBar />
+          <WhatsAppFab />
+        </MotionProvider>
       </body>
     </html>
   );

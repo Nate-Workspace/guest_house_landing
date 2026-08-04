@@ -59,9 +59,7 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
       <FadeIn>
         <RoomDetailContent room={room} />
       </FadeIn>
-      <FadeIn delay={0.1}>
-        <RelatedRooms currentSlug={slug} />
-      </FadeIn>
+      <RelatedRooms currentSlug={slug} />
 
       <CTABanner />
     </>

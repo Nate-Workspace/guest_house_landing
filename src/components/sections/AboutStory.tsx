@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { AboutContent } from "@/lib/types";
 
@@ -12,19 +13,20 @@ export function AboutStory({ story }: AboutStoryProps) {
         <SectionHeading
           eyebrow={story.eyebrow}
           title={story.title}
-          animate={false}
         />
 
-        <div className="mt-10 max-w-3xl space-y-6">
-          {story.paragraphs.map((paragraph) => (
-            <p
-              key={paragraph.slice(0, 40)}
-              className="text-base leading-relaxed text-muted md:text-lg"
-            >
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        <FadeIn>
+          <div className="mt-10 max-w-3xl space-y-6">
+            {story.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 40)}
+                className="text-base leading-relaxed text-muted md:text-lg"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

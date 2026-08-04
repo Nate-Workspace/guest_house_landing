@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { StaggerChildren, StaggerItem } from "@/components/motion";
 import type { PropertyHighlight } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -17,36 +18,37 @@ export function PropertyHighlights({ highlights }: PropertyHighlightsProps) {
           Spaces crafted for slow living
         </h2>
 
-        <div className="mt-14 space-y-20 md:space-y-28">
+        <StaggerChildren className="mt-14 space-y-20 md:space-y-28">
           {highlights.map((highlight, index) => (
-            <div
-              key={highlight.id}
-              className={cn(
-                "grid items-center gap-8 lg:grid-cols-2 lg:gap-16",
-                index % 2 === 1 && "lg:[&>div:first-child]:order-2",
-              )}
-            >
-              <div className="relative aspect-4/3 overflow-hidden rounded-lg shadow-luxury ring-1 ring-text/5">
-                <Image
-                  src={highlight.image}
-                  alt={highlight.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
+            <StaggerItem key={highlight.id} index={index}>
+              <div
+                className={cn(
+                  "grid items-center gap-8 lg:grid-cols-2 lg:gap-16",
+                  index % 2 === 1 && "lg:[&>div:first-child]:order-2",
+                )}
+              >
+                <div className="relative aspect-4/3 overflow-hidden rounded-lg shadow-luxury ring-1 ring-text/5">
+                  <Image
+                    src={highlight.image}
+                    alt={highlight.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
 
-              <div>
-                <h3 className="font-display text-2xl text-text md:text-3xl">
-                  {highlight.title}
-                </h3>
-                <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-                  {highlight.description}
-                </p>
+                <div>
+                  <h3 className="font-display text-2xl text-text md:text-3xl">
+                    {highlight.title}
+                  </h3>
+                  <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
+                    {highlight.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

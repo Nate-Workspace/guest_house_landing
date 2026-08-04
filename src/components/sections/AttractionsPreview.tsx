@@ -1,3 +1,4 @@
+import { StaggerChildren, StaggerItem } from "@/components/motion";
 import { featuredAttractions } from "@/data/attractions";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -18,15 +19,13 @@ export function AttractionsPreview() {
           </Button>
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {featuredAttractions.map((attraction) => (
-            <AttractionCard
-              key={attraction.id}
-              attraction={attraction}
-              href="/attractions"
-            />
+        <StaggerChildren className="mt-14 grid gap-8 md:grid-cols-3">
+          {featuredAttractions.map((attraction, index) => (
+            <StaggerItem key={attraction.id} index={index}>
+              <AttractionCard attraction={attraction} href="/attractions" />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

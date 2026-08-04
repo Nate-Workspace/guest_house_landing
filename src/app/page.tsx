@@ -1,4 +1,3 @@
-import { FadeIn } from "@/components/motion";
 import {
   AmenitiesPreview,
   AttractionsPreview,
@@ -25,17 +24,11 @@ export default function Home() {
     <>
       <JsonLd data={buildLodgingBusinessJsonLd()} />
       <LuxuryHero />
-      <FadeIn>
-        <FeaturedRooms />
-      </FadeIn>
+      <FeaturedRooms />
       <WhyStayHere />
       <AmenitiesPreview />
-      <FadeIn>
-        <GalleryPreview />
-      </FadeIn>
-      <FadeIn delay={0.1}>
-        <Testimonials />
-      </FadeIn>
+      <GalleryPreview />
+      <Testimonials />
       <AttractionsPreview />
       <FAQ />
       <CTABanner />

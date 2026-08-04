@@ -3,22 +3,39 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import {
+  revealBaseDelay,
+  revealOpacity,
+  revealViewportMargin,
+  revealY,
+} from "./tokens";
 
 type FadeInProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
+  /** Vertical offset in px (max 20) */
+  y?: number;
+  /** Starting opacity (0–1, min 0.4) */
+  opacity?: number;
 };
 
-const ease = [0.25, 0.3, 0.25, 1] as const;
+export function FadeIn({
+  children,
+  className,
+  delay = revealBaseDelay,
+  y = revealY,
+  opacity = revealOpacity,
+}: FadeInProps) {
+  const offsetY = Math.min(y, 20);
+  const startOpacity = Math.max(opacity, 0.4);
 
-export function FadeIn({ children, className, delay = 0 }: FadeInProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: startOpacity, y: offsetY }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease }}
+      viewport={{ once: true, margin: revealViewportMargin }}
+      transition={{ delay }}
       className={cn(className)}
     >
       {children}

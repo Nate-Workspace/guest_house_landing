@@ -139,7 +139,9 @@ Apply similar alternation to About, Amenities, Contact pages.
 
 ---
 
-## 1B — Motion System (Fade + Y-Axis Scroll-In)
+## 1B — Motion System (Fade + Y-Axis Scroll-In) ✅
+
+> **Status:** Complete
 
 **Goal:** Elements drift up slightly as they enter the viewport. Side-by-side cards animate one after another.
 

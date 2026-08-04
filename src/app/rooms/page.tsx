@@ -1,4 +1,5 @@
 import { RoomCard } from "@/components/rooms";
+import { StaggerChildren, StaggerItem } from "@/components/motion";
 import { CTABanner, PageHero } from "@/components/sections";
 import { rooms } from "@/data/rooms";
 import { buildPageMetadata } from "@/lib/seo";
@@ -27,11 +28,13 @@ export default function RoomsPage() {
 
       <section className="section-padding bg-bg">
         <div className="container-content">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {rooms.map((room) => (
-              <RoomCard key={room.slug} room={room} />
+          <StaggerChildren className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {rooms.map((room, index) => (
+              <StaggerItem key={room.slug} index={index}>
+                <RoomCard room={room} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import { StaggerChildren, StaggerItem } from "@/components/motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const valueProps = [
@@ -39,22 +40,21 @@ export function WhyStayHere() {
           className="mx-auto"
         />
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {valueProps.map((prop) => (
-            <div
-              key={prop.title}
-              className="rounded-lg bg-surface p-6 shadow-sm ring-1 ring-text/5 transition-shadow duration-300 hover:shadow-luxury"
-            >
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-accent/10 text-accent">
-                <ValueIcon name={prop.icon} />
+        <StaggerChildren className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {valueProps.map((prop, index) => (
+            <StaggerItem key={prop.title} index={index}>
+              <div className="rounded-lg bg-surface p-6 shadow-sm ring-1 ring-text/5 transition-shadow duration-300 hover:shadow-luxury">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <ValueIcon name={prop.icon} />
+                </div>
+                <h3 className="font-display text-xl text-text">{prop.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {prop.description}
+                </p>
               </div>
-              <h3 className="font-display text-xl text-text">{prop.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {prop.description}
-              </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

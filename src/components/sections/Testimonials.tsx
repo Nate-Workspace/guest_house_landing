@@ -1,3 +1,4 @@
+import { StaggerChildren, StaggerItem } from "@/components/motion";
 import { testimonials } from "@/data/testimonials";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -11,41 +12,39 @@ export function Testimonials() {
           description="Rated 5 stars by travellers who found their perfect Provençal escape."
           align="center"
           className="mx-auto"
-          animate={false}
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <blockquote
-              key={testimonial.id}
-              className="flex flex-col rounded-lg bg-bg p-6 ring-1 ring-text/5"
-            >
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <StarRating rating={testimonial.rating ?? 5} />
-                <span className="text-xs font-medium uppercase tracking-wide text-muted">
-                  Google Review
-                </span>
-              </div>
-
-              <p className="flex-1 text-sm leading-relaxed text-text md:text-base">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-
-              <footer className="mt-5 border-t border-text/10 pt-4">
-                <cite className="not-italic">
-                  <span className="block text-sm font-medium text-text">
-                    {testimonial.author}
+        <StaggerChildren className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
+            <StaggerItem key={testimonial.id} index={index}>
+              <blockquote className="flex h-full flex-col rounded-lg bg-bg p-6 ring-1 ring-text/5">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <StarRating rating={testimonial.rating ?? 5} />
+                  <span className="text-xs font-medium uppercase tracking-wide text-muted">
+                    Google Review
                   </span>
-                  {testimonial.location ? (
-                    <span className="mt-0.5 block text-xs text-muted">
-                      {testimonial.location}
+                </div>
+
+                <p className="flex-1 text-sm leading-relaxed text-text md:text-base">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+
+                <footer className="mt-5 border-t border-text/10 pt-4">
+                  <cite className="not-italic">
+                    <span className="block text-sm font-medium text-text">
+                      {testimonial.author}
                     </span>
-                  ) : null}
-                </cite>
-              </footer>
-            </blockquote>
+                    {testimonial.location ? (
+                      <span className="mt-0.5 block text-xs text-muted">
+                        {testimonial.location}
+                      </span>
+                    ) : null}
+                  </cite>
+                </footer>
+              </blockquote>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

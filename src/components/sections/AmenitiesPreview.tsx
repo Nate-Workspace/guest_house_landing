@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StaggerChildren, StaggerItem } from "@/components/motion";
 import { amenities } from "@/data/amenities";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -31,23 +32,24 @@ export function AmenitiesPreview() {
           </Button>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {previewItems.map((amenity) => (
-            <Link
-              key={amenity.id}
-              href="/amenities"
-              className="group rounded-lg p-5 ring-1 ring-text/5 transition-all duration-300 hover:bg-bg hover:shadow-luxury"
-            >
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-surface">
-                <AmenityIcon name={amenity.icon} />
-              </div>
-              <h3 className="font-medium text-text">{amenity.name}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-muted line-clamp-2">
-                {amenity.description}
-              </p>
-            </Link>
+        <StaggerChildren className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {previewItems.map((amenity, index) => (
+            <StaggerItem key={amenity.id} index={index}>
+              <Link
+                href="/amenities"
+                className="group block rounded-lg p-5 ring-1 ring-text/5 transition-all duration-300 hover:bg-bg hover:shadow-luxury"
+              >
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-surface">
+                  <AmenityIcon name={amenity.icon} />
+                </div>
+                <h3 className="font-medium text-text">{amenity.name}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted line-clamp-2">
+                  {amenity.description}
+                </p>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

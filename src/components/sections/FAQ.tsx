@@ -11,10 +11,9 @@ export function FAQ() {
             eyebrow="FAQ"
             title="Questions before you arrive"
             description="Everything you need to know about booking, amenities, and making the most of your stay in Gordes."
-            animate={false}
           />
 
-          <Accordion items={faq} />
+          <Accordion items={faq} stagger />
         </div>
       </div>
     </section>

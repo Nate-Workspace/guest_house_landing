@@ -1,4 +1,5 @@
 import { RoomCard } from "@/components/rooms/RoomCard";
+import { StaggerChildren, StaggerItem } from "@/components/motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { getRelatedRooms } from "@/data/rooms";
 
@@ -20,14 +21,15 @@ export function RelatedRooms({ currentSlug }: RelatedRoomsProps) {
           eyebrow="Explore more"
           title="You may also like"
           description="Discover other rooms and suites that offer a similar sense of calm and comfort."
-          animate={false}
         />
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2">
-          {related.map((room) => (
-            <RoomCard key={room.slug} room={room} />
+        <StaggerChildren className="mt-14 grid gap-8 md:grid-cols-2">
+          {related.map((room, index) => (
+            <StaggerItem key={room.slug} index={index}>
+              <RoomCard room={room} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { ContactDetails, ContactForm } from "@/components/conversion";
+import { FadeIn } from "@/components/motion";
 import { MapSection, PageHero } from "@/components/sections";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -33,7 +34,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       <section className="section-padding section-divider bg-surface bg-grain">
         <div className="container-content">
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
-            <div className="lg:col-span-3">
+            <FadeIn className="lg:col-span-3">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
                 Inquiry form
               </p>
@@ -48,7 +49,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               <div className="mt-10 rounded-lg bg-surface p-6 shadow-sm ring-1 ring-text/5 md:p-8">
                 <ContactForm defaultRoom={room} />
               </div>
-            </div>
+            </FadeIn>
 
             <div className="lg:col-span-2">
               <ContactDetails />

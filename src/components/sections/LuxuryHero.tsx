@@ -3,31 +3,38 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import { useMountAnimation } from "@/components/motion";
+import {
+  heroDelayChildren,
+  heroStaggerDelay,
+  motionEase,
+  revealDuration,
+  revealHidden,
+  revealVisible,
+} from "@/components/motion/tokens";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 
 const heroImage =
   "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop";
 
-const ease = [0.25, 0.1, 0.25, 1] as const;
-
 const contentVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.15 },
+    transition: { staggerChildren: heroStaggerDelay, delayChildren: heroDelayChildren },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: revealHidden,
   visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease },
+    ...revealVisible,
+    transition: { duration: revealDuration, ease: motionEase },
   },
 };
 
 export function LuxuryHero() {
+  const mounted = useMountAnimation();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -54,8 +61,8 @@ export function LuxuryHero() {
 
       <motion.div
         className="relative z-10 container-content py-32 text-center text-surface md:py-40"
-        initial="hidden"
-        animate="visible"
+        initial={false}
+        animate={mounted ? "visible" : false}
         variants={contentVariants}
       >
         <motion.p

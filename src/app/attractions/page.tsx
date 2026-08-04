@@ -1,3 +1,4 @@
+import { StaggerChildren, StaggerItem } from "@/components/motion";
 import {
   AttractionCard,
   CTABanner,
@@ -30,11 +31,13 @@ export default function AttractionsPage() {
 
       <section className="section-padding bg-bg">
         <div className="container-content">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-            {attractions.map((attraction) => (
-              <AttractionCard key={attraction.id} attraction={attraction} />
+          <StaggerChildren className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+            {attractions.map((attraction, index) => (
+              <StaggerItem key={attraction.id} index={index}>
+                <AttractionCard attraction={attraction} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 

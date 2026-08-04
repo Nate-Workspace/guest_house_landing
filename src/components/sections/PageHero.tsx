@@ -1,4 +1,17 @@
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
+import { useMountAnimation } from "@/components/motion";
+import {
+  heroDelayChildren,
+  heroStaggerDelay,
+  motionEase,
+  revealDuration,
+  revealHidden,
+  revealVisible,
+} from "@/components/motion/tokens";
 
 type PageHeroProps = {
   eyebrow?: string;
@@ -9,6 +22,21 @@ type PageHeroProps = {
   priority?: boolean;
 };
 
+const contentVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: heroStaggerDelay, delayChildren: heroDelayChildren },
+  },
+};
+
+const itemVariants = {
+  hidden: revealHidden,
+  visible: {
+    ...revealVisible,
+    transition: { duration: revealDuration, ease: motionEase },
+  },
+};
+
 export function PageHero({
   eyebrow,
   title,
@@ -17,33 +45,63 @@ export function PageHero({
   imageAlt,
   priority = true,
 }: PageHeroProps) {
+  const mounted = useMountAnimation();
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
+
   return (
-    <section className="relative flex min-h-[42vh] items-end overflow-hidden md:min-h-[48vh]">
-      <Image
-        src={image}
-        alt={imageAlt}
-        fill
-        priority={priority}
-        className="object-cover"
-        sizes="100vw"
-      />
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-[42vh] items-end overflow-hidden md:min-h-[48vh]"
+    >
+      <motion.div
+        className="absolute inset-0 -top-[6%] h-[106%]"
+        style={{ y: imageY }}
+      >
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          priority={priority}
+          className="object-cover"
+          sizes="100vw"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-linear-to-t from-text/70 via-text/40 to-text/25" />
 
-      <div className="relative z-10 container-content w-full pb-12 pt-28 md:pb-16 md:pt-32">
+      <motion.div
+        className="relative z-10 container-content w-full pb-12 pt-28 md:pb-16 md:pt-32"
+        initial={false}
+        animate={mounted ? "visible" : false}
+        variants={contentVariants}
+      >
         {eyebrow ? (
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-surface/80">
+          <motion.p
+            variants={itemVariants}
+            className="text-xs font-medium uppercase tracking-[0.2em] text-surface/80"
+          >
             {eyebrow}
-          </p>
+          </motion.p>
         ) : null}
-        <h1 className="mt-3 font-display text-4xl text-surface md:text-5xl lg:text-6xl">
+        <motion.h1
+          variants={itemVariants}
+          className="mt-3 font-display text-4xl text-surface md:text-5xl lg:text-6xl"
+        >
           {title}
-        </h1>
+        </motion.h1>
         {description ? (
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-surface/90 md:text-lg">
+          <motion.p
+            variants={itemVariants}
+            className="mt-4 max-w-2xl text-base leading-relaxed text-surface/90 md:text-lg"
+          >
             {description}
-          </p>
+          </motion.p>
         ) : null}
-      </div>
+      </motion.div>
     </section>
   );
 }
