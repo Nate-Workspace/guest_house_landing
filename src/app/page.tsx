@@ -10,6 +10,14 @@ import {
   Testimonials,
   WhyStayHere,
 } from "@/components/sections";
+import { siteConfig } from "@/config/site";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: siteConfig.seo.defaultTitle,
+  absoluteTitle: true,
+  path: "/",
+});
 
 export default function Home() {
   return (

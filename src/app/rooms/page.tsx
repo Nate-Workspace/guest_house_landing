@@ -1,9 +1,18 @@
 import { RoomCard } from "@/components/rooms";
 import { CTABanner, PageHero } from "@/components/sections";
 import { rooms } from "@/data/rooms";
+import { buildPageMetadata } from "@/lib/seo";
 
 const heroImage =
   "https://images.unsplash.com/photo-1618773928121-c1d5f9b1a564?w=1920&h=900&fit=crop";
+
+export const metadata = buildPageMetadata({
+  title: "Rooms & Suites",
+  description:
+    "Six individually designed rooms and suites — from intimate garden retreats to panoramic top-floor suites with views over the Luberon valley.",
+  path: "/rooms",
+  image: heroImage,
+});
 
 export default function RoomsPage() {
   return (

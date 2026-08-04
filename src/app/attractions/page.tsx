@@ -5,8 +5,17 @@ import {
   PageHero,
 } from "@/components/sections";
 import { attractions } from "@/data/attractions";
+import { buildPageMetadata } from "@/lib/seo";
 
 const heroImage = attractions[0].image;
+
+export const metadata = buildPageMetadata({
+  title: "Nearby Attractions",
+  description:
+    "Hilltop villages, lavender fields, ochre trails, and market towns — the Luberon's finest sights are within easy reach of Serenité.",
+  path: "/attractions",
+  image: heroImage,
+});
 
 export default function AttractionsPage() {
   return (

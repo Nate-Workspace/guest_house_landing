@@ -8,6 +8,14 @@ import {
   PropertyHighlights,
 } from "@/components/sections";
 import { about } from "@/data/about";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "About",
+  description: about.hero.description,
+  path: "/about",
+  image: about.hero.image,
+});
 
 export default function AboutPage() {
   return (

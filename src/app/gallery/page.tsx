@@ -1,8 +1,17 @@
 import { GalleryView } from "@/components/gallery";
 import { CTABanner, PageHero } from "@/components/sections";
 import { gallery } from "@/data/gallery";
+import { buildPageMetadata } from "@/lib/seo";
 
 const heroImage = gallery[0].src;
+
+export const metadata = buildPageMetadata({
+  title: "Gallery",
+  description:
+    "Explore Serenité through sunlit terraces, refined interiors, and the Provençal landscapes that surround us.",
+  path: "/gallery",
+  image: heroImage,
+});
 
 export default function GalleryPage() {
   return (

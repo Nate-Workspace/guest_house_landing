@@ -1,8 +1,17 @@
 import { ContactDetails, ContactForm } from "@/components/conversion";
 import { MapSection, PageHero } from "@/components/sections";
+import { buildPageMetadata } from "@/lib/seo";
 
 const heroImage =
   "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=900&fit=crop";
+
+export const metadata = buildPageMetadata({
+  title: "Contact",
+  description:
+    "Share your preferred dates and room — we'll respond within 24 hours with availability and a personalised offer.",
+  path: "/contact",
+  image: heroImage,
+});
 
 type ContactPageProps = {
   searchParams: Promise<{ room?: string }>;

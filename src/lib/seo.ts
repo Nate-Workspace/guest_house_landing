@@ -5,6 +5,8 @@ import type { ContactAddress, Room } from "@/lib/types";
 export interface PageMetadataOptions {
   /** Page title without site name — root layout template adds `| {site.name}`. */
   title: string;
+  /** Set true for the home page to bypass the title template. */
+  absoluteTitle?: boolean;
   description?: string;
   /** Pathname including leading slash, e.g. `/rooms`. Omit for home (`/`). */
   path?: string;
@@ -44,16 +46,17 @@ function formatPostalAddress(address: ContactAddress) {
 /** Builds per-route Next.js metadata with Open Graph and Twitter cards. */
 export function buildPageMetadata({
   title,
+  absoluteTitle = false,
   description = siteConfig.seo.description,
   path,
   image = siteConfig.seo.ogImage,
   noIndex = false,
 }: PageMetadataOptions): Metadata {
   const url = buildAbsoluteUrl(path);
-  const openGraphTitle = `${title} | ${siteConfig.name}`;
+  const openGraphTitle = absoluteTitle ? title : `${title} | ${siteConfig.name}`;
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
       canonical: url,
