@@ -6,6 +6,7 @@ type PageHeroProps = {
   description?: string;
   image: string;
   imageAlt: string;
+  priority?: boolean;
 };
 
 export function PageHero({
@@ -14,6 +15,7 @@ export function PageHero({
   description,
   image,
   imageAlt,
+  priority = true,
 }: PageHeroProps) {
   return (
     <section className="relative flex min-h-[42vh] items-end overflow-hidden md:min-h-[48vh]">
@@ -21,7 +23,7 @@ export function PageHero({
         src={image}
         alt={imageAlt}
         fill
-        priority
+        priority={priority}
         className="object-cover"
         sizes="100vw"
       />

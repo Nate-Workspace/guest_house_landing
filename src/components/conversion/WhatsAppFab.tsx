@@ -16,7 +16,9 @@ export function WhatsAppFab({ className }: WhatsAppFabProps) {
       aria-label="Chat on WhatsApp"
       className={cn(
         "fixed right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-surface shadow-luxury transition-all duration-300 sm:right-6",
-        "bottom-[calc(1.5rem+env(safe-area-inset-bottom,0px))]",
+        siteConfig.features.stickyBookBar
+          ? "bottom-[calc(5.75rem+env(safe-area-inset-bottom,0px))] md:bottom-[calc(1.5rem+env(safe-area-inset-bottom,0px))]"
+          : "bottom-[calc(1.5rem+env(safe-area-inset-bottom,0px))]",
         "hover:scale-105 hover:bg-[#20BD5A] active:scale-95",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg",
         className,

@@ -1,22 +1,37 @@
 import type { MetadataRoute } from "next";
+import { rooms } from "@/data/rooms";
+import { getSiteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+  const baseUrl = getSiteUrl();
 
-  const staticRoutes = [
-    "",
-    "/rooms",
-    "/gallery",
-    "/about",
-    "/amenities",
-    "/attractions",
-    "/contact",
+  const staticRoutes: Array<{
+    path: string;
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+    priority: number;
+  }> = [
+    { path: "", changeFrequency: "weekly", priority: 1 },
+    { path: "/rooms", changeFrequency: "weekly", priority: 0.9 },
+    { path: "/gallery", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/about", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/amenities", changeFrequency: "monthly", priority: 0.7 },
+    { path: "/attractions", changeFrequency: "monthly", priority: 0.7 },
+    { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
   ];
 
-  return staticRoutes.map((route) => ({
-    url: `${baseUrl}${route}`,
+  const staticEntries = staticRoutes.map(({ path, changeFrequency, priority }) => ({
+    url: path ? `${baseUrl}${path}` : baseUrl,
     lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency,
+    priority,
   }));
+
+  const roomEntries = rooms.map((room) => ({
+    url: `${baseUrl}/rooms/${room.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticEntries, ...roomEntries];
 }

@@ -41,6 +41,6 @@ export const siteConfig = {
   },
   features: {
     showPrices: true,
-    stickyBookBar: false,
+    stickyBookBar: true,
   },
 } satisfies SiteConfig;

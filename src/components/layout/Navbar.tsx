@@ -113,7 +113,7 @@ export function Navbar() {
             <button
               type="button"
               className={cn(
-                "inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors lg:hidden",
+                "inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors lg:hidden",
                 isSolid
                   ? "text-text hover:bg-text/5"
                   : "text-surface hover:bg-surface/10",

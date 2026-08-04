@@ -44,7 +44,7 @@ export const testimonials = [
   {
     id: "testimonial-6",
     quote:
-      "The perfect base for a Provence road trip. Secure parking, fast Wi-Fi for remote work mornings, and an location that puts you minutes from Roussillon and Ménerbes. Highly recommend.",
+      "The perfect base for a Provence road trip. Secure parking, fast Wi-Fi for remote work mornings, and a location that puts you minutes from Roussillon and Ménerbes. Highly recommend.",
     author: "Thomas Müller",
     location: "Munich, Germany",
     rating: 5,

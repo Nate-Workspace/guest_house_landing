@@ -8,7 +8,7 @@
 - [x] **Phase 2 — Home page:** demo data, all home sections, conversion components, optional motion
 - [x] **Phase 3 — Rooms:** list page, RoomCard, dynamic `[slug]` detail, related rooms
 - [x] **Phase 4 — Remaining pages:** Gallery, About, Amenities, Attractions, Contact
-- [ ] **Phase 5 — Polish & SEO:** metadata, JSON-LD, sitemap, perf pass, responsive QA
+- [x] **Phase 5 — Polish & SEO:** metadata, JSON-LD, sitemap, perf pass, responsive QA
 
 ---
 
@@ -388,13 +388,13 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 1. [x] Build `src/lib/seo.ts` helpers for metadata + JSON-LD
 2. [x] Add `generateMetadata()` to every page (title, description, OG, Twitter)
 3. [x] JSON-LD: `LodgingBusiness` on home, `HotelRoom` on room detail pages
-4. Create `sitemap.ts` (static routes + room slugs) and `robots.txt`
-5. Audit all images: `next/image`, `sizes`, `priority` on above-fold, lazy below-fold
-6. Review `'use client'` boundaries — minimize client JS
-7. Run Lighthouse on home, rooms, contact; fix anything blocking 95+ scores
-8. Responsive QA pass: mobile nav, sticky bar, thumb-friendly buttons, gallery on small screens
-9. Optional: branded `loading.tsx` — only if we want it after perf check
-10. Final content/copy review on demo data
+4. [x] Create `sitemap.ts` (static routes + room slugs) and `robots.txt`
+5. [x] Audit all images: `next/image`, `sizes`, `priority` on above-fold, lazy below-fold
+6. [x] Review `'use client'` boundaries — minimize client JS
+7. [x] Run Lighthouse on home, rooms, contact; fix anything blocking 95+ scores
+8. [x] Responsive QA pass: mobile nav, sticky bar, thumb-friendly buttons, gallery on small screens
+9. [x] Optional: branded `loading.tsx` — skipped (not needed; site loads fast without it)
+10. [x] Final content/copy review on demo data
 
 **Done when:** Lighthouse 95+ on key pages, all metadata present, no broken links, mobile feels premium.
 
