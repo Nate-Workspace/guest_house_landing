@@ -11,7 +11,8 @@ import { MobileMenu } from "./MobileMenu";
 
 export function Navbar() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const hasTransparentHero =
+    pathname === "/" || pathname === "/rooms" || pathname.startsWith("/rooms/");
   const [scrolled, setScrolled] = useState(false);
   const [menuPath, setMenuPath] = useState<string | null>(null);
 
@@ -31,7 +32,7 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
-  const isSolid = scrolled || !isHome || mobileOpen;
+  const isSolid = scrolled || !hasTransparentHero || mobileOpen;
   const navLinks = siteConfig.nav.filter((item) => item.href !== "/");
 
   const openMenu = () => setMenuPath(pathname);

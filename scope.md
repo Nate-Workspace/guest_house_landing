@@ -352,8 +352,8 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 1. [x] Build `RoomCard` with image, name, description, capacity, optional price, CTA link
 2. [x] Add hover effect (image scale + overlay) — CSS-first
 3. [x] Build rooms list page with responsive grid + short page hero
-4. Build `rooms/[slug]/page.tsx` with `generateStaticParams` from room data
-5. Room detail layout: image gallery, description, capacity/bed/bath info, amenity list
+4. [x] Build `rooms/[slug]/page.tsx` with `generateStaticParams` from room data
+5. [x] Room detail layout: image gallery, description, capacity/bed/bath info, amenity list
 6. "Send Inquiry" CTA linking to `/contact?room={slug}`
 7. Build `RelatedRooms` section (2 other rooms)
 8. Apply scroll fade-ins sparingly on detail page

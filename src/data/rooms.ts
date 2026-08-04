@@ -166,3 +166,7 @@ export const rooms = [
 ] satisfies Room[];
 
 export const featuredRooms = rooms.filter((room) => room.featured);
+
+export function getRoomBySlug(slug: string): Room | undefined {
+  return rooms.find((room) => room.slug === slug);
+}

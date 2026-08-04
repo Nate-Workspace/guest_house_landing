@@ -1,17 +1,35 @@
-import { PageStub } from "@/components/layout";
+import { notFound } from "next/navigation";
+import { RoomDetailContent, RoomGallery } from "@/components/rooms";
+import { PageHero } from "@/components/sections/PageHero";
+import { getRoomBySlug, rooms } from "@/data/rooms";
 
 type RoomDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export function generateStaticParams() {
+  return rooms.map((room) => ({ slug: room.slug }));
+}
+
 export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
   const { slug } = await params;
-  const roomName = slug.replace(/-/g, " ");
+  const room = getRoomBySlug(slug);
+
+  if (!room) {
+    notFound();
+  }
 
   return (
-    <PageStub
-      title={roomName}
-      description="Individual room galleries, amenities, and inquiry options are coming soon. Contact us to ask about this room."
-    />
+    <>
+      <PageHero
+        eyebrow="Room"
+        title={room.name}
+        description={room.shortDescription}
+        image={room.images[0]}
+        imageAlt={room.name}
+      />
+      <RoomGallery images={room.images.slice(1)} roomName={room.name} />
+      <RoomDetailContent room={room} />
+    </>
   );
 }
