@@ -354,7 +354,7 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 3. [x] Build rooms list page with responsive grid + short page hero
 4. [x] Build `rooms/[slug]/page.tsx` with `generateStaticParams` from room data
 5. [x] Room detail layout: image gallery, description, capacity/bed/bath info, amenity list
-6. "Send Inquiry" CTA linking to `/contact?room={slug}`
+6. [x] "Send Inquiry" CTA linking to `/contact?room={slug}`
 7. Build `RelatedRooms` section (2 other rooms)
 8. Apply scroll fade-ins sparingly on detail page
 

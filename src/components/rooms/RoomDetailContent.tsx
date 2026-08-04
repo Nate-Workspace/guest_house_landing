@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { Button } from "@/components/ui/Button";
 import type { Room } from "@/lib/types";
 import type { ReactNode } from "react";
 
@@ -20,9 +21,16 @@ export function RoomDetailContent({ room }: RoomDetailContentProps) {
             <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
               {room.description}
             </p>
+            <Button
+              href={`/contact?room=${room.slug}`}
+              size="lg"
+              className="mt-8 lg:hidden"
+            >
+              Send Inquiry
+            </Button>
           </div>
 
-          <aside className="flex flex-col gap-8">
+          <aside className="flex flex-col gap-8 lg:sticky lg:top-28 lg:self-start">
             <div className="rounded-lg bg-bg p-6 ring-1 ring-text/5">
               <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
                 Room details
@@ -55,6 +63,10 @@ export function RoomDetailContent({ room }: RoomDetailContentProps) {
                 ))}
               </ul>
             </div>
+
+            <Button href={`/contact?room=${room.slug}`} size="lg" className="hidden w-full lg:inline-flex">
+              Send Inquiry
+            </Button>
           </aside>
         </div>
       </div>
