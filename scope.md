@@ -369,7 +369,7 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 **Steps:**
 1. [x] **Gallery** — `MasonryGallery` (CSS columns) + `Lightbox` (dynamic import); populate from `gallery.ts`
 2. [x] **About** — story/mission/values from config; property highlight blocks with side-by-side layout
-3. **Amenities** — full `AmenitiesGrid` with categories from spec
+3. [x] **Amenities** — full `AmenitiesGrid` with categories from spec
 4. **Attractions** — `AttractionCard` grid + `MapSection` at bottom
 5. **Contact** — `ContactForm` (name, email, phone, dates, room preference, message); read `?room=` query param
 6. Contact page: phone/email/address/hours, WhatsApp + call buttons, map embed
