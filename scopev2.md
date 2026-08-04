@@ -314,7 +314,9 @@ features: {
 
 ---
 
-## 2B — Targeted "Wow" Moments (Optional)
+## 2B — Targeted "Wow" Moments (Optional) ✅
+
+> **Status:** Complete — image clip reveal on About → Property Highlights. PageHero parallax already shipped in Phase 1B.
 
 Pick 1–2 only if site still feels too quiet after Phase 1 + 2A.
 

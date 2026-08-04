@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { StaggerChildren, StaggerItem } from "@/components/motion";
 import type { PropertyHighlight } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { PropertyHighlightImage } from "./PropertyHighlightImage";
 
 type PropertyHighlightsProps = {
   highlights: PropertyHighlight[];
@@ -27,15 +27,10 @@ export function PropertyHighlights({ highlights }: PropertyHighlightsProps) {
                   index % 2 === 1 && "lg:[&>div:first-child]:order-2",
                 )}
               >
-                <div className="relative aspect-4/3 overflow-hidden rounded-lg shadow-luxury ring-1 ring-text/5">
-                  <Image
-                    src={highlight.image}
-                    alt={highlight.imageAlt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
+                <PropertyHighlightImage
+                  src={highlight.image}
+                  alt={highlight.imageAlt}
+                />
 
                 <div>
                   <h3 className="font-display text-2xl text-text md:text-3xl">
