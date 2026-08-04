@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
-/** Defer mount animations until after hydration to avoid SSR/client style mismatches */
+const emptySubscribe = () => () => {};
+
+/** True only after client hydration — avoids SSR/client animation mismatches */
 export function useMountAnimation() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  return mounted;
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import { useMountAnimation } from "@/components/motion";
@@ -46,12 +46,14 @@ export function PageHero({
   priority = true,
 }: PageHeroProps) {
   const mounted = useMountAnimation();
+  const prefersReducedMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
+  const parallaxY = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
+  const imageY = prefersReducedMotion ? "0%" : parallaxY;
 
   return (
     <section
