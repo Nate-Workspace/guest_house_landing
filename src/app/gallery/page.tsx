@@ -1,10 +1,25 @@
-import { PageStub } from "@/components/layout";
+import { GalleryView } from "@/components/gallery";
+import { PageHero } from "@/components/sections/PageHero";
+import { gallery } from "@/data/gallery";
+
+const heroImage = gallery[0].src;
 
 export default function GalleryPage() {
   return (
-    <PageStub
-      title="Gallery"
-      description="A curated collection of property, room, and Provençal landscape photography — the full gallery is on its way."
-    />
+    <>
+      <PageHero
+        eyebrow="Visual tour"
+        title="Gallery"
+        description="Explore Serenité through sunlit terraces, refined interiors, and the Provençal landscapes that surround us."
+        image={heroImage}
+        imageAlt={gallery[0].alt}
+      />
+
+      <section className="section-padding bg-bg">
+        <div className="container-content">
+          <GalleryView images={gallery} />
+        </div>
+      </section>
+    </>
   );
 }

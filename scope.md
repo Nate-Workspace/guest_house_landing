@@ -367,7 +367,7 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 **Goal:** All secondary pages complete; contact form functional.
 
 **Steps:**
-1. **Gallery** — `MasonryGallery` (CSS columns) + `Lightbox` (dynamic import); populate from `gallery.ts`
+1. [x] **Gallery** — `MasonryGallery` (CSS columns) + `Lightbox` (dynamic import); populate from `gallery.ts`
 2. **About** — story/mission/values from config; property highlight blocks with side-by-side layout
 3. **Amenities** — full `AmenitiesGrid` with categories from spec
 4. **Attractions** — `AttractionCard` grid + `MapSection` at bottom
