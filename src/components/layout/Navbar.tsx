@@ -12,7 +12,11 @@ import { MobileMenu } from "./MobileMenu";
 export function Navbar() {
   const pathname = usePathname();
   const hasTransparentHero =
-    pathname === "/" || pathname === "/rooms" || pathname.startsWith("/rooms/");
+    pathname === "/" ||
+    pathname === "/gallery" ||
+    pathname === "/about" ||
+    pathname === "/rooms" ||
+    pathname.startsWith("/rooms/");
   const [scrolled, setScrolled] = useState(false);
   const [menuPath, setMenuPath] = useState<string | null>(null);
 
