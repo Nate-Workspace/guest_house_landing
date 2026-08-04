@@ -105,3 +105,44 @@ export interface GalleryImage {
   alt: string;
   category?: string;
 }
+
+export interface AboutValue {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface PropertyHighlight {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface AboutContent {
+  hero: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+  };
+  story: {
+    eyebrow: string;
+    title: string;
+    paragraphs: string[];
+  };
+  mission: {
+    eyebrow: string;
+    title: string;
+    description: string;
+  };
+  values: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: AboutValue[];
+  };
+  highlights: PropertyHighlight[];
+}

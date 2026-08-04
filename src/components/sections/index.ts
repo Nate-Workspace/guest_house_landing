@@ -8,3 +8,7 @@ export { Testimonials } from "./Testimonials";
 export { AttractionsPreview } from "./AttractionsPreview";
 export { FAQ } from "./FAQ";
 export { CTABanner } from "./CTABanner";
+export { AboutStory } from "./AboutStory";
+export { AboutMission } from "./AboutMission";
+export { AboutValues } from "./AboutValues";
+export { PropertyHighlights } from "./PropertyHighlights";

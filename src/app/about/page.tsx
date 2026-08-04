@@ -1,10 +1,35 @@
-import { PageStub } from "@/components/layout";
+import { FadeIn } from "@/components/motion";
+import {
+  AboutMission,
+  AboutStory,
+  AboutValues,
+  PageHero,
+  PropertyHighlights,
+} from "@/components/sections";
+import { about } from "@/data/about";
 
 export default function AboutPage() {
   return (
-    <PageStub
-      title="About Serenité"
-      description="Our story, values, and the people behind your stay — a full about page is being prepared."
-    />
+    <>
+      <PageHero
+        eyebrow={about.hero.eyebrow}
+        title={about.hero.title}
+        description={about.hero.description}
+        image={about.hero.image}
+        imageAlt={about.hero.imageAlt}
+      />
+
+      <AboutStory story={about.story} />
+
+      <FadeIn>
+        <AboutMission mission={about.mission} />
+      </FadeIn>
+
+      <AboutValues values={about.values} />
+
+      <FadeIn>
+        <PropertyHighlights highlights={about.highlights} />
+      </FadeIn>
+    </>
   );
 }
