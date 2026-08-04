@@ -1,5 +1,5 @@
 import { RoomCard } from "@/components/rooms";
-import { PageHero } from "@/components/sections/PageHero";
+import { CTABanner, PageHero } from "@/components/sections";
 import { rooms } from "@/data/rooms";
 
 const heroImage =
@@ -25,6 +25,8 @@ export default function RoomsPage() {
           </div>
         </div>
       </section>
+
+      <CTABanner />
     </>
   );
 }

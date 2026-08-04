@@ -1,5 +1,6 @@
 import {
   AttractionCard,
+  CTABanner,
   MapSection,
   PageHero,
 } from "@/components/sections";
@@ -32,6 +33,8 @@ export default function AttractionsPage() {
         title="Start from Serenité"
         description="We're perched above Gordes with quick access to the Luberon's villages, trails, and lavender country — your ideal base for exploring Provence."
       />
+
+      <CTABanner />
     </>
   );
 }

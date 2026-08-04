@@ -3,6 +3,7 @@ import {
   AboutMission,
   AboutStory,
   AboutValues,
+  CTABanner,
   PageHero,
   PropertyHighlights,
 } from "@/components/sections";
@@ -30,6 +31,8 @@ export default function AboutPage() {
       <FadeIn>
         <PropertyHighlights highlights={about.highlights} />
       </FadeIn>
+
+      <CTABanner />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { GalleryView } from "@/components/gallery";
-import { PageHero } from "@/components/sections/PageHero";
+import { CTABanner, PageHero } from "@/components/sections";
 import { gallery } from "@/data/gallery";
 
 const heroImage = gallery[0].src;
@@ -20,6 +20,8 @@ export default function GalleryPage() {
           <GalleryView images={gallery} />
         </div>
       </section>
+
+      <CTABanner />
     </>
   );
 }

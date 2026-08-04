@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { FadeIn } from "@/components/motion";
 import { RoomDetailContent, RoomGallery, RelatedRooms } from "@/components/rooms";
-import { PageHero } from "@/components/sections/PageHero";
+import { CTABanner, PageHero } from "@/components/sections";
 import { getRoomBySlug, rooms } from "@/data/rooms";
 
 type RoomDetailPageProps = {
@@ -40,6 +40,8 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
       <FadeIn delay={0.1}>
         <RelatedRooms currentSlug={slug} />
       </FadeIn>
+
+      <CTABanner />
     </>
   );
 }

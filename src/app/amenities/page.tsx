@@ -1,4 +1,4 @@
-import { AmenitiesGrid, PageHero } from "@/components/sections";
+import { AmenitiesGrid, CTABanner, PageHero } from "@/components/sections";
 
 const heroImage =
   "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=900&fit=crop";
@@ -15,6 +15,8 @@ export default function AmenitiesPage() {
       />
 
       <AmenitiesGrid />
+
+      <CTABanner />
     </>
   );
 }
