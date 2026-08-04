@@ -170,3 +170,16 @@ export const featuredRooms = rooms.filter((room) => room.featured);
 export function getRoomBySlug(slug: string): Room | undefined {
   return rooms.find((room) => room.slug === slug);
 }
+
+export function getRelatedRooms(slug: string, limit = 2): Room[] {
+  const current = getRoomBySlug(slug);
+  if (!current) {
+    return [];
+  }
+
+  const others = rooms.filter((room) => room.slug !== slug);
+  const sameCapacity = others.filter((room) => room.capacity === current.capacity);
+  const differentCapacity = others.filter((room) => room.capacity !== current.capacity);
+
+  return [...sameCapacity, ...differentCapacity].slice(0, limit);
+}

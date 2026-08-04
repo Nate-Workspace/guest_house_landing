@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { RoomDetailContent, RoomGallery } from "@/components/rooms";
+import { RoomDetailContent, RoomGallery, RelatedRooms } from "@/components/rooms";
 import { PageHero } from "@/components/sections/PageHero";
 import { getRoomBySlug, rooms } from "@/data/rooms";
 
@@ -30,6 +30,7 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
       />
       <RoomGallery images={room.images.slice(1)} roomName={room.name} />
       <RoomDetailContent room={room} />
+      <RelatedRooms currentSlug={slug} />
     </>
   );
 }
