@@ -385,7 +385,7 @@ We develop **one phase at a time**. Each phase ends with something runnable in t
 **Goal:** Production-ready metadata, structured data, and performance baseline.
 
 **Steps:**
-1. Build `src/lib/seo.ts` helpers for metadata + JSON-LD
+1. [x] Build `src/lib/seo.ts` helpers for metadata + JSON-LD
 2. Add `generateMetadata()` to every page (title, description, OG, Twitter)
 3. JSON-LD: `LodgingBusiness` on home, `HotelRoom` on room detail pages
 4. Create `sitemap.ts` (static routes + room slugs) and `robots.txt`
