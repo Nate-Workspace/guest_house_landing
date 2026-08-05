@@ -1,5 +1,6 @@
 import { AnimatedSectionHeading } from "./AnimatedSectionHeading";
 import { SectionHeadingContent } from "./SectionHeadingContent";
+import type { SectionHeadingTone } from "./SectionHeadingContent";
 
 type SectionHeadingProps = {
   eyebrow?: string;
@@ -8,6 +9,7 @@ type SectionHeadingProps = {
   align?: "left" | "center";
   className?: string;
   animate?: boolean;
+  tone?: SectionHeadingTone;
 };
 
 export function SectionHeading({

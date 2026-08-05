@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/Button";
+import { isNavActive } from "@/lib/nav";
 import { cn } from "@/lib/utils";
 
 type MobileMenuProps = {
@@ -78,22 +79,27 @@ export function MobileMenu({ open, pathname, onClose }: MobileMenuProps) {
           >
             <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain pt-24 pb-4">
               <motion.ul className="flex flex-col gap-1" variants={listVariants}>
-                {siteConfig.nav.map((item) => (
-                  <motion.li key={item.href} variants={itemVariants}>
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "block rounded-lg px-3 py-3 font-display text-2xl transition-colors",
-                        pathname === item.href
-                          ? "bg-accent/10 text-accent"
-                          : "text-text hover:bg-text/5 hover:text-accent",
-                      )}
-                      onClick={onClose}
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.li>
-                ))}
+                {siteConfig.nav.map((item) => {
+                  const active = isNavActive(pathname, item.href);
+
+                  return (
+                    <motion.li key={item.href} variants={itemVariants}>
+                      <Link
+                        href={item.href}
+                        aria-current={active ? "page" : undefined}
+                        className={cn(
+                          "block rounded-lg px-3 py-3 font-display text-2xl transition-colors",
+                          active
+                            ? "bg-accent/12 font-medium text-accent ring-1 ring-accent/25"
+                            : "text-text hover:bg-text/5 hover:text-accent",
+                        )}
+                        onClick={onClose}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.li>
+                  );
+                })}
               </motion.ul>
             </div>
 

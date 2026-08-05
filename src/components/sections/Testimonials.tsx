@@ -1,52 +1,58 @@
 import { StaggerChildren, StaggerItem } from "@/components/motion";
-import { testimonials } from "@/data/testimonials";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { gallery } from "@/data/gallery";
+import { testimonials } from "@/data/testimonials";
+
+const backgroundImage = gallery.find((item) => item.id === "gallery-living")!;
 
 export function Testimonials() {
   return (
-    <section className="section-padding section-divider bg-bg-warm bg-grain">
-      <div className="container-content">
-        <SectionHeading
-          eyebrow="Guest Reviews"
-          title="What our guests say"
-          description="Rated 5 stars by travellers who found their perfect Provençal escape."
-          align="center"
-          className="mx-auto"
-        />
+    <SectionBackground
+      image={backgroundImage.src}
+      imageAlt={backgroundImage.alt}
+    >
+      <SectionHeading
+        eyebrow="Guest Reviews"
+        title="What our guests say"
+        description="Rated 5 stars by travellers who found their perfect Provençal escape."
+        align="center"
+        className="mx-auto"
+        tone="onDark"
+      />
 
-        <StaggerChildren className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <StaggerItem key={testimonial.id} index={index}>
-              <blockquote className="flex h-full flex-col rounded-lg bg-bg p-6 ring-1 ring-text/5">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <StarRating rating={testimonial.rating ?? 5} />
-                  <span className="text-xs font-medium uppercase tracking-wide text-muted">
-                    Google Review
+      <StaggerChildren className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((testimonial, index) => (
+          <StaggerItem key={testimonial.id} index={index}>
+            <blockquote className="flex h-full flex-col rounded-lg bg-surface/95 p-6 ring-1 ring-text/5 backdrop-blur-sm">
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <StarRating rating={testimonial.rating ?? 5} />
+                <span className="text-xs font-medium uppercase tracking-wide text-muted">
+                  Google Review
+                </span>
+              </div>
+
+              <p className="flex-1 text-sm leading-relaxed text-text md:text-base">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+
+              <footer className="mt-5 border-t border-text/10 pt-4">
+                <cite className="not-italic">
+                  <span className="block text-sm font-medium text-text">
+                    {testimonial.author}
                   </span>
-                </div>
-
-                <p className="flex-1 text-sm leading-relaxed text-text md:text-base">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-
-                <footer className="mt-5 border-t border-text/10 pt-4">
-                  <cite className="not-italic">
-                    <span className="block text-sm font-medium text-text">
-                      {testimonial.author}
+                  {testimonial.location ? (
+                    <span className="mt-0.5 block text-xs text-muted">
+                      {testimonial.location}
                     </span>
-                    {testimonial.location ? (
-                      <span className="mt-0.5 block text-xs text-muted">
-                        {testimonial.location}
-                      </span>
-                    ) : null}
-                  </cite>
-                </footer>
-              </blockquote>
-            </StaggerItem>
-          ))}
-        </StaggerChildren>
-      </div>
-    </section>
+                  ) : null}
+                </cite>
+              </footer>
+            </blockquote>
+          </StaggerItem>
+        ))}
+      </StaggerChildren>
+    </SectionBackground>
   );
 }
 

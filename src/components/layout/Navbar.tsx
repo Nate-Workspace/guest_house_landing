@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/Button";
+import { isNavActive } from "@/lib/nav";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./MobileMenu";
 
@@ -79,22 +80,32 @@ export function Navbar() {
             className="hidden items-center gap-8 lg:flex"
             aria-label="Main navigation"
           >
-            {navLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "text-sm tracking-wide transition-colors duration-200",
-                  pathname === item.href
-                    ? "text-accent"
-                    : isSolid
-                      ? "text-text/80 hover:text-accent"
-                      : "text-surface/90 hover:text-surface",
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              const active = isNavActive(pathname, item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "relative py-1 text-sm tracking-wide transition-colors duration-200",
+                    active
+                      ? cn(
+                          "font-medium",
+                          isSolid
+                            ? "text-text after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-accent"
+                            : "text-surface after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-surface",
+                        )
+                      : isSolid
+                        ? "text-muted hover:text-text"
+                        : "text-surface/80 hover:text-surface",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="relative z-50 flex items-center gap-3">

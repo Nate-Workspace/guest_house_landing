@@ -5,7 +5,7 @@ import { rooms } from "@/data/rooms";
 import { buildPageMetadata } from "@/lib/seo";
 
 const heroImage =
-  "https://images.unsplash.com/photo-1618773928121-c1d5f9b1a564?w=1920&h=900&fit=crop";
+  "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&h=900&fit=crop";
 
 export const metadata = buildPageMetadata({
   title: "Rooms & Suites",

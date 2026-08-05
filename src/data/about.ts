@@ -73,7 +73,7 @@ export const about = {
       description:
         "Three hectares of terraced gardens descend toward the valley — lavender borders, a stone fountain, century-old olive trees, and an infinity pool that seems to spill into the Luberon horizon. Breakfast is served on the terrace whenever weather permits.",
       image:
-        "https://images.unsplash.com/photo-1416879595882-3373a0480b2b?w=1200&h=900&fit=crop",
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=900&fit=crop",
       imageAlt: "Manicured garden with stone fountain and olive trees",
     },
     {

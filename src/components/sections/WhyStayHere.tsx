@@ -1,5 +1,9 @@
 import { StaggerChildren, StaggerItem } from "@/components/motion";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { gallery } from "@/data/gallery";
+
+const backgroundImage = gallery.find((item) => item.id === "gallery-garden")!;
 
 const valueProps = [
   {
@@ -30,33 +34,35 @@ const valueProps = [
 
 export function WhyStayHere() {
   return (
-    <section className="section-padding section-divider bg-bg-warm bg-grain">
-      <div className="container-content">
-        <SectionHeading
-          eyebrow="Why Serenité"
-          title="A stay that feels effortlessly special"
-          description="We believe luxury is found in restraint — in space, silence, and the small gestures that make you feel truly at home."
-          align="center"
-          className="mx-auto"
-        />
+    <SectionBackground
+      image={backgroundImage.src}
+      imageAlt={backgroundImage.alt}
+    >
+      <SectionHeading
+        eyebrow="Why Serenité"
+        title="A stay that feels effortlessly special"
+        description="We believe luxury is found in restraint — in space, silence, and the small gestures that make you feel truly at home."
+        align="center"
+        className="mx-auto"
+        tone="onDark"
+      />
 
-        <StaggerChildren className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {valueProps.map((prop, index) => (
-            <StaggerItem key={prop.title} index={index}>
-              <div className="rounded-lg bg-surface p-6 shadow-sm ring-1 ring-text/5 transition-shadow duration-300 hover:shadow-luxury">
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-accent/10 text-accent">
-                  <ValueIcon name={prop.icon} />
-                </div>
-                <h3 className="font-display text-xl text-text">{prop.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {prop.description}
-                </p>
+      <StaggerChildren className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {valueProps.map((prop, index) => (
+          <StaggerItem key={prop.title} index={index}>
+            <div className="rounded-lg bg-surface/95 p-6 shadow-sm ring-1 ring-text/5 backdrop-blur-sm transition-shadow duration-300 hover:shadow-luxury">
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-accent/10 text-accent">
+                <ValueIcon name={prop.icon} />
               </div>
-            </StaggerItem>
-          ))}
-        </StaggerChildren>
-      </div>
-    </section>
+              <h3 className="font-display text-xl text-text">{prop.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {prop.description}
+              </p>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerChildren>
+    </SectionBackground>
   );
 }
 

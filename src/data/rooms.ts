@@ -15,7 +15,7 @@ export const rooms = [
     images: [
       "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=800&fit=crop",
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1611892440504-42a792e2848d?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&h=800&fit=crop",
     ],
     amenities: [
       "Private terrace",
@@ -43,7 +43,7 @@ export const rooms = [
     images: [
       "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&h=800&fit=crop",
       "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d2f08a4?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&h=800&fit=crop",
     ],
     amenities: [
       "Private terrace",
@@ -69,8 +69,8 @@ export const rooms = [
     bathroom: "Ensuite with shower",
     price: 210,
     images: [
-      "https://images.unsplash.com/photo-1618773928121-c1d5f9b1a564?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b2b?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop",
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&h=800&fit=crop",
     ],
     amenities: [
@@ -97,8 +97,8 @@ export const rooms = [
     bathroom: "Ensuite with shower",
     price: 185,
     images: [
-      "https://images.unsplash.com/photo-1590071245000-5ec6707c6880?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1560185127-6ed189bf0f51?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop",
     ],
     amenities: [
       "Olive grove views",

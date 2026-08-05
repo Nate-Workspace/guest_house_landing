@@ -8,7 +8,7 @@ export const attractions = [
       "One of France's most beautiful hilltop villages, with cobblestone lanes, artisan shops, and a commanding view over the Calavon valley. Best explored at dawn before the day-trippers arrive.",
     distance: "5 min walk",
     image:
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1596436889106-be35e843f974?w=800&h=600&fit=crop",
   },
   {
     id: "attraction-senanque",
@@ -17,7 +17,7 @@ export const attractions = [
       "A 12th-century Cistercian abbey surrounded by iconic lavender fields in bloom from late June through July. Guided tours reveal centuries of monastic history.",
     distance: "10 min drive",
     image:
-      "https://images.unsplash.com/photo-1499002238440-d264f804d948?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
   },
   {
     id: "attraction-roussillon",

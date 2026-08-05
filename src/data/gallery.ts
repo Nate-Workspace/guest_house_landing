@@ -15,7 +15,7 @@ export const gallery = [
   },
   {
     id: "gallery-lavender",
-    src: "https://images.unsplash.com/photo-1499002238440-d264f804d948?w=800&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
     alt: "Lavender fields in full bloom near the guesthouse",
     category: "Surroundings",
   },
@@ -39,7 +39,7 @@ export const gallery = [
   },
   {
     id: "gallery-garden",
-    src: "https://images.unsplash.com/photo-1416879595882-3373a0480b2b?w=800&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
     alt: "Manicured garden with stone fountain and olive trees",
     category: "Outdoor",
   },
@@ -63,7 +63,7 @@ export const gallery = [
   },
   {
     id: "gallery-village",
-    src: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=1000&fit=crop",
+    src: "https://images.unsplash.com/photo-1596436889106-be35e843f974?w=800&h=1000&fit=crop",
     alt: "View of Gordes village from the guesthouse terrace",
     category: "Surroundings",
   },
