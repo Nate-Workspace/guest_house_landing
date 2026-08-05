@@ -1,6 +1,7 @@
 "use server";
 
 import { getRoomBySlug } from "@/data/rooms";
+import { sendContactInquiry } from "@/lib/email/send-contact-inquiry";
 
 export type ContactFormState = {
   success: boolean;
@@ -89,18 +90,19 @@ export async function submitContactForm(
     checkIn: checkIn || undefined,
     checkOut: checkOut || undefined,
     message,
-    submittedAt: new Date().toISOString(),
   };
 
-  console.log("[Contact inquiry]", inquiry);
+  try {
+    await sendContactInquiry(inquiry);
+  } catch (error) {
+    console.error("[Contact inquiry] Failed to send email:", error);
 
-  // TODO: Send email via Resend or SMTP, e.g.
-  // await resend.emails.send({
-  //   from: "inquiries@serenite-guesthouse.com",
-  //   to: siteConfig.contact.email,
-  //   subject: `New inquiry from ${name}`,
-  //   text: JSON.stringify(inquiry, null, 2),
-  // });
+    return {
+      success: false,
+      message:
+        "We couldn't send your inquiry right now. Please try again shortly or contact us by phone or WhatsApp.",
+    };
+  }
 
   return {
     success: true,
