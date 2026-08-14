@@ -17,7 +17,7 @@ const fullWidthBackground = gallery.find((item) => item.id === "gallery-lavender
 
 export function MapSection({
   title = "Find us",
-  description = "Serenité Guesthouse sits on the edge of Gordes, with easy access to village life and the open Luberon countryside.",
+  description = "Alem Guesthouse sits on the heart of Hawassa, with easy access to Menahria, Sumuda, Piassa, Atote, and Hawassa Lake.",
   layout = "split",
   showAddress = true,
   backgroundImage,

@@ -15,7 +15,7 @@ export function Testimonials() {
       <SectionHeading
         eyebrow="Guest Reviews"
         title="What our guests say"
-        description="Rated 5 stars by travellers who found their perfect Provençal escape."
+        description="Rated 5 stars by travellers who found their perfect Guesthouse in Hawassa."
         align="center"
         className="mx-auto"
         tone="onDark"

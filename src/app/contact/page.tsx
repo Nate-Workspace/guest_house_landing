@@ -9,7 +9,7 @@ const heroImage =
 export const metadata = buildPageMetadata({
   title: "Contact",
   description:
-    "Share your preferred dates and room — we'll respond within 24 hours with availability and a personalised offer.",
+    "Share your preferred dates and room. We'll respond within 24 hours with availability and a personalised offer.",
   path: "/contact",
   image: heroImage,
 });
@@ -26,7 +26,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       <PageHero
         eyebrow="Get in touch"
         title="Contact & Inquiries"
-        description="Share your preferred dates and room — we'll respond within 24 hours with availability and a personalised offer."
+        description="Share your preferred dates and room. We'll respond within 24 hours with availability and a personalised offer."
         image={heroImage}
         imageAlt="Serenité Guesthouse exterior at golden hour"
       />

@@ -11,7 +11,7 @@ export function FAQ() {
           <SectionHeading
             eyebrow="FAQ"
             title="Questions before you arrive"
-            description="Everything you need to know about booking, amenities, and making the most of your stay in Gordes."
+            description="Everything you need to know about booking, amenities, and making the most of your stay in Hawassa."
           />
 
           <FadeIn delay={0.18}>

@@ -19,7 +19,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Visual tour"
         title="Gallery"
-        description="Explore Serenité through sunlit terraces, refined interiors, and the Provençal landscapes that surround us."
+        description="Explore Alem Guesthouse through our best rooms, refined interiors, and Hawassa's landscapes that surround us."
         image={heroImage}
         imageAlt={gallery[0].alt}
       />

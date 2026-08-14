@@ -2,76 +2,76 @@ import type { Attraction } from "@/lib/types";
 
 export const attractions = [
   {
-    id: "attraction-gordes",
-    name: "Village of Gordes",
+    id: "attraction-lake-hawassa",
+    name: "Lake Hawassa",
     description:
-      "One of France's most beautiful hilltop villages, with cobblestone lanes, artisan shops, and a commanding view over the Calavon valley. Best explored at dawn before the day-trippers arrive.",
-    distance: "5 min walk",
-    image:
-      "https://images.unsplash.com/photo-1596436889106-be35e843f974?w=800&h=600&fit=crop",
-  },
-  {
-    id: "attraction-senanque",
-    name: "Abbey of Sénanque",
-    description:
-      "A 12th-century Cistercian abbey surrounded by iconic lavender fields in bloom from late June through July. Guided tours reveal centuries of monastic history.",
+      "The city's main natural attraction, known for its calm waters, lakeside views, birdlife, and boat trips. It is a great place to relax, enjoy the sunset, or see hippos near the shore.",
     distance: "10 min drive",
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800&h=600&fit=crop",
   },
   {
-    id: "attraction-roussillon",
-    name: "Roussillon Ochre Trail",
+    id: "attraction-fish-market",
+    name: "Hawassa Fish Market",
     description:
-      "Walk among dramatic red and orange ochre cliffs in this artists' village. The Sentier des Ocres offers an easy loop through otherworldly landscapes.",
-    distance: "15 min drive",
+      "A lively local market beside Lake Hawassa where visitors can see fishermen bringing in their daily catch and experience one of the city's most popular local food spots.",
+    distance: "10 min drive",
     image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1534766438357-2b270b64b5c5?w=800&h=600&fit=crop",
   },
   {
-    id: "attraction-lourmarin",
-    name: "Lourmarin",
+    id: "attraction-amora-gedel",
+    name: "Amora Gedel Park",
     description:
-      "A lively market town with Renaissance castle, excellent wine bars, and a Saturday morning market beloved by locals. Albert Camus is buried in the cemetery here.",
-    distance: "25 min drive",
-    image:
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
-  },
-  {
-    id: "attraction-menerbes",
-    name: "Ménerbes",
-    description:
-      "Perched on a ridge with sweeping vineyard views, this quiet village was home to Peter Mayle. Visit the Maison de la Truffe et du Vin for local tastings.",
+      "A green lakeside park with large trees, monkeys, birds, and views of Lake Hawassa. It is also a popular place to enjoy the sunset and take a relaxing walk.",
     distance: "12 min drive",
     image:
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
   },
   {
-    id: "attraction-colorado",
-    name: "Colorado Provençal",
+    id: "attraction-tabor-mountain",
+    name: "Tabor Mountain",
     description:
-      "Former ochre quarries near Rustrel with vivid yellow, red, and orange rock formations — a photographer's paradise and an easy half-day hike.",
-    distance: "35 min drive",
+      "A well-known viewpoint in Hawassa with elevated views across the city and surrounding landscape. It is a good spot for visitors who want to see Hawassa from above.",
+    distance: "10 min drive",
     image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
   },
   {
-    id: "attraction-isle-sur-sorgue",
-    name: "L'Isle-sur-la-Sorgue",
+    id: "attraction-hippo-watching",
+    name: "Lake Hawassa Hippo Watching",
     description:
-      "Known as the Venice of Provence for its canals and waterwheels. Famous for antique markets on Sundays and a thriving art scene year-round.",
-    distance: "40 min drive",
+      "Take a boat trip on Lake Hawassa for a closer look at hippos and the birdlife around the lake. It is one of the most memorable wildlife experiences available in the city.",
+    distance: "10 min drive",
     image:
-      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800&h=600&fit=crop",
   },
   {
-    id: "attraction-luberon-hike",
-    name: "Luberon Ridge Trail",
+    id: "attraction-tikur-wuha",
+    name: "Tikur Wuha",
     description:
-      "A scenic hiking route along the crest of the Luberon massif with panoramic views of vineyards, orchards, and medieval villages below.",
-    distance: "20 min drive",
+      "A natural area on the edge of Hawassa known for its greenery and peaceful surroundings. It offers visitors a quieter place to enjoy nature away from the busy parts of the city.",
+    distance: "15 min drive",
     image:
-      "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+  },
+  {
+    id: "attraction-sidama-cultural-hall",
+    name: "Sidama Cultural Hall",
+    description:
+      "A place to learn more about Sidama culture and local traditions. It can be a good stop for visitors interested in the history and culture of the region.",
+    distance: "10 min drive",
+    image:
+      "https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=800&h=600&fit=crop",
+  },
+  {
+    id: "attraction-alamura-mountain",
+    name: "Alamura Mountain",
+    description:
+      "A scenic mountain area outside the center of Hawassa, offering beautiful views and a chance to enjoy the natural landscape around the city.",
+    distance: "25 min drive",
+    image:
+      "https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=800&h=600&fit=crop",
   },
 ] satisfies Attraction[];
 

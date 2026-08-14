@@ -17,13 +17,13 @@ export function CTABanner() {
 
         <div className="container-content relative text-center">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-surface/70">
-            Plan your escape
+            Plan your stay
           </p>
           <h2 className="mt-4 font-display text-3xl text-surface md:text-4xl lg:text-5xl">
-            Ready to experience Provence?
+            Ready to experience Hawassa?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-surface/85 md:text-lg">
-            Send us an inquiry with your preferred dates and room — we&apos;ll respond
+            Send us an request with your preferred dates and room. We&apos;ll respond
             within 24 hours with availability and a personalised offer.
           </p>
 
@@ -33,7 +33,7 @@ export function CTABanner() {
               size="lg"
               className="bg-surface text-accent hover:bg-surface/90 hover:text-accent-dark"
             >
-              Send an inquiry
+              Send a request
             </Button>
             <Button
               href={`https://wa.me/${siteConfig.contact.whatsapp}`}

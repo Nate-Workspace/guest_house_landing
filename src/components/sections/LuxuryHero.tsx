@@ -71,7 +71,7 @@ export function LuxuryHero() {
           variants={itemVariants}
           className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-surface/80"
         >
-          Boutique Luxury Guesthouse · Provence
+          Luxurious Comfortable Guesthouse · Hawassa
         </motion.p>
         <motion.h1
           variants={itemVariants}
@@ -90,7 +90,7 @@ export function LuxuryHero() {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button href="/contact" size="lg">
-            Inquire About Stay
+            Ask about Stay
           </Button>
           <Button
             href="/rooms"
@@ -98,7 +98,7 @@ export function LuxuryHero() {
             size="lg"
             className="border-surface/80 text-surface hover:bg-surface/10 hover:text-surface"
           >
-            View Rooms
+            View our Rooms
           </Button>
         </motion.div>
       </motion.div>

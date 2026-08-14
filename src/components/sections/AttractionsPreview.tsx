@@ -10,9 +10,9 @@ export function AttractionsPreview() {
       <div className="container-content">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
-            eyebrow="Explore Provence"
+            eyebrow="Explore Hawassa"
             title="Nearby attractions"
-            description="From hilltop villages to lavender fields and ochre trails — the Luberon's finest sights are at your doorstep."
+            description="From Menahria to Sumuda, Piassa, Atote, and Hawassa Lake. The Hawassa's finest sights are at your doorstep."
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
             <Button href="/attractions" variant="outline">

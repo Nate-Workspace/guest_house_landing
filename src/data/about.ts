@@ -3,20 +3,20 @@ import type { AboutContent } from "@/lib/types";
 export const about = {
   hero: {
     eyebrow: "Our story",
-    title: "About Serenité",
+    title: "About Alem Guesthouse",
     description:
       "A family-run guesthouse in Gordes, where Provençal heritage meets understated luxury and every guest is welcomed as a friend.",
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=900&fit=crop",
-    imageAlt: "Serenité Guesthouse stone facade nestled in the Luberon hills",
+    imageAlt: "Alem Guesthouse stone facade nestled in the Luberon hills",
   },
   story: {
     eyebrow: "How it began",
     title: "A house restored with intention",
     paragraphs: [
-      "Serenité began as a crumbling 18th-century mas — a traditional Provençal farmhouse overlooking the Luberon valley. When Claire and Antoine Laurent discovered it in 2016, they saw not ruin, but possibility: a place where travellers could slow down, breathe deeply, and feel the rhythm of the countryside.",
+      "Alem Guesthouse began as a crumbling 18th-century mas — a traditional Provençal farmhouse overlooking the Luberon valley. When Claire and Antoine Laurent discovered it in 2016, they saw not ruin, but possibility: a place where travellers could slow down, breathe deeply, and feel the rhythm of the countryside.",
       "Over three years, local artisans restored the stone walls, reclaimed oak beams, and terracotta floors while preserving the soul of the building. Six rooms were carefully conceived — each with its own character, none repeating the last. The infinity pool was sited to frame the sunset; the garden planted with lavender, rosemary, and ancient olive trees.",
-      "Today, Serenité is a four-star boutique guesthouse that welcomes a handful of guests at a time. We are not a hotel chain nor a rental property — we are hosts who believe the finest luxury is found in authenticity, warmth, and the unhurried pace of Provence.",
+      "Today, Alem Guesthouse is a four-star boutique guesthouse that welcomes a handful of guests at a time. We are not a hotel chain nor a rental property — we are hosts who believe the finest luxury is found in authenticity, warmth, and the unhurried pace of Provence.",
     ],
   },
   mission: {

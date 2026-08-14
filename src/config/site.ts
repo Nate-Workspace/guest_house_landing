@@ -1,18 +1,18 @@
 import type { SiteConfig } from "@/lib/types";
 
 export const siteConfig = {
-  name: "Serenité Guesthouse",
-  tagline: "Where tranquility meets refined comfort",
+  name: "Alem Guesthouse",
+  tagline: "Where Luxury meets Comfort",
   contact: {
-    phone: "+33 4 90 12 34 56",
+    phone: "+251 921 04 44 57",
     email: "hello@serenite-guesthouse.com",
-    whatsapp: "33490123456",
+    whatsapp: "251921044457",
     address: {
-      street: "12 Chemin des Lavandes",
-      city: "Gordes",
-      region: "Provence-Alpes-Côte d'Azur",
-      postalCode: "84220",
-      country: "France",
+      street: "Menahria",
+      city: "Hawassa",
+      region: "Sidama",
+      postalCode: "",
+      country: "Ethiopia",
     },
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1158.0!2d5.1996!3d43.9122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDU0JzQ0LjAiTiA1wrAxMSc1OC42IkU!5e0!3m2!1sen!2sfr!4v1700000000000",
@@ -33,9 +33,9 @@ export const siteConfig = {
     { label: "Contact", href: "/contact" },
   ],
   seo: {
-    defaultTitle: "Serenité Guesthouse",
+    defaultTitle: "Amen Guesthouse",
     description:
-      "A boutique luxury guesthouse in the heart of Provence. Elegant rooms, refined comfort, and warm hospitality — inquire for availability.",
+      "A luxury and comfortable guesthouse in the heart of Hawassa. Elegant rooms, refined comfort, and warm hospitality. Contact us for availability.",
     ogImage:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=630&fit=crop",
   },

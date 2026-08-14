@@ -13,15 +13,15 @@ const valueProps = [
     icon: "home",
   },
   {
-    title: "Heart of the Luberon",
+    title: "Heart of the Hawassa",
     description:
-      "Steps from Gordes and minutes from lavender fields, ochre trails, and vineyard villages that define Provence.",
+      "Steps from Menahria and minutes from Sumuda, Piassa, Atote, and Hawassa Lake that define Hawassa.",
     icon: "map",
   },
   {
     title: "Refined comfort",
     description:
-      "Italian linens, rainfall showers, curated minibars, and Provençal furnishings — every detail considered.",
+      "Comfortable beds, quality showers, carefully crafted restrooms, and fine furnishings. Every detail considered.",
     icon: "sparkles",
   },
   {
@@ -39,9 +39,9 @@ export function WhyStayHere() {
       imageAlt={backgroundImage.alt}
     >
       <SectionHeading
-        eyebrow="Why Serenité"
+        eyebrow="Why Alem Guesthouse"
         title="A stay that feels effortlessly special"
-        description="We believe luxury is found in restraint — in space, silence, and the small gestures that make you feel truly at home."
+        description="We believe comfort is found in simplicity. Space, silence, and the small gestures that make you feel truly at home."
         align="center"
         className="mx-auto"
         tone="onDark"

@@ -13,7 +13,7 @@ const heroImage = attractions[0].image;
 export const metadata = buildPageMetadata({
   title: "Nearby Attractions",
   description:
-    "Hilltop villages, lavender fields, ochre trails, and market towns — the Luberon's finest sights are within easy reach of Serenité.",
+    "From Menahria to Sumuda, Piassa, Atote, and Hawassa Lake. The Hawassa's finest sights are at your doorstep.",
   path: "/attractions",
   image: heroImage,
 });
@@ -22,9 +22,9 @@ export default function AttractionsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Explore Provence"
+        eyebrow="Explore Hawassa"
         title="Nearby Attractions"
-        description="Hilltop villages, lavender fields, ochre trails, and market towns — the Luberon's finest sights are within easy reach of Serenité."
+        description="From Menahria to Sumuda, Piassa, Atote, and Hawassa Lake. The Hawassa's finest sights are at your doorstep."
         image={heroImage}
         imageAlt={attractions[0].name}
       />
@@ -42,8 +42,8 @@ export default function AttractionsPage() {
       </section>
 
       <MapSection
-        title="Start from Serenité"
-        description="We're perched above Gordes with quick access to the Luberon's villages, trails, and lavender country — your ideal base for exploring Provence."
+        title="Start from Alem Guesthouse"
+        description="We're positioned above Menahria with quick access to the Sumuda, Piassa, Atote, and Hawassa Lake. Your ideal base for exploring Hawassa."
       />
 
       <CTABanner />
