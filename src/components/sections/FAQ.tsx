@@ -1,4 +1,5 @@
 import { faq } from "@/data/faq";
+import { FadeIn } from "@/components/motion";
 import { Accordion } from "@/components/ui/Accordion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -13,7 +14,9 @@ export function FAQ() {
             description="Everything you need to know about booking, amenities, and making the most of your stay in Gordes."
           />
 
-          <Accordion items={faq} stagger />
+          <FadeIn delay={0.18}>
+            <Accordion items={faq} stagger />
+          </FadeIn>
         </div>
       </div>
     </section>

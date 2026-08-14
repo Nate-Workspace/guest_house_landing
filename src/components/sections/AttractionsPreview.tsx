@@ -1,4 +1,4 @@
-import { StaggerChildren, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion";
 import { featuredAttractions } from "@/data/attractions";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -14,9 +14,11 @@ export function AttractionsPreview() {
             title="Nearby attractions"
             description="From hilltop villages to lavender fields and ochre trails — the Luberon's finest sights are at your doorstep."
           />
-          <Button href="/attractions" variant="outline" className="shrink-0 self-start md:self-auto">
-            All attractions
-          </Button>
+          <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
+            <Button href="/attractions" variant="outline">
+              All attractions
+            </Button>
+          </FadeIn>
         </div>
 
         <StaggerChildren className="mt-14 grid gap-8 md:grid-cols-3">

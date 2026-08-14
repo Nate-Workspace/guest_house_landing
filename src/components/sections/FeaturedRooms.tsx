@@ -1,5 +1,5 @@
 import { RoomCard } from "@/components/rooms";
-import { StaggerChildren, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { featuredRooms } from "@/data/rooms";
@@ -14,9 +14,11 @@ export function FeaturedRooms() {
             title="Rooms crafted for rest"
             description="Six individually designed rooms and suites, each offering a distinct perspective on Provençal living — from garden-level serenity to panoramic valley views."
           />
-          <Button href="/rooms" variant="outline" className="shrink-0 self-start md:self-auto">
-            View all rooms
-          </Button>
+          <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
+            <Button href="/rooms" variant="outline">
+              View all rooms
+            </Button>
+          </FadeIn>
         </div>
 
         <StaggerChildren className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">

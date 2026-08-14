@@ -2,7 +2,8 @@
 export const motionEase = [0.25, 0.1, 0.25, 1] as const;
 
 export const revealDuration = 0.85;
-export const revealY = 12;
+/** Vertical travel on scroll reveal — soft lift into place */
+export const revealY = 18;
 /** Starting opacity — never fully invisible; keeps reveals feeling soft, not rushed */
 export const revealOpacity = 0.6;
 export const revealViewportMargin = "-60px";

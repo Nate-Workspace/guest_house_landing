@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { StaggerChildren, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion";
 import { amenities } from "@/data/amenities";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -27,9 +27,11 @@ export function AmenitiesPreview() {
             title="Everything you need, thoughtfully provided"
             description="From morning breakfast on the terrace to high-speed Wi-Fi and secure parking — comfort is built into every stay."
           />
-          <Button href="/amenities" variant="outline" className="shrink-0 self-start md:self-auto">
-            All amenities
-          </Button>
+          <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
+            <Button href="/amenities" variant="outline">
+              All amenities
+            </Button>
+          </FadeIn>
         </div>
 
         <StaggerChildren className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -37,7 +39,7 @@ export function AmenitiesPreview() {
             <StaggerItem key={amenity.id} index={index}>
               <Link
                 href="/amenities"
-                className="group block rounded-lg p-5 ring-1 ring-text/5 transition-all duration-300 hover:bg-bg hover:shadow-luxury"
+                className="group block rounded-lg border border-text/15 p-5 transition-all duration-300 hover:border-text/10 hover:bg-bg hover:shadow-luxury"
               >
                 <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-surface">
                   <AmenityIcon name={amenity.icon} />

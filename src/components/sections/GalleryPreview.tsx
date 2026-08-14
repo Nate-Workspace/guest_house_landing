@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { StaggerChildren, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion";
 import { galleryPreview } from "@/data/gallery";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -17,9 +17,11 @@ export function GalleryPreview() {
             title="Moments of serenity"
             description="Sunlit terraces, lavender-scented gardens, and interiors that honour the spirit of Provence."
           />
-          <Button href="/gallery" variant="outline" className="shrink-0 self-start md:self-auto">
-            View gallery
-          </Button>
+          <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
+            <Button href="/gallery" variant="outline">
+              View gallery
+            </Button>
+          </FadeIn>
         </div>
 
         <StaggerChildren className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
