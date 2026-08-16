@@ -1,9 +1,9 @@
 import { FadeIn } from "@/components/motion";
 import { AmenitiesGrid, CTABanner, PageHero } from "@/components/sections";
+import { siteImages } from "@/data/site-images";
 import { buildPageMetadata } from "@/lib/seo";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=900&fit=crop";
+const heroImage = siteImages.hero.amenities;
 
 export const metadata = buildPageMetadata({
   title: "Amenities",

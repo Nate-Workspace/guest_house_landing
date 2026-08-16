@@ -2,10 +2,10 @@ import { ContactDetails, ContactForm } from "@/components/conversion";
 import { FadeIn } from "@/components/motion";
 import { MapSection, PageHero } from "@/components/sections";
 import { getBatchBySlug } from "@/data/rooms";
+import { siteImages } from "@/data/site-images";
 import { buildPageMetadata } from "@/lib/seo";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=900&fit=crop";
+const heroImage = siteImages.hero.contact;
 
 export const metadata = buildPageMetadata({
   title: "Contact",

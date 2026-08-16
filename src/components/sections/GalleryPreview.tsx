@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from "next/link";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion";
 import { galleryPreview } from "@/data/gallery";
@@ -14,7 +14,7 @@ export function GalleryPreview() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             eyebrow="Gallery"
-            title="Moments of serenity"
+            title="Moments of Alem Guesthouse"
             description="Clean rooms, welcoming spaces, and the calm atmosphere that makes Alem Guesthouse feel like home."
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
@@ -33,12 +33,14 @@ export function GalleryPreview() {
               href="/gallery"
               className="group relative block h-full overflow-hidden rounded-lg"
             >
-              <Image
+              <OptimizedImage
                 src={featured.src}
                 alt={featured.alt}
                 fill
                 className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizePreset="galleryPreviewLarge"
+                qualityPreset="card"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-text/0 transition-colors duration-300 group-hover:bg-text/20" />
             </Link>
@@ -50,12 +52,14 @@ export function GalleryPreview() {
                 href="/gallery"
                 className="group relative block aspect-square overflow-hidden rounded-lg"
               >
-                <Image
+                <OptimizedImage
                   src={image.src}
                   alt={image.alt}
                   fill
                   className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  sizePreset="galleryPreviewSmall"
+                  qualityPreset="card"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-text/0 transition-colors duration-300 group-hover:bg-text/20" />
               </Link>

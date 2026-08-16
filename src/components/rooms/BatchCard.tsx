@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Badge } from "@/components/ui/Badge";
@@ -23,12 +23,14 @@ export function BatchCard({ batch, className }: BatchCardProps) {
         href={batchHref}
         className="group relative block aspect-4/3 overflow-hidden rounded-lg"
       >
-        <Image
+        <OptimizedImage
           src={batch.images[0]}
           alt={batch.name}
           fill
           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizePreset="cardGrid"
+          qualityPreset="card"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-linear-to-t from-text/65 via-text/15 to-transparent" />
         <div className="absolute left-3 top-3 flex flex-wrap gap-2 sm:left-4 sm:top-4">

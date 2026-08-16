@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -29,12 +29,14 @@ export function SectionBackground({
       )}
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <Image
+        <OptimizedImage
           src={image}
           alt={imageAlt}
           fill
           className="object-cover"
-          sizes="100vw"
+          qualityPreset="content"
+          sizePreset="hero"
+          loading="lazy"
         />
         <div
           className={cn(

@@ -1,4 +1,5 @@
 import type { AboutContent } from "@/lib/types";
+import { placeholderImages, roomFolderImages, siteImages } from "./site-images";
 
 export const about = {
   hero: {
@@ -6,8 +7,7 @@ export const about = {
     title: "About Alem Guesthouse",
     description:
       "Founded with a passion for genuine hospitality, Alem Guesthouse offers travellers a peaceful, secure, and comfortable sanctuary in the heart of Hawassa.",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=900&fit=crop",
+    image: siteImages.hero.exterior,
     imageAlt: "Alem Guesthouse welcoming exterior in Hawassa",
   },
   story: {
@@ -63,8 +63,7 @@ export const about = {
       title: "Comfortable, well-appointed rooms",
       description:
         "Each room is fitted with quality beds, fresh linen, and thoughtful amenities — including reliable hot water and daily housekeeping. Whether you are here for a night or a longer stay, you will find a clean and comfortable space to unwind.",
-      image:
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=900&fit=crop",
+      image: roomFolderImages[6][0],
       imageAlt: "Bright, comfortable guest room at Alem Guesthouse",
     },
     {
@@ -72,8 +71,7 @@ export const about = {
       title: "Complimentary breakfast included",
       description:
         "Start every morning with a delicious complimentary breakfast — part of your room rate. It is our way of making sure you leave the table satisfied and ready for the day ahead in Hawassa.",
-      image:
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=900&fit=crop",
+      image: placeholderImages.breakfast,
       imageAlt: "Complimentary breakfast served at Alem Guesthouse",
     },
     {
@@ -81,8 +79,7 @@ export const about = {
       title: "Heart of Hawassa",
       description:
         "Steps from Menahria and minutes from Sumuda, Piassa, Atote, and Hawassa Lake — Alem Guesthouse is ideally placed for both city convenience and lakeside leisure. Handle your daily activities with ease, then return to a calm and secure retreat.",
-      image:
-        "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1200&h=900&fit=crop",
+      image: placeholderImages.hawassaScenery,
       imageAlt: "Scenic view near Hawassa and Lake Hawassa",
     },
   ],

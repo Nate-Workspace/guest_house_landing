@@ -1,4 +1,5 @@
 import type { SiteConfig } from "@/lib/types";
+import { siteImages } from "@/data/site-images";
 
 export const siteConfig = {
   name: "Alem Guesthouse",
@@ -36,8 +37,7 @@ export const siteConfig = {
     defaultTitle: "Alem Guesthouse",
     description:
       "A clean, secure, and comfortable guesthouse in the heart of Hawassa. Warm hospitality, complimentary breakfast, free Wi-Fi, and secure parking — inquire for availability.",
-    ogImage:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=630&fit=crop",
+    ogImage: siteImages.og,
   },
   features: {
     showPrices: true,

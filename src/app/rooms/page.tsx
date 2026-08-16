@@ -13,10 +13,10 @@ import {
   getTotalRoomCount,
   roomBatches,
 } from "@/data/rooms";
+import { siteImages } from "@/data/site-images";
 import { buildPageMetadata, buildRoomBatchJsonLd } from "@/lib/seo";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&h=900&fit=crop";
+const heroImage = siteImages.hero.rooms;
 
 const totalRooms = getTotalRoomCount();
 

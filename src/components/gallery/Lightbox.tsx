@@ -2,6 +2,7 @@
 
 import YarlLightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { buildLightboxImageUrl } from "@/lib/image";
 import type { GalleryImage } from "@/lib/types";
 
 type LightboxProps = {
@@ -13,7 +14,7 @@ type LightboxProps = {
 
 export function Lightbox({ open, index, images, onClose }: LightboxProps) {
   const slides = images.map((image) => ({
-    src: image.src,
+    src: buildLightboxImageUrl(image.src),
     alt: image.alt,
     title: image.alt,
     description: image.category,

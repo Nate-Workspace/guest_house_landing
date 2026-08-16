@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { useRef } from "react";
 import { useMountAnimation } from "@/components/motion";
 import {
@@ -64,13 +64,14 @@ export function PageHero({
         className="absolute inset-0 -top-[6%] h-[106%]"
         style={{ y: imageY }}
       >
-        <Image
+        <OptimizedImage
           src={image}
           alt={imageAlt}
           fill
           priority={priority}
           className="object-cover"
-          sizes="100vw"
+          qualityPreset={priority ? "hero" : "content"}
+          sizePreset="pageHero"
         />
       </motion.div>
       <div className="absolute inset-0 bg-linear-to-t from-text/70 via-text/40 to-text/25" />

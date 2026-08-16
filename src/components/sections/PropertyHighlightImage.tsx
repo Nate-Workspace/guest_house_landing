@@ -6,7 +6,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { useRef } from "react";
 
 type PropertyHighlightImageProps = {
@@ -37,21 +37,25 @@ export function PropertyHighlightImage({
       className="relative aspect-4/3 overflow-hidden rounded-lg shadow-luxury ring-1 ring-text/5"
     >
       {prefersReducedMotion ? (
-        <Image
+        <OptimizedImage
           src={src}
           alt={alt}
           fill
           className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 50vw"
+          sizePreset="cardHalf"
+          qualityPreset="card"
+          loading="lazy"
         />
       ) : (
         <motion.div className="relative h-full w-full" style={{ clipPath }}>
-          <Image
+          <OptimizedImage
             src={src}
             alt={alt}
             fill
             className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            sizePreset="cardHalf"
+            qualityPreset="card"
+            loading="lazy"
           />
         </motion.div>
       )}

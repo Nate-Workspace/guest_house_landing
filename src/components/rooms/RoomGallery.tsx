@@ -1,9 +1,10 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
+import { preloadAdjacentImages } from "@/lib/image";
 import type { GalleryImage } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -36,6 +37,10 @@ export function RoomGallery({ images, roomName }: RoomGalleryProps) {
 
   const goPrev = useCallback(() => goTo(current - 1), [current, goTo]);
   const goNext = useCallback(() => goTo(current + 1), [current, goTo]);
+
+  useEffect(() => {
+    preloadAdjacentImages(images, current);
+  }, [current, images]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -100,32 +105,30 @@ export function RoomGallery({ images, roomName }: RoomGalleryProps) {
                 else goNext();
               }}
             >
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div
-                  key={images[current]}
-                  initial={prefersReducedMotion ? false : { opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={prefersReducedMotion ? undefined : { opacity: 0 }}
-                  transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="absolute inset-0"
+              <motion.div
+                key={images[current]}
+                initial={prefersReducedMotion ? false : { opacity: 0.85 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                className="absolute inset-0"
+              >
+                <button
+                  type="button"
+                  onClick={() => setLightboxOpen(true)}
+                  className="relative block h-full w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+                  aria-label={`View photo ${current + 1} full screen`}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setLightboxOpen(true)}
-                    className="relative block h-full w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
-                    aria-label={`View photo ${current + 1} full screen`}
-                  >
-                    <Image
-                      src={images[current]}
-                      alt={`${roomName} — photo ${current + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1280px) 100vw, 1280px"
-                      priority={current === 0}
-                    />
-                  </button>
-                </motion.div>
-              </AnimatePresence>
+                  <OptimizedImage
+                    src={images[current]}
+                    alt={`${roomName} — photo ${current + 1}`}
+                    fill
+                    className="object-cover"
+                    sizePreset="galleryMain"
+                    qualityPreset="content"
+                    priority={current === 0}
+                  />
+                </button>
+              </motion.div>
 
               {total > 1 ? (
                 <>
@@ -174,12 +177,14 @@ export function RoomGallery({ images, roomName }: RoomGalleryProps) {
                           : "ring-text/10 opacity-75 hover:opacity-100",
                       )}
                     >
-                      <Image
+                      <OptimizedImage
                         src={image}
                         alt=""
                         fill
                         className="object-cover"
-                        sizes="112px"
+                        sizePreset="thumb"
+                        qualityPreset="thumb"
+                        loading={isActive ? "eager" : "lazy"}
                       />
                     </button>
                   );

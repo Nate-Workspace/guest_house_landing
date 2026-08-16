@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { useRef } from "react";
 import { useMountAnimation } from "@/components/motion";
 import {
@@ -13,10 +13,10 @@ import {
   revealVisible,
 } from "@/components/motion/tokens";
 import { siteConfig } from "@/config/site";
+import { siteImages } from "@/data/site-images";
 import { Button } from "@/components/ui/Button";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop";
+const heroImage = siteImages.hero.exterior;
 
 const contentVariants = {
   hidden: {},
@@ -50,13 +50,14 @@ export function LuxuryHero() {
       className="relative flex min-h-svh items-center justify-center overflow-hidden"
     >
       <motion.div className="absolute inset-0 -top-[28%] h-[128%]" style={{ y: imageY }}>
-        <Image
+        <OptimizedImage
           src={heroImage}
           alt={`${siteConfig.name} exterior at golden hour`}
           fill
           priority
           className="object-cover"
-          sizes="100vw"
+          qualityPreset="hero"
+          sizePreset="hero"
         />
       </motion.div>
       <div className="absolute inset-0 bg-linear-to-b from-text/50 via-text/35 to-text/60" />

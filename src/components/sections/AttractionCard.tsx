@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from "next/link";
 import type { Attraction } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
@@ -17,12 +17,14 @@ export function AttractionCard({
 }: AttractionCardProps) {
   const image = (
     <div className="relative aspect-4/3 overflow-hidden rounded-lg">
-      <Image
+      <OptimizedImage
         src={attraction.image}
         alt={attraction.name}
         fill
         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        sizePreset="cardGrid"
+        qualityPreset="card"
+        loading="lazy"
       />
       <div className="absolute inset-0 bg-linear-to-t from-text/50 to-transparent" />
       <div className="absolute bottom-4 left-4">

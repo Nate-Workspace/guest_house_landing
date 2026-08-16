@@ -1,4 +1,5 @@
 import type { RoomBatch, RoomUnit } from "@/lib/types";
+import { getBatchImages } from "./site-images";
 
 const sharedAmenities = [
   "Fresh linen & daily housekeeping",
@@ -21,10 +22,7 @@ export const roomBatches = [
     bedType: "Single bed",
     bathroom: "Private ensuite with shower",
     price: 1500,
-    images: [
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&h=800&fit=crop",
-    ],
+    images: getBatchImages(1),
     amenities: [...sharedAmenities, "Quiet workspace"],
     units: [
       { number: 14, floor: 1 },
@@ -46,10 +44,7 @@ export const roomBatches = [
     bedType: "Double bed",
     bathroom: "Private ensuite with shower",
     price: 2800,
-    images: [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1200&h=800&fit=crop",
-    ],
+    images: getBatchImages(2),
     amenities: [...sharedAmenities, "Private balcony", "Work desk"],
     units: [
       { number: 15, floor: 2 },
@@ -70,10 +65,7 @@ export const roomBatches = [
     bedType: "Single bed",
     bathroom: "Private ensuite with shower",
     price: 1800,
-    images: [
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop",
-    ],
+    images: getBatchImages(3),
     amenities: [...sharedAmenities, "Private balcony"],
     units: [
       { number: 16, floor: 2 },
@@ -94,10 +86,7 @@ export const roomBatches = [
     bedType: "Single bed",
     bathroom: "Private ensuite with shower",
     price: 2000,
-    images: [
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&h=800&fit=crop",
-    ],
+    images: getBatchImages(4),
     amenities: [...sharedAmenities, "Private balcony", "In-room TV"],
     units: [
       { number: 17, floor: 2 },
@@ -119,10 +108,7 @@ export const roomBatches = [
     bedType: "Single bed",
     bathroom: "Private ensuite with shower",
     price: 1600,
-    images: [
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop",
-    ],
+    images: getBatchImages(5),
     amenities: [...sharedAmenities, "Quiet workspace"],
     units: [
       { number: 11, floor: 1 },
@@ -144,10 +130,7 @@ export const roomBatches = [
     bedType: "Single bed",
     bathroom: "Private ensuite with shower",
     price: 1500,
-    images: [
-      "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&h=800&fit=crop",
-    ],
+    images: getBatchImages(6),
     amenities: [...sharedAmenities],
     units: [
       { number: 12, floor: 1 },
@@ -171,10 +154,7 @@ export const roomBatches = [
     bedType: "Single bed",
     bathroom: "Private ensuite with shower",
     price: 1700,
-    images: [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&h=800&fit=crop",
-    ],
+    images: getBatchImages(7),
     amenities: [...sharedAmenities, "Wide window", "Work desk"],
     units: [
       { number: 13, floor: 1 },
