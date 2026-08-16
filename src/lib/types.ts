@@ -46,9 +46,16 @@ export interface SiteConfig {
   features: SiteFeatures;
 }
 
-export interface Room {
+export interface RoomUnit {
+  number: number;
+  floor: number;
+}
+
+/** A design group — shared photos, copy, and amenities across multiple physical rooms. */
+export interface RoomBatch {
   slug: string;
   name: string;
+  subtitle: string;
   description: string;
   shortDescription: string;
   capacity: number;
@@ -57,8 +64,12 @@ export interface Room {
   price?: number;
   images: string[];
   amenities: string[];
+  units: RoomUnit[];
   featured: boolean;
 }
+
+/** @deprecated Use RoomBatch — kept for transitional imports */
+export type Room = RoomBatch;
 
 export type AmenityCategory =
   | "Accommodation"

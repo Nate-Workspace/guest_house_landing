@@ -1,5 +1,14 @@
-export { RoomCard } from "./RoomCard";
-export type { RoomCardProps } from "./RoomCard";
+export { BatchCard } from "./BatchCard";
+export type { BatchCardProps } from "./BatchCard";
+export { BatchDetailContent } from "./BatchDetailContent";
+export { BatchDetailStats } from "./BatchDetailStats";
+export { RelatedBatches } from "./RelatedBatches";
 export { RoomGallery } from "./RoomGallery";
-export { RoomDetailContent } from "./RoomDetailContent";
-export { RelatedRooms } from "./RelatedRooms";
+export { RoomUnitPicker } from "./RoomUnitPicker";
+
+/** @deprecated Use BatchCard */
+export { BatchCard as RoomCard } from "./BatchCard";
+/** @deprecated Use BatchDetailContent */
+export { BatchDetailContent as RoomDetailContent } from "./BatchDetailContent";
+/** @deprecated Use RelatedBatches */
+export { RelatedBatches as RelatedRooms } from "./RelatedBatches";

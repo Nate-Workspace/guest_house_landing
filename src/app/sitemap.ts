@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { rooms } from "@/data/rooms";
+import { roomBatches } from "@/data/room-batches";
 import { getSiteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,8 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   }));
 
-  const roomEntries = rooms.map((room) => ({
-    url: `${baseUrl}/rooms/${room.slug}`,
+  const roomEntries = roomBatches.map((batch) => ({
+    url: `${baseUrl}/rooms/${batch.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,

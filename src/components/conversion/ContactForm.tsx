@@ -1,16 +1,22 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useMemo } from "react";
 import {
   submitContactForm,
   type ContactFormState,
 } from "@/app/actions/contact";
 import { Button } from "@/components/ui/Button";
-import { rooms } from "@/data/rooms";
+import {
+  formatBatchLabel,
+  getBatchBySlug,
+  getUnitInBatch,
+  roomBatches,
+} from "@/data/rooms";
 import { cn } from "@/lib/utils";
 
 type ContactFormProps = {
-  defaultRoom?: string;
+  defaultBatch?: string;
+  defaultUnit?: string;
 };
 
 const initialState: ContactFormState = {
@@ -23,10 +29,30 @@ const fieldClassName =
 
 const labelClassName = "mb-2 block text-sm font-medium text-text";
 
-export function ContactForm({ defaultRoom }: ContactFormProps) {
-  const validRoom = rooms.some((room) => room.slug === defaultRoom)
-    ? defaultRoom
-    : "";
+function resolveDefaultPreference(
+  defaultBatch?: string,
+  defaultUnit?: string,
+): string {
+  if (!defaultBatch || !getBatchBySlug(defaultBatch)) {
+    return "";
+  }
+
+  if (defaultUnit) {
+    const unitNumber = Number(defaultUnit);
+    if (getUnitInBatch(defaultBatch, unitNumber)) {
+      return `${defaultBatch}:${unitNumber}`;
+    }
+  }
+
+  return defaultBatch;
+}
+
+export function ContactForm({ defaultBatch, defaultUnit }: ContactFormProps) {
+  const defaultPreference = useMemo(
+    () => resolveDefaultPreference(defaultBatch, defaultUnit),
+    [defaultBatch, defaultUnit],
+  );
+
   const [state, formAction, pending] = useActionState(
     submitContactForm,
     initialState,
@@ -77,7 +103,7 @@ export function ContactForm({ defaultRoom }: ContactFormProps) {
             type="tel"
             autoComplete="tel"
             className={fieldClassName}
-            placeholder="+33 6 00 00 00 00"
+            placeholder="+251 9XX XXX XXX"
           />
         </div>
 
@@ -88,14 +114,21 @@ export function ContactForm({ defaultRoom }: ContactFormProps) {
           <select
             id="room"
             name="room"
-            defaultValue={validRoom}
+            defaultValue={defaultPreference}
             className={cn(fieldClassName, "appearance-none bg-surface")}
           >
             <option value="">No preference</option>
-            {rooms.map((room) => (
-              <option key={room.slug} value={room.slug}>
-                {room.name}
-              </option>
+            {roomBatches.map((batch) => (
+              <optgroup key={batch.slug} label={formatBatchLabel(batch)}>
+                <option value={batch.slug}>
+                  Any room in {batch.name}
+                </option>
+                {batch.units.map((unit) => (
+                  <option key={unit.number} value={`${batch.slug}:${unit.number}`}>
+                    Room {unit.number} · Floor {unit.floor}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </div>
@@ -137,7 +170,7 @@ export function ContactForm({ defaultRoom }: ContactFormProps) {
           required
           rows={5}
           className={cn(fieldClassName, "resize-y min-h-32")}
-          placeholder="Tell us about your stay — dates, number of guests, special requests..."
+          placeholder="Tell us about your stay — dates, number of guests, preferred room type or number..."
         />
       </div>
 
@@ -155,7 +188,7 @@ export function ContactForm({ defaultRoom }: ContactFormProps) {
         </p>
       ) : null}
 
-      <Button type="submit" size="lg" disabled={pending}>
+      <Button type="submit" size="lg" disabled={pending} className="w-full sm:w-auto">
         {pending ? "Sending..." : "Send inquiry"}
       </Button>
     </form>

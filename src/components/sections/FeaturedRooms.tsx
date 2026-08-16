@@ -1,8 +1,10 @@
-import { RoomCard } from "@/components/rooms";
+import { BatchCard } from "@/components/rooms";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { featuredRooms } from "@/data/rooms";
+import { featuredRooms, getTotalRoomCount } from "@/data/rooms";
+
+const totalRooms = getTotalRoomCount();
 
 export function FeaturedRooms() {
   return (
@@ -11,20 +13,20 @@ export function FeaturedRooms() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             eyebrow="Accommodations"
-            title="Rooms crafted for rest"
-            description="Six comfortable rooms and suites — from budget-friendly singles to spacious family accommodation in the heart of Hawassa."
+            title="Room types for every stay"
+            description={`${totalRooms} rooms across 7 designs — browse by type, pick a room number, and inquire for availability.`}
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
             <Button href="/rooms" variant="outline">
-              View all rooms
+              View all room types
             </Button>
           </FadeIn>
         </div>
 
-        <StaggerChildren className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {featuredRooms.map((room, index) => (
-            <StaggerItem key={room.slug} index={index}>
-              <RoomCard room={room} />
+        <StaggerChildren className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 md:mt-14">
+          {featuredRooms.map((batch, index) => (
+            <StaggerItem key={batch.slug} index={index}>
+              <BatchCard batch={batch} />
             </StaggerItem>
           ))}
         </StaggerChildren>

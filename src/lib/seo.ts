@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import type { ContactAddress, Room } from "@/lib/types";
+import type { ContactAddress, RoomBatch } from "@/lib/types";
 
 export interface PageMetadataOptions {
   /** Page title without site name — root layout template adds `| {site.name}`. */
@@ -106,26 +106,26 @@ export function buildLodgingBusinessJsonLd() {
   };
 }
 
-/** JSON-LD for room detail pages — schema.org HotelRoom. */
-export function buildHotelRoomJsonLd(room: Room) {
-  const roomUrl = buildAbsoluteUrl(`/rooms/${room.slug}`);
+/** JSON-LD for room type pages — schema.org HotelRoom. */
+export function buildRoomBatchJsonLd(batch: RoomBatch) {
+  const roomUrl = buildAbsoluteUrl(`/rooms/${batch.slug}`);
 
   return {
     "@context": "https://schema.org",
     "@type": "HotelRoom",
-    name: room.name,
-    description: room.description,
+    name: `${batch.name} — ${batch.subtitle}`,
+    description: batch.description,
     url: roomUrl,
-    image: room.images,
+    image: batch.images,
     occupancy: {
       "@type": "QuantitativeValue",
-      maxValue: room.capacity,
+      maxValue: batch.capacity,
     },
     bed: {
       "@type": "BedDetails",
-      typeOfBed: room.bedType,
+      typeOfBed: batch.bedType,
     },
-    amenityFeature: room.amenities.map((amenity) => ({
+    amenityFeature: batch.amenities.map((amenity) => ({
       "@type": "LocationFeatureSpecification",
       name: amenity,
       value: true,
@@ -135,17 +135,20 @@ export function buildHotelRoomJsonLd(room: Room) {
       name: siteConfig.name,
       url: getSiteUrl(),
     },
-    ...(room.price !== undefined && {
+    ...(batch.price !== undefined && {
       offers: {
         "@type": "Offer",
-        price: room.price,
+        price: batch.price,
         priceCurrency: "ETB",
         availability: "https://schema.org/InStock",
-        url: `${getSiteUrl()}/contact?room=${room.slug}`,
+        url: `${getSiteUrl()}/contact?batch=${batch.slug}`,
       },
     }),
   };
 }
+
+/** @deprecated Use buildRoomBatchJsonLd */
+export const buildHotelRoomJsonLd = buildRoomBatchJsonLd;
 
 /** Safe JSON string for `<script type="application/ld+json">` tags. */
 export function serializeJsonLd(data: object | object[]): string {

@@ -1,6 +1,9 @@
 "use server";
 
-import { getRoomBySlug } from "@/data/rooms";
+import {
+  formatInquiryPreference,
+  parseInquiryPreference,
+} from "@/data/rooms";
 import { sendContactInquiry } from "@/lib/email/send-contact-inquiry";
 
 export type ContactFormState = {
@@ -47,7 +50,8 @@ export async function submitContactForm(
     };
   }
 
-  if (room && !getRoomBySlug(room)) {
+  const preference = room ? parseInquiryPreference(room) : null;
+  if (room && !preference) {
     return {
       success: false,
       message: "Please select a valid room preference.",
@@ -86,7 +90,9 @@ export async function submitContactForm(
     name,
     email,
     phone: phone || undefined,
-    room: room ? getRoomBySlug(room)?.name : undefined,
+    room: preference
+      ? formatInquiryPreference(preference.batchSlug, preference.unitNumber)
+      : undefined,
     checkIn: checkIn || undefined,
     checkOut: checkOut || undefined,
     message,
@@ -107,6 +113,6 @@ export async function submitContactForm(
   return {
     success: true,
     message:
-      "Thank you — your inquiry has been received. We'll respond within 24 hours.",
+      "Thank you — your inquiry has been received. We'll confirm availability and respond within 24 hours.",
   };
 }

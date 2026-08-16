@@ -1,65 +1,85 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FadeIn } from "@/components/motion";
-import { RoomDetailContent, RoomGallery, RelatedRooms } from "@/components/rooms";
+import {
+  BatchDetailContent,
+  BatchDetailStats,
+  RelatedBatches,
+  RoomGallery,
+  RoomUnitPicker,
+} from "@/components/rooms";
 import { CTABanner, PageHero } from "@/components/sections";
 import { JsonLd } from "@/components/seo";
-import { getRoomBySlug, rooms } from "@/data/rooms";
-import { buildHotelRoomJsonLd, buildPageMetadata } from "@/lib/seo";
+import { getBatchBySlug, roomBatches } from "@/data/rooms";
+import { buildPageMetadata, buildRoomBatchJsonLd } from "@/lib/seo";
 
-type RoomDetailPageProps = {
+type BatchDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return rooms.map((room) => ({ slug: room.slug }));
+  return roomBatches.map((batch) => ({ slug: batch.slug }));
 }
 
 export async function generateMetadata({
   params,
-}: RoomDetailPageProps): Promise<Metadata> {
+}: BatchDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const room = getRoomBySlug(slug);
+  const batch = getBatchBySlug(slug);
 
-  if (!room) {
+  if (!batch) {
     return {};
   }
 
   return buildPageMetadata({
-    title: room.name,
-    description: room.shortDescription,
-    path: `/rooms/${room.slug}`,
-    image: room.images[0],
+    title: `${batch.name} · ${batch.subtitle}`,
+    description: batch.shortDescription,
+    path: `/rooms/${batch.slug}`,
+    image: batch.images[0],
   });
 }
 
-export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
+export default async function BatchDetailPage({ params }: BatchDetailPageProps) {
   const { slug } = await params;
-  const room = getRoomBySlug(slug);
+  const batch = getBatchBySlug(slug);
 
-  if (!room) {
+  if (!batch) {
     notFound();
   }
 
+  const roomCount = batch.units.length;
+
   return (
     <>
-      <JsonLd data={buildHotelRoomJsonLd(room)} />
-      <PageHero
-        eyebrow="Room"
-        title={room.name}
-        description={room.shortDescription}
-        image={room.images[0]}
-        imageAlt={room.name}
-      />
-      {room.images.length > 1 ? (
+      <JsonLd data={buildRoomBatchJsonLd(batch)} />
+      <div className="bg-bg">
+        <PageHero
+          eyebrow={batch.name}
+          title={batch.subtitle}
+          description={`${batch.shortDescription} · ${roomCount} room${roomCount === 1 ? "" : "s"} of this type`}
+          image={batch.images[0]}
+          imageAlt={`${batch.name} — ${batch.subtitle}`}
+        />
+        <BatchDetailStats batch={batch} />
+      </div>
+
+      {batch.images.length > 0 ? (
         <FadeIn>
-          <RoomGallery images={room.images.slice(1)} roomName={room.name} />
+          <RoomGallery images={batch.images} roomName={batch.name} />
         </FadeIn>
-      ) : null}
+      ) : (
+        <div className="h-6 md:h-10" aria-hidden="true" />
+      )}
+
       <FadeIn>
-        <RoomDetailContent room={room} />
+        <BatchDetailContent batch={batch} />
       </FadeIn>
-      <RelatedRooms currentSlug={slug} />
+
+      <RoomUnitPicker batch={batch} />
+
+      <FadeIn>
+        <RelatedBatches currentSlug={slug} />
+      </FadeIn>
 
       <CTABanner />
     </>
