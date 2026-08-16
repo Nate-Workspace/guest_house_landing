@@ -15,7 +15,7 @@ export function GalleryPreview() {
           <SectionHeading
             eyebrow="Gallery"
             title="Moments of serenity"
-            description="Sunlit terraces, lavender-scented gardens, and interiors that honour the spirit of Provence."
+            description="Clean rooms, welcoming spaces, and the calm atmosphere that makes Alem Guesthouse feel like home."
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
             <Button href="/gallery" variant="outline">

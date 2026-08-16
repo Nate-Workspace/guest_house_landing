@@ -25,7 +25,7 @@ export function AmenitiesPreview() {
           <SectionHeading
             eyebrow="Amenities"
             title="Everything you need, thoughtfully provided"
-            description="From morning breakfast on the terrace to high-speed Wi-Fi and secure parking — comfort is built into every stay."
+            description="Comfortable rooms with fresh linen, reliable hot water, complimentary breakfast, and secure parking — everything you need for a restful stay."
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
             <Button href="/amenities" variant="outline">

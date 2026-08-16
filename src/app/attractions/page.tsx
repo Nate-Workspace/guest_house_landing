@@ -13,7 +13,7 @@ const heroImage = attractions[0].image;
 export const metadata = buildPageMetadata({
   title: "Nearby Attractions",
   description:
-    "From Menahria to Sumuda, Piassa, Atote, and Hawassa Lake. The Hawassa's finest sights are at your doorstep.",
+    "Lake Hawassa, local markets, and the city's best sights — all within easy reach of Alem Guesthouse.",
   path: "/attractions",
   image: heroImage,
 });
@@ -24,7 +24,7 @@ export default function AttractionsPage() {
       <PageHero
         eyebrow="Explore Hawassa"
         title="Nearby Attractions"
-        description="From Menahria to Sumuda, Piassa, Atote, and Hawassa Lake. The Hawassa's finest sights are at your doorstep."
+        description="Lake Hawassa, local markets, and the city's best sights — all within easy reach of Alem Guesthouse."
         image={heroImage}
         imageAlt={attractions[0].name}
       />

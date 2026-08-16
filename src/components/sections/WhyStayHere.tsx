@@ -7,9 +7,9 @@ const backgroundImage = gallery.find((item) => item.id === "gallery-garden")!;
 
 const valueProps = [
   {
-    title: "Intimate by design",
+    title: "Clean & secure",
     description:
-      "With just six rooms, every guest receives unhurried attention. No crowds, no queues — only the calm of a true boutique retreat.",
+      "Spotlessly clean rooms, 24/7 water supply, and secure on-site parking. A peaceful sanctuary where families and solo travellers feel safe and at ease.",
     icon: "home",
   },
   {
@@ -41,7 +41,7 @@ export function WhyStayHere() {
       <SectionHeading
         eyebrow="Why Alem Guesthouse"
         title="A stay that feels effortlessly special"
-        description="We believe comfort is found in simplicity. Space, silence, and the small gestures that make you feel truly at home."
+        description="We believe true comfort is found in cleanliness, security, and the warm gestures that make you feel completely at home."
         align="center"
         className="mx-auto"
         tone="onDark"

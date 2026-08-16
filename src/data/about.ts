@@ -5,85 +5,85 @@ export const about = {
     eyebrow: "Our story",
     title: "About Alem Guesthouse",
     description:
-      "A family-run guesthouse in Gordes, where Provençal heritage meets understated luxury and every guest is welcomed as a friend.",
+      "Founded with a passion for genuine hospitality, Alem Guesthouse offers travellers a peaceful, secure, and comfortable sanctuary in the heart of Hawassa.",
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=900&fit=crop",
-    imageAlt: "Alem Guesthouse stone facade nestled in the Luberon hills",
+    imageAlt: "Alem Guesthouse welcoming exterior in Hawassa",
   },
   story: {
     eyebrow: "How it began",
-    title: "A house restored with intention",
+    title: "A home away from home",
     paragraphs: [
-      "Alem Guesthouse began as a crumbling 18th-century mas — a traditional Provençal farmhouse overlooking the Luberon valley. When Claire and Antoine Laurent discovered it in 2016, they saw not ruin, but possibility: a place where travellers could slow down, breathe deeply, and feel the rhythm of the countryside.",
-      "Over three years, local artisans restored the stone walls, reclaimed oak beams, and terracotta floors while preserving the soul of the building. Six rooms were carefully conceived — each with its own character, none repeating the last. The infinity pool was sited to frame the sunset; the garden planted with lavender, rosemary, and ancient olive trees.",
-      "Today, Alem Guesthouse is a four-star boutique guesthouse that welcomes a handful of guests at a time. We are not a hotel chain nor a rental property — we are hosts who believe the finest luxury is found in authenticity, warmth, and the unhurried pace of Provence.",
+      "Alem Guesthouse was founded in 2018 E.C. with a simple vision: to create a true home away from home for every traveller who walks through our doors. What began as a dream to offer peaceful, secure, and comfortable accommodation has grown into a trusted address for both local and international visitors.",
+      "From the start, we built Alem around the essentials that matter most — spotless rooms, reliable hot water, comfortable beds with fresh linen, and a team that greets every guest like family. Our location in Menahria puts you steps from the city's key centres while keeping your stay quiet and restful.",
+      "Today, we continue to welcome guests into our extended family with the same commitment to cleanliness, warmth, and exceptional service. Whether you are visiting Hawassa for business, family, or leisure, our goal is simple: a relaxing and memorable stay every time.",
     ],
   },
   mission: {
     eyebrow: "Our mission",
-    title: "Hospitality rooted in place",
+    title: "Hospitality you can trust",
     description:
-      "We exist to offer a genuine Provençal experience — one that honours the land, supports local producers, and leaves every guest feeling restored rather than merely accommodated. Sustainability, craftsmanship, and personal connection guide every decision we make.",
+      "To provide clean, secure, and comfortable accommodation where every guest feels completely at home, delivering an unforgettable hospitality experience. We are committed to ensuring ultimate guest satisfaction through personalized, reliable, and high-quality service.",
   },
   values: {
     eyebrow: "What we stand for",
-    title: "Values that shape your stay",
+    title: "Qualities that define your stay",
     description:
-      "These principles inform how we design our rooms, source our breakfast, and welcome you through the door.",
+      "These principles guide how we maintain our rooms, serve breakfast, and welcome you through the door.",
     items: [
       {
-        id: "value-authenticity",
-        title: "Authenticity",
+        id: "value-comfort",
+        title: "Refined comfort",
         description:
-          "No manufactured charm. Our interiors feature local ceramics, regional wines, and recommendations drawn from years of living in Gordes — not a guidebook.",
+          "Comfortable beds, quality showers, carefully crafted restrooms, and fine furnishings. Every detail is considered so you can rest well after a long day.",
       },
       {
-        id: "value-tranquility",
-        title: "Tranquility",
+        id: "value-hospitality",
+        title: "Warm hospitality",
         description:
-          "With only six rooms, silence is a guarantee. We cap occupancy deliberately so that the pool, terrace, and garden remain peaceful throughout the day.",
+          "Personal recommendations, flexible check-in when possible, and hosts who treat your stay as a welcome — not a transaction.",
       },
       {
-        id: "value-care",
-        title: "Personal care",
+        id: "value-cleanliness",
+        title: "Cleanliness & care",
         description:
-          "Claire and Antoine greet every guest personally. Dietary preferences, celebration plans, and quiet requests are remembered — not logged in a system.",
+          "Daily housekeeping, fresh linen, and spotless common areas. Our team takes pride in maintaining a guesthouse that feels consistently clean and cared for.",
       },
       {
-        id: "value-place",
-        title: "Sense of place",
+        id: "value-security",
+        title: "Peace & security",
         description:
-          "We partner with village bakers, Luberon winemakers, and independent guides. Your stay supports the community that makes this region extraordinary.",
+          "A quiet environment, secure on-site parking, and attentive staff who help families and solo travellers feel safe and at ease throughout their stay.",
       },
     ],
   },
   highlights: [
     {
-      id: "highlight-architecture",
-      title: "Restored Provençal architecture",
+      id: "highlight-rooms",
+      title: "Comfortable, well-appointed rooms",
       description:
-        "Original stone walls, vaulted ceilings, and terracotta floors meet contemporary comfort — rainfall showers, climate control, and Italian linens. Every room tells a story of the mas's 250-year history while offering the ease of modern boutique hospitality.",
+        "Each room is fitted with quality beds, fresh linen, and thoughtful amenities — including reliable hot water and daily housekeeping. Whether you are here for a night or a longer stay, you will find a clean and comfortable space to unwind.",
       image:
-        "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&h=900&fit=crop",
-      imageAlt: "Restored interior with stone walls and artisan ceramics",
+        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=900&fit=crop",
+      imageAlt: "Bright, comfortable guest room at Alem Guesthouse",
     },
     {
-      id: "highlight-gardens",
-      title: "Gardens & outdoor living",
+      id: "highlight-breakfast",
+      title: "Complimentary breakfast included",
       description:
-        "Three hectares of terraced gardens descend toward the valley — lavender borders, a stone fountain, century-old olive trees, and an infinity pool that seems to spill into the Luberon horizon. Breakfast is served on the terrace whenever weather permits.",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=900&fit=crop",
-      imageAlt: "Manicured garden with stone fountain and olive trees",
-    },
-    {
-      id: "highlight-dining",
-      title: "Provence on the plate",
-      description:
-        "Our continental breakfast features bread from the Gordes boulangerie, honey from a neighbouring apiary, and seasonal fruit from the Luberon markets. Evenings bring local wines to the terrace for aperitif hour — a ritual we hope becomes yours.",
+        "Start every morning with a delicious complimentary breakfast — part of your room rate. It is our way of making sure you leave the table satisfied and ready for the day ahead in Hawassa.",
       image:
         "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=900&fit=crop",
-      imageAlt: "Continental breakfast spread on the garden terrace",
+      imageAlt: "Complimentary breakfast served at Alem Guesthouse",
+    },
+    {
+      id: "highlight-location",
+      title: "Heart of Hawassa",
+      description:
+        "Steps from Menahria and minutes from Sumuda, Piassa, Atote, and Hawassa Lake — Alem Guesthouse is ideally placed for both city convenience and lakeside leisure. Handle your daily activities with ease, then return to a calm and secure retreat.",
+      image:
+        "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1200&h=900&fit=crop",
+      imageAlt: "Scenic view near Hawassa and Lake Hawassa",
     },
   ],
 } satisfies AboutContent;

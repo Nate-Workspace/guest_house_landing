@@ -17,7 +17,7 @@ const fullWidthBackground = gallery.find((item) => item.id === "gallery-lavender
 
 export function MapSection({
   title = "Find us",
-  description = "Alem Guesthouse sits on the heart of Hawassa, with easy access to Menahria, Sumuda, Piassa, Atote, and Hawassa Lake.",
+  description = "Alem Guesthouse sits in the heart of Hawassa, with easy access to Menahria, Sumuda, Piassa, Atote, and Hawassa Lake.",
   layout = "split",
   showAddress = true,
   backgroundImage,

@@ -139,7 +139,7 @@ export function buildHotelRoomJsonLd(room: Room) {
       offers: {
         "@type": "Offer",
         price: room.price,
-        priceCurrency: "EUR",
+        priceCurrency: "ETB",
         availability: "https://schema.org/InStock",
         url: `${getSiteUrl()}/contact?room=${room.slug}`,
       },

@@ -51,7 +51,7 @@ export function RoomCard({ room, className }: RoomCardProps) {
           </h3>
           {showPrice ? (
             <p className="shrink-0 text-sm text-muted">
-              <span className="font-medium text-text">€{room.price}</span>
+              <span className="font-medium text-text">ETB {room.price!.toLocaleString()}</span>
               <span className="text-muted"> / night</span>
             </p>
           ) : null}

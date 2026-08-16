@@ -12,7 +12,7 @@ export function FeaturedRooms() {
           <SectionHeading
             eyebrow="Accommodations"
             title="Rooms crafted for rest"
-            description="Six individually designed rooms, each offering a distinct perspective on the experience at Alem Guesthouse"
+            description="Six comfortable rooms and suites — from budget-friendly singles to spacious family accommodation in the heart of Hawassa."
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
             <Button href="/rooms" variant="outline">

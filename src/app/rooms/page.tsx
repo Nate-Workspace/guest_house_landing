@@ -1,5 +1,5 @@
 import { RoomCard } from "@/components/rooms";
-import { StaggerChildren, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion";
 import { CTABanner, PageHero } from "@/components/sections";
 import { rooms } from "@/data/rooms";
 import { buildPageMetadata } from "@/lib/seo";
@@ -10,7 +10,7 @@ const heroImage =
 export const metadata = buildPageMetadata({
   title: "Rooms & Suites",
   description:
-    "Six individually designed rooms and suites — from intimate garden retreats to panoramic top-floor suites with views over the Luberon valley.",
+    "Six comfortable rooms and suites at Alem Guesthouse — from single rooms to family suites, all with fresh linen, hot water, Wi-Fi, and complimentary breakfast.",
   path: "/rooms",
   image: heroImage,
 });
@@ -21,22 +21,24 @@ export default function RoomsPage() {
       <PageHero
         eyebrow="Accommodations"
         title="Rooms & Suites"
-        description="Six individually designed rooms and suites — from intimate garden retreats to panoramic top-floor suites with views over the Luberon valley."
+        description="Six comfortable rooms and suites — from budget-friendly singles to spacious family accommodation in the heart of Hawassa."
         image={heroImage}
-        imageAlt="Elegant guest room interior at Serenité Guesthouse"
+        imageAlt="Comfortable guest room at Alem Guesthouse, Hawassa"
       />
 
-      <section className="section-padding bg-bg">
-        <div className="container-content">
-          <StaggerChildren className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {rooms.map((room, index) => (
-              <StaggerItem key={room.slug} index={index}>
-                <RoomCard room={room} />
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
+      <FadeIn>
+        <section className="section-padding bg-bg">
+          <div className="container-content">
+            <StaggerChildren className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {rooms.map((room, index) => (
+                <StaggerItem key={room.slug} index={index}>
+                  <RoomCard room={room} />
+                </StaggerItem>
+              ))}
+            </StaggerChildren>
+          </div>
+        </section>
+      </FadeIn>
 
       <CTABanner />
     </>

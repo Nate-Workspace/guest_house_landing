@@ -3,74 +3,68 @@ import type { Amenity, AmenityCategory } from "@/lib/types";
 export const amenities = [
   // Accommodation
   {
-    id: "accommodation-ac",
-    name: "Climate control",
-    description: "Individual air conditioning and heating in every room for year-round comfort.",
-    category: "Accommodation",
-    icon: "thermometer",
-  },
-  {
-    id: "accommodation-linens",
-    name: "Premium linens",
-    description: "Italian cotton sheets, down pillows, and plush duvets on every bed.",
+    id: "accommodation-beds",
+    name: "Comfortable beds & fresh linen",
+    description:
+      "Quality beds dressed in clean, fresh linen — replaced regularly and prepared with care before every arrival.",
     category: "Accommodation",
     icon: "bed",
   },
   {
-    id: "accommodation-minibar",
-    name: "Curated minibar",
-    description: "Locally sourced wines, artisan snacks, and still or sparkling water.",
+    id: "accommodation-housekeeping",
+    name: "Daily housekeeping",
+    description:
+      "Rooms and common areas are cleaned daily so your space stays spotless throughout your stay.",
     category: "Accommodation",
-    icon: "wine",
+    icon: "home",
+  },
+  {
+    id: "accommodation-water",
+    name: "24/7 water supply",
+    description:
+      "Reliable hot and cold water around the clock — consistently available whenever you need it.",
+    category: "Accommodation",
+    icon: "bath",
+  },
+  {
+    id: "accommodation-climate",
+    name: "Comfortable room environment",
+    description:
+      "Well-ventilated rooms with quality furnishings designed for restful sleep and everyday comfort.",
+    category: "Accommodation",
+    icon: "thermometer",
   },
   {
     id: "accommodation-toiletries",
-    name: "Luxury toiletries",
-    description: "Natural Provençal bath products, soft towels, and daily replenishment.",
+    name: "Quality restrooms & showers",
+    description:
+      "Carefully maintained bathrooms with quality showers, fresh towels, and essential toiletries.",
     category: "Accommodation",
     icon: "sparkles",
   },
   {
     id: "accommodation-safe",
-    name: "In-room safe",
-    description: "Secure storage for valuables, passports, and electronics.",
+    name: "Secure accommodation",
+    description:
+      "A safe, well-managed property where guests can relax with peace of mind day and night.",
     category: "Accommodation",
     icon: "lock",
-  },
-  {
-    id: "accommodation-housekeeping",
-    name: "Daily housekeeping",
-    description: "Thoughtful turndown service and fresh linens upon request.",
-    category: "Accommodation",
-    icon: "home",
   },
 
   // Dining
   {
     id: "dining-breakfast",
-    name: "Continental breakfast",
-    description: "Fresh pastries, local cheeses, seasonal fruit, and barista coffee each morning.",
+    name: "Complimentary breakfast",
+    description:
+      "A delicious breakfast included with your room rate — served each morning to start your day right.",
     category: "Dining",
     icon: "coffee",
   },
   {
-    id: "dining-terrace",
-    name: "Garden terrace dining",
-    description: "Al fresco breakfast and light lunches surrounded by lavender and olive trees.",
-    category: "Dining",
-    icon: "sun",
-  },
-  {
-    id: "dining-wine",
-    name: "Wine cellar selection",
-    description: "Curated list of Luberon and Rhône Valley wines available by the glass or bottle.",
-    category: "Dining",
-    icon: "grape",
-  },
-  {
-    id: "dining-room-service",
-    name: "Evening room service",
-    description: "Light bites and cheese boards delivered to your room until 9:00 PM.",
+    id: "dining-dining-area",
+    name: "Comfortable dining space",
+    description:
+      "A pleasant setting to enjoy breakfast and unwind before heading out to explore Hawassa.",
     category: "Dining",
     icon: "utensils",
   },
@@ -79,14 +73,16 @@ export const amenities = [
   {
     id: "internet-wifi",
     name: "High-speed Wi-Fi",
-    description: "Complimentary fibre internet throughout the property and in all guest rooms.",
+    description:
+      "Free high-speed internet access throughout the property and in all guest rooms.",
     category: "Internet",
     icon: "wifi",
   },
   {
     id: "internet-workspace",
     name: "Quiet workspaces",
-    description: "Desk areas in select rooms and a shaded garden nook for remote work.",
+    description:
+      "Calm areas suited for remote work, study, or catching up on email without distraction.",
     category: "Internet",
     icon: "laptop",
   },
@@ -94,54 +90,53 @@ export const amenities = [
   // Parking
   {
     id: "parking-on-site",
-    name: "On-site parking",
-    description: "Private gated parking at no extra charge — one space per room.",
+    name: "Secure on-site parking",
+    description:
+      "Complimentary secure parking within the property — convenient and free for all guests.",
     category: "Parking",
     icon: "car",
-  },
-  {
-    id: "parking-ev",
-    name: "EV charging",
-    description: "Two Level 2 electric vehicle charging points available by reservation.",
-    category: "Parking",
-    icon: "zap",
   },
 
   // Laundry
   {
     id: "laundry-service",
-    name: "Laundry service",
-    description: "Same-day wash and fold available on weekdays; express service on request.",
+    name: "Laundry services",
+    description:
+      "Laundry service available for guests who need fresh clothes during a longer stay or busy trip.",
     category: "Laundry",
     icon: "shirt",
   },
   {
     id: "laundry-ironing",
-    name: "Iron & board",
-    description: "Ironing facilities available upon request from reception.",
+    name: "Ironing on request",
+    description:
+      "Ironing assistance available upon request — just ask our team at reception.",
     category: "Laundry",
     icon: "iron",
   },
 
   // Family
   {
-    id: "family-cot",
-    name: "Baby cot",
-    description: "Complimentary cot and high chair available — please request when inquiring.",
+    id: "family-friendly",
+    name: "Family-friendly stays",
+    description:
+      "A secure and comfortable environment well suited to families visiting Hawassa together.",
     category: "Family",
     icon: "baby",
   },
   {
-    id: "family-garden",
-    name: "Family-friendly garden",
-    description: "Enclosed courtyard safe for children, with shaded seating for parents.",
+    id: "family-quiet",
+    name: "Peaceful surroundings",
+    description:
+      "A quiet guesthouse setting where families and couples can rest without unnecessary noise or bustle.",
     category: "Family",
     icon: "trees",
   },
   {
     id: "family-recommendations",
-    name: "Local activity guides",
-    description: "Personal recommendations for family-friendly markets, hikes, and villages.",
+    name: "Local recommendations",
+    description:
+      "Personal tips for nearby restaurants, Lake Hawassa, and key city centres from our knowledgeable team.",
     category: "Family",
     icon: "map",
   },
@@ -149,22 +144,25 @@ export const amenities = [
   // Accessibility
   {
     id: "accessibility-ground-floor",
-    name: "Ground-floor access",
-    description: "The Jardin Room and common areas are accessible without stairs.",
+    name: "Ground-floor rooms",
+    description:
+      "Ground-floor accommodation available — please mention any mobility needs when inquiring.",
     category: "Accessibility",
     icon: "accessibility",
   },
   {
-    id: "accessibility-elevator",
-    name: "Lift to upper floors",
-    description: "Small elevator serves all upper-floor rooms and the terrace level.",
+    id: "accessibility-assistance",
+    name: "Attentive staff assistance",
+    description:
+      "Our team is ready to help with luggage, directions, and any reasonable accessibility requests.",
     category: "Accessibility",
     icon: "elevator",
   },
   {
-    id: "accessibility-bathroom",
-    name: "Accessible bathroom",
-    description: "Ground-floor ensuite with grab rails available upon request.",
+    id: "accessibility-common-areas",
+    name: "Accessible common areas",
+    description:
+      "Entry and shared spaces designed to be straightforward and comfortable for all guests.",
     category: "Accessibility",
     icon: "bath",
   },

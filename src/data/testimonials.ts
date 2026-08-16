@@ -4,49 +4,25 @@ export const testimonials = [
   {
     id: "testimonial-1",
     quote:
-      "Serenité exceeded every expectation. The Lavande Suite terrace at sunset was pure magic, and the staff anticipated our needs before we even asked. This is what boutique hospitality should feel like.",
-    author: "Claire & James Whitfield",
-    location: "London, UK",
+      "A very quiet, peaceful, and spotlessly clean place. The staff's warm hospitality made me feel right at home. I will definitely stay here again!",
+    author: "Yonas K.",
+    location: "Hawassa, Ethiopia",
     rating: 5,
   },
   {
     id: "testimonial-2",
     quote:
-      "We spent a week exploring Provence and returned each evening to the most peaceful retreat imaginable. Breakfast in the garden, the scent of lavender, and genuinely warm hosts — we are already planning our return.",
-    author: "Sophie Laurent",
-    location: "Paris, France",
+      "Extremely comfortable and secure for a family stay. The environment is pleasant, and its proximity to key city centers made handling our daily activities effortless.",
+    author: "Helen M.",
+    location: "Addis Ababa, Ethiopia",
     rating: 5,
   },
   {
     id: "testimonial-3",
     quote:
-      "Impeccable attention to detail in every room. The linens, the minibar selections, the local wine recommendations — nothing felt generic. Gordes is stunning, but Serenité made it unforgettable.",
-    author: "Marcus & Elena Rivera",
-    location: "Barcelona, Spain",
-    rating: 5,
-  },
-  {
-    id: "testimonial-4",
-    quote:
-      "As a solo traveller, I felt completely at ease. The Petit Studio was charming and perfectly equipped, and the team shared wonderful tips for hidden villages and vineyard tastings nearby.",
-    author: "Anna Bergström",
-    location: "Stockholm, Sweden",
-    rating: 5,
-  },
-  {
-    id: "testimonial-5",
-    quote:
-      "Our anniversary stay in Suite Ciel was extraordinary. Waking up to Luberon views from the skylit bathroom, enjoying aperitifs on the terrace — every moment felt curated and special.",
-    author: "David & Rachel Cohen",
-    location: "New York, USA",
-    rating: 5,
-  },
-  {
-    id: "testimonial-6",
-    quote:
-      "The perfect base for a Provence road trip. Secure parking, fast Wi-Fi for remote work mornings, and a location that puts you minutes from Roussillon and Ménerbes. Highly recommend.",
-    author: "Thomas Müller",
-    location: "Munich, Germany",
+      "Exceptional value for money. The Wi-Fi was fast, hot water was consistently available, and the room cleanliness was impressive. Highly recommended!",
+    author: "Dawit A.",
+    location: "Hawassa, Ethiopia",
     rating: 5,
   },
 ] satisfies Testimonial[];

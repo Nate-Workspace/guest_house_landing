@@ -43,7 +43,7 @@ export function RoomDetailContent({ room }: RoomDetailContentProps) {
                 <SpecItem label="Bathroom">{room.bathroom}</SpecItem>
                 {showPrice ? (
                   <SpecItem label="From">
-                    <span className="font-medium text-text">€{room.price}</span>
+                    <span className="font-medium text-text">ETB {room.price!.toLocaleString()}</span>
                     <span className="text-muted"> / night</span>
                   </SpecItem>
                 ) : null}

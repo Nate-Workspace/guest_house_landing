@@ -28,7 +28,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         title="Contact & Inquiries"
         description="Share your preferred dates and room. We'll respond within 24 hours with availability and a personalised offer."
         image={heroImage}
-        imageAlt="Serenité Guesthouse exterior at golden hour"
+        imageAlt="Alem Guesthouse exterior in Hawassa"
       />
 
       <section className="section-padding section-divider bg-surface bg-grain">

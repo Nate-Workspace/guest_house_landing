@@ -12,7 +12,7 @@ export function AttractionsPreview() {
           <SectionHeading
             eyebrow="Explore Hawassa"
             title="Nearby attractions"
-            description="From Menahria to Sumuda, Piassa, Atote, and Hawassa Lake. The Hawassa's finest sights are at your doorstep."
+            description="Lake Hawassa, local markets, and the city's best sights — all within easy reach of Alem Guesthouse."
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
             <Button href="/attractions" variant="outline">

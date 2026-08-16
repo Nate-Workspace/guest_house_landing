@@ -23,7 +23,7 @@ export function CTABanner() {
             Ready to experience Hawassa?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-surface/85 md:text-lg">
-            Send us an request with your preferred dates and room. We&apos;ll respond
+            Send us an inquiry with your preferred dates and room. We&apos;ll respond
             within 24 hours with availability and a personalised offer.
           </p>
 
@@ -33,7 +33,7 @@ export function CTABanner() {
               size="lg"
               className="bg-surface text-accent hover:bg-surface/90 hover:text-accent-dark"
             >
-              Send a request
+              Send an inquiry
             </Button>
             <Button
               href={`https://wa.me/${siteConfig.contact.whatsapp}`}

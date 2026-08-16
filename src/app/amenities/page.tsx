@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/motion";
 import { AmenitiesGrid, CTABanner, PageHero } from "@/components/sections";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -7,7 +8,7 @@ const heroImage =
 export const metadata = buildPageMetadata({
   title: "Amenities",
   description:
-    "From continental breakfast on the garden terrace to high-speed Wi-Fi, secure parking, and thoughtful accessibility — everything is included in your stay.",
+    "High-speed Wi-Fi, 24/7 water, secure parking, daily housekeeping, laundry service, quiet workspaces, and complimentary breakfast at Alem Guesthouse.",
   path: "/amenities",
   image: heroImage,
 });
@@ -18,12 +19,14 @@ export default function AmenitiesPage() {
       <PageHero
         eyebrow="Comfort & convenience"
         title="Amenities"
-        description="From continental breakfast on the garden terrace to high-speed Wi-Fi, secure parking, and thoughtful accessibility — everything is included in your stay."
+        description="From complimentary breakfast and high-speed Wi-Fi to secure parking, laundry service, and quiet workspaces — comfort is built into every stay."
         image={heroImage}
-        imageAlt="Continental breakfast spread on the garden terrace at Serenité Guesthouse"
+        imageAlt="Complimentary breakfast at Alem Guesthouse, Hawassa"
       />
 
-      <AmenitiesGrid />
+      <FadeIn>
+        <AmenitiesGrid />
+      </FadeIn>
 
       <CTABanner />
     </>
