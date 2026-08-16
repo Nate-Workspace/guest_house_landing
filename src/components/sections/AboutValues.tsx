@@ -8,7 +8,7 @@ type AboutValuesProps = {
 
 export function AboutValues({ values }: AboutValuesProps) {
   return (
-    <section className="section-padding section-divider bg-bg-warm bg-grain">
+    <section className="section-padding section-divider bg-bg-muted bg-grain">
       <div className="container-content">
         <SectionHeading
           eyebrow={values.eyebrow}

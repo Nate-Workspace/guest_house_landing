@@ -38,7 +38,7 @@ function RoomRow({
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/40",
         isSelected
           ? "bg-accent/10 hover:bg-accent/12"
-          : "hover:bg-bg",
+          : "hover:bg-bg-subtle",
       )}
     >
       <div className="w-24 shrink-0">
@@ -63,7 +63,7 @@ function RoomRow({
             "flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border font-display text-lg tabular-nums leading-none transition-colors",
             isSelected
               ? "border-accent bg-accent text-surface"
-              : "border-text/10 bg-bg text-text",
+              : "border-text/10 bg-bg-subtle text-text",
           )}
         >
           {unit.number}
@@ -101,7 +101,7 @@ export function RoomUnitPicker({ batch }: RoomUnitPickerProps) {
   }, []);
 
   return (
-    <section className="section-padding bg-bg-warm">
+    <section className="section-padding bg-bg-muted">
       <div className="container-content">
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-12 xl:gap-16">
           <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-md lg:text-left xl:max-w-lg">
@@ -135,7 +135,7 @@ export function RoomUnitPicker({ batch }: RoomUnitPickerProps) {
               )}
             </div>
 
-            <div className="border-t border-text/5 bg-bg/60 px-5 py-5 sm:px-6">
+            <div className="border-t border-text/5 bg-bg-inset px-5 py-5 sm:px-6">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between gap-4 rounded-lg bg-surface px-4 py-3 ring-1 ring-text/5">
                   <div className="min-w-0 text-left">

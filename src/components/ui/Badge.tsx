@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   default: "bg-surface text-text ring-1 ring-text/10",
-  accent: "bg-accent/10 text-accent-dark",
+  accent: "bg-accent/10 text-accent",
   muted: "bg-text/5 text-muted",
 } as const;
 

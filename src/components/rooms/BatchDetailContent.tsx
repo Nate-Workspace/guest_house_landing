@@ -53,7 +53,7 @@ export function BatchDetailContent({ batch }: BatchDetailContentProps) {
 
           <aside className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
-              <div className="overflow-hidden rounded-xl bg-bg-warm ring-1 ring-text/5">
+              <div className="overflow-hidden rounded-xl bg-bg-subtle ring-1 ring-text/5">
                 <div className="border-b border-text/5 px-6 py-6 md:px-7 md:py-7">
                   <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
                     Plan your stay

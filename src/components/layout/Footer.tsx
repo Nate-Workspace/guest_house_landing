@@ -9,7 +9,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="section-divider border-t border-text/10 bg-bg-warm bg-grain bg-grain-light">
+    <footer className="section-divider border-t border-text/10 bg-bg-muted bg-grain bg-grain-light">
       <div className="container-content section-padding grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
         <div className="space-y-4 lg:col-span-1">
           <Link href="/" aria-label={`${siteConfig.name} home`}>

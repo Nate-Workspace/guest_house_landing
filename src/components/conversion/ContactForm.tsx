@@ -180,7 +180,7 @@ export function ContactForm({ defaultBatch, defaultUnit }: ContactFormProps) {
           className={cn(
             "rounded-lg px-4 py-3 text-sm",
             state.success
-              ? "bg-accent/10 text-accent-dark"
+              ? "bg-accent/10 text-accent"
               : "bg-text/5 text-text",
           )}
         >

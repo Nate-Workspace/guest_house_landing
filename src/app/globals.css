@@ -1,27 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #faf8f5;
+  /*
+   * Alem Guesthouse — blue-black palette
+   * Accent: #141c2e · cool slate neutrals (no warm beige/cream)
+   */
+  --color-bg: #f5f7fa;
   --color-surface: #ffffff;
-  --color-bg-warm: #f3efe8;
-  --color-bg-accent-soft: #f0ebe3;
-  --color-text: #1c1c1c;
-  --color-muted: #6b6560;
-  --color-accent: #8b7355;
-  --color-accent-dark: #6b5a42;
-  --color-border-subtle: rgb(28 28 28 / 0.08);
+  --color-bg-muted: #e8ecf2;
+  --color-bg-subtle: #eef1f6;
+  --color-bg-inset: #e3e8f0;
+  --color-bg-accent-soft: #d8e0eb;
+  --color-text: #121826;
+  --color-muted: #5a6478;
+  --color-accent: #141c2e;
+  --color-accent-dark: #0a1019;
+  --color-accent-muted: #2a3550;
+  --color-border-subtle: rgb(20 28 46 / 0.1);
+
+  /* @deprecated alias — use bg-muted */
+  --color-bg-warm: var(--color-bg-muted);
 }
 
 @theme inline {
   /* Colors */
   --color-bg: var(--color-bg);
   --color-surface: var(--color-surface);
-  --color-bg-warm: var(--color-bg-warm);
+  --color-bg-muted: var(--color-bg-muted);
+  --color-bg-subtle: var(--color-bg-subtle);
+  --color-bg-inset: var(--color-bg-inset);
+  --color-bg-warm: var(--color-bg-muted);
   --color-accent-soft: var(--color-bg-accent-soft);
   --color-text: var(--color-text);
   --color-muted: var(--color-muted);
   --color-accent: var(--color-accent);
   --color-accent-dark: var(--color-accent-dark);
+  --color-accent-muted: var(--color-accent-muted);
   --color-border-subtle: var(--color-border-subtle);
 
   /* Typography — font CSS vars set in root layout (step 5) */
@@ -37,7 +51,7 @@
   --spacing-section-lg: 8rem;
 
   /* Elevation */
-  --shadow-luxury: 0 4px 24px rgb(28 28 28 / 0.08);
+  --shadow-luxury: 0 4px 24px rgb(20 28 46 / 0.1);
 
   /* Border radius */
   --radius-card: 0.5rem;
@@ -64,7 +78,7 @@
   }
 
   ::selection {
-    background-color: color-mix(in srgb, var(--color-accent) 25%, transparent);
+    background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
     color: var(--color-text);
   }
 }
@@ -94,7 +108,7 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.15;
+    opacity: 0.12;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-repeat: repeat;
@@ -108,10 +122,10 @@
 
   /* Lighter grain for footer and subtle surfaces */
   .bg-grain-light::after {
-    opacity: 0.022;
+    opacity: 0.018;
   }
 
-  /* Soft ambient glow — extends CTABanner radial pattern */
+  /* Soft ambient glow — cool accent wash on light sections */
   .section-glow {
     position: relative;
     isolation: isolate;
@@ -126,7 +140,7 @@
     pointer-events: none;
     background: radial-gradient(
       ellipse 70% 60% at 88% 12%,
-      color-mix(in srgb, var(--color-accent) 5%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent) 8%, transparent) 0%,
       transparent 65%
     );
   }

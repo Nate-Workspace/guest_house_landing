@@ -28,7 +28,7 @@ export function AttractionCard({
       <div className="absolute bottom-4 left-4">
         <Badge
           variant="accent"
-          className="bg-surface/90 text-accent-dark backdrop-blur-sm"
+          className="bg-surface/90 text-accent backdrop-blur-sm"
         >
           {attraction.distance}
         </Badge>

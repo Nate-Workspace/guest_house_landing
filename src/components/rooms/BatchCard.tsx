@@ -32,7 +32,7 @@ export function BatchCard({ batch, className }: BatchCardProps) {
         />
         <div className="absolute inset-0 bg-linear-to-t from-text/65 via-text/15 to-transparent" />
         <div className="absolute left-3 top-3 flex flex-wrap gap-2 sm:left-4 sm:top-4">
-          <Badge variant="accent" className="bg-surface/95 text-accent-dark backdrop-blur-sm">
+          <Badge variant="accent" className="bg-surface/95 text-accent backdrop-blur-sm">
             {roomCountLabel}
           </Badge>
         </div>
