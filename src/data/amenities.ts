@@ -1,4 +1,9 @@
 import type { Amenity, AmenityCategory } from "@/lib/types";
+import {
+  outsideImages,
+  roomFolderImages,
+  stairImages,
+} from "@/data/site-images";
 
 export const amenities = [
   // Accommodation
@@ -49,24 +54,6 @@ export const amenities = [
       "A safe, well-managed property where guests can relax with peace of mind day and night.",
     category: "Accommodation",
     icon: "lock",
-  },
-
-  // Dining
-  {
-    id: "dining-breakfast",
-    name: "Complimentary breakfast",
-    description:
-      "A delicious breakfast included with your room rate — served each morning to start your day right.",
-    category: "Dining",
-    icon: "coffee",
-  },
-  {
-    id: "dining-dining-area",
-    name: "Comfortable dining space",
-    description:
-      "A pleasant setting to enjoy breakfast and unwind before heading out to explore Hawassa.",
-    category: "Dining",
-    icon: "utensils",
   },
 
   // Internet
@@ -143,14 +130,6 @@ export const amenities = [
 
   // Accessibility
   {
-    id: "accessibility-ground-floor",
-    name: "Ground-floor rooms",
-    description:
-      "Ground-floor accommodation available — please mention any mobility needs when inquiring.",
-    category: "Accessibility",
-    icon: "accessibility",
-  },
-  {
     id: "accessibility-assistance",
     name: "Attentive staff assistance",
     description:
@@ -170,7 +149,6 @@ export const amenities = [
 
 export const amenityCategories: AmenityCategory[] = [
   "Accommodation",
-  "Dining",
   "Internet",
   "Parking",
   "Laundry",
@@ -181,3 +159,62 @@ export const amenityCategories: AmenityCategory[] = [
 export function getAmenitiesByCategory(category: AmenityCategory): Amenity[] {
   return amenities.filter((amenity) => amenity.category === category);
 }
+
+export type AmenityCategoryMeta = {
+  tagline: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+};
+
+export const amenityCategoryMeta = {
+  Accommodation: {
+    tagline: "Rest easy",
+    description:
+      "From fresh linen and quality beds to round-the-clock hot water — your room is prepared with the same care we would want for our own guests.",
+    image: roomFolderImages[1]?.[0],
+    imageAlt: "Comfortable guest room at Alem Guesthouse",
+  },
+  Internet: {
+    tagline: "Stay connected",
+    description:
+      "Reliable Wi-Fi and quiet corners when you need to work, study, or catch up from the road.",
+    image: roomFolderImages[6]?.[0] ?? stairImages[0],
+    imageAlt: "Quiet workspace at Alem Guesthouse",
+  },
+  Parking: {
+    tagline: "Arrive with ease",
+    description:
+      "Secure on-site parking so you can come and go without worry — included for every guest.",
+    image: outsideImages[1] ?? outsideImages[0],
+    imageAlt: "Exterior of Alem Guesthouse with parking",
+  },
+  Laundry: {
+    tagline: "Fresh & ready",
+    description:
+      "Practical laundry support for longer stays and busy itineraries — just ask our team.",
+    image: roomFolderImages[5]?.[0],
+    imageAlt: "Guest room details at Alem Guesthouse",
+  },
+  Family: {
+    tagline: "Welcome for everyone",
+    description:
+      "A peaceful setting for families and couples, with local tips from hosts who know Hawassa well.",
+    image: outsideImages[3] ?? outsideImages[0],
+    imageAlt: "Peaceful surroundings at Alem Guesthouse",
+  },
+  Accessibility: {
+    tagline: "Here to help",
+    description:
+      "Attentive staff and accessible common areas — let us know if you have any specific needs when you inquire.",
+    image: stairImages[2] ?? stairImages[0],
+    imageAlt: "Accessible common areas at Alem Guesthouse",
+  },
+} satisfies Record<AmenityCategory, AmenityCategoryMeta>;
+
+export const amenityQuickStats = [
+  { label: "Thoughtful touches", value: `${amenities.length}` },
+  { label: "Housekeeping", value: "Daily" },
+  { label: "Water supply", value: "24/7" },
+  { label: "Secure parking", value: "Free" },
+] as const;

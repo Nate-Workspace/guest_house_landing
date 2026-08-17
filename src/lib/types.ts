@@ -73,7 +73,6 @@ export type Room = RoomBatch;
 
 export type AmenityCategory =
   | "Accommodation"
-  | "Dining"
   | "Internet"
   | "Parking"
   | "Laundry"

@@ -8,9 +8,9 @@ import { AmenityIcon } from "./AmenityIcon";
 
 const previewCategories: AmenityCategory[] = [
   "Accommodation",
-  "Dining",
   "Internet",
   "Parking",
+  "Laundry",
 ];
 
 export function AmenitiesPreview() {
@@ -25,7 +25,7 @@ export function AmenitiesPreview() {
           <SectionHeading
             eyebrow="Amenities"
             title="Everything you need, thoughtfully provided"
-            description="Comfortable rooms with fresh linen, reliable hot water, complimentary breakfast, and secure parking — everything you need for a restful stay."
+            description="Comfortable rooms with fresh linen, reliable hot water, high-speed Wi-Fi, and secure parking — everything you need for a restful stay."
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
             <Button href="/amenities" variant="outline">

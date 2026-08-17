@@ -3,6 +3,7 @@ export { PageHero } from "./PageHero";
 export { FeaturedRooms } from "./FeaturedRooms";
 export { WhyStayHere } from "./WhyStayHere";
 export { AmenitiesPreview } from "./AmenitiesPreview";
+export { AmenitiesShowcase } from "./AmenitiesShowcase";
 export { AmenitiesGrid } from "./AmenitiesGrid";
 export { GalleryPreview } from "./GalleryPreview";
 export { Testimonials } from "./Testimonials";

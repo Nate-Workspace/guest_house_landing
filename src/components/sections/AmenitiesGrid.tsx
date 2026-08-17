@@ -13,7 +13,7 @@ export function AmenitiesGrid() {
         <SectionHeading
           eyebrow="At your service"
           title="Amenities & services"
-          description="Every comfort considered — from complimentary breakfast and high-speed Wi-Fi to laundry service and secure parking."
+          description="Every comfort considered — from high-speed Wi-Fi and daily housekeeping to laundry service and secure parking."
         />
 
         <div className="mt-16 space-y-16 md:space-y-20">
