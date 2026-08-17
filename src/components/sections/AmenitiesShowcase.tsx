@@ -109,16 +109,30 @@ function AmenityCategorySection({
   const anchorId = categoryAnchorId(category);
   const isWideLayout = category === "Accommodation" || category === "Parking";
   const hasImage = Boolean(meta.image);
+  const isDark = category === "Accommodation" || category === "Laundry";
 
   return (
     <div
       id={anchorId}
       className={cn(
-        "scroll-mt-24 section-padding section-divider",
-        index % 2 === 0 ? "bg-surface" : "bg-bg-subtle",
+        "scroll-mt-24 section-padding relative overflow-hidden",
+        isDark
+          ? "bg-accent"
+          : cn("section-divider", index % 2 === 0 ? "bg-surface" : "bg-bg-subtle"),
       )}
     >
-      <div className="container-content">
+      {isDark ? (
+        <div
+          className="pointer-events-none absolute inset-0 opacity-10"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 50%, white 0%, transparent 50%), radial-gradient(circle at 80% 50%, white 0%, transparent 50%)",
+          }}
+        />
+      ) : null}
+
+      <div className="container-content relative">
         <div
           className={cn(
             isWideLayout &&
@@ -132,13 +146,14 @@ function AmenityCategorySection({
               category={category}
               tagline={meta.tagline}
               description={meta.description}
+              tone={isDark ? "onDark" : "default"}
             />
 
             {isWideLayout && hasImage ? (
               <StaggerChildren className="mt-10 space-y-1 lg:hidden">
                 {items.map((amenity, itemIndex) => (
                   <StaggerItem key={amenity.id} index={itemIndex}>
-                    <AmenityListItem amenity={amenity} />
+                    <AmenityListItem amenity={amenity} tone={isDark ? "onDark" : "default"} />
                   </StaggerItem>
                 ))}
               </StaggerChildren>
@@ -153,7 +168,7 @@ function AmenityCategorySection({
               >
                 {items.map((amenity, itemIndex) => (
                   <StaggerItem key={amenity.id} index={itemIndex}>
-                    <AmenityListItem amenity={amenity} />
+                    <AmenityListItem amenity={amenity} tone={isDark ? "onDark" : "default"} />
                   </StaggerItem>
                 ))}
               </StaggerChildren>
@@ -170,7 +185,11 @@ function AmenityCategorySection({
                 <StaggerChildren className="space-y-1">
                   {items.map((amenity, itemIndex) => (
                     <StaggerItem key={amenity.id} index={itemIndex}>
-                      <AmenityListItem amenity={amenity} compact />
+                      <AmenityListItem
+                        amenity={amenity}
+                        compact
+                        tone={isDark ? "onDark" : "default"}
+                      />
                     </StaggerItem>
                   ))}
                 </StaggerChildren>
@@ -179,7 +198,12 @@ function AmenityCategorySection({
           ) : null}
 
           {!isWideLayout && hasImage ? (
-            <div className="relative mt-10 aspect-21/9 overflow-hidden rounded-lg shadow-luxury ring-1 ring-text/5">
+            <div
+              className={cn(
+                "relative mt-10 aspect-21/9 overflow-hidden rounded-lg shadow-luxury ring-1",
+                isDark ? "ring-surface/20" : "ring-text/5",
+              )}
+            >
               <OptimizedImage
                 src={meta.image!}
                 alt={meta.imageAlt ?? category}
@@ -202,21 +226,40 @@ function CategoryHeader({
   category,
   tagline,
   description,
+  tone = "default",
 }: {
   number: string;
   category: AmenityCategory;
   tagline: string;
   description: string;
+  tone?: "default" | "onDark";
 }) {
+  const onDark = tone === "onDark";
+
   return (
     <header className="max-w-2xl">
-      <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
+      <p
+        className={cn(
+          "text-xs font-medium uppercase tracking-[0.2em]",
+          onDark ? "text-surface/70" : "text-accent",
+        )}
+      >
         {number} · {tagline}
       </p>
-      <h3 className="mt-3 font-display text-3xl text-text md:text-4xl">
+      <h3
+        className={cn(
+          "mt-3 font-display text-3xl md:text-4xl",
+          onDark ? "text-surface" : "text-text",
+        )}
+      >
         {category}
       </h3>
-      <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
+      <p
+        className={cn(
+          "mt-4 text-base leading-relaxed md:text-lg",
+          onDark ? "text-surface/80" : "text-muted",
+        )}
+      >
         {description}
       </p>
     </header>
@@ -226,35 +269,50 @@ function CategoryHeader({
 function AmenityListItem({
   amenity,
   compact = false,
+  tone = "default",
 }: {
   amenity: Amenity;
   compact?: boolean;
+  tone?: "default" | "onDark";
 }) {
+  const onDark = tone === "onDark";
+
   return (
     <div
       className={cn(
-        "group flex gap-4 rounded-lg border-b border-text/10 transition-colors last:border-0 hover:bg-bg/50",
+        "group flex gap-4 rounded-lg border-b transition-colors last:border-0",
         compact ? "py-4" : "py-5 md:py-6",
+        onDark
+          ? "border-surface/15 hover:bg-surface/5"
+          : "border-text/10 hover:bg-bg/50",
       )}
     >
       <div
         className={cn(
-          "inline-flex shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent ring-1 ring-accent/10 transition-colors group-hover:bg-accent group-hover:text-surface",
+          "inline-flex shrink-0 items-center justify-center rounded-full ring-1 transition-colors",
           compact ? "h-10 w-10" : "h-11 w-11",
+          onDark
+            ? "bg-surface/15 text-surface ring-surface/20 group-hover:bg-surface group-hover:text-accent"
+            : "bg-accent/10 text-accent ring-accent/10 group-hover:bg-accent group-hover:text-surface",
         )}
       >
         <AmenityIcon name={amenity.icon} className="h-5 w-5" />
       </div>
       <div className="min-w-0">
         <h4
-          className={cn("font-medium text-text", compact ? "text-sm" : "text-base")}
+          className={cn(
+            "font-medium",
+            compact ? "text-sm" : "text-base",
+            onDark ? "text-surface" : "text-text",
+          )}
         >
           {amenity.name}
         </h4>
         <p
           className={cn(
-            "mt-1.5 leading-relaxed text-muted",
+            "mt-1.5 leading-relaxed",
             compact ? "text-xs" : "text-sm",
+            onDark ? "text-surface/75" : "text-muted",
           )}
         >
           {amenity.description}
