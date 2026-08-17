@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 const exploreLinks = siteConfig.nav.filter((item) => item.href !== "/contact");
 const { address, phone, email } = siteConfig.contact;
@@ -9,7 +10,13 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="section-divider border-t border-text/10 bg-bg-muted bg-grain bg-grain-light">
+    <footer
+      className={cn(
+        "section-divider border-t border-text/10 bg-bg-muted bg-grain bg-grain-light",
+        siteConfig.features.stickyBookBar &&
+          "pb-[calc(6rem+env(safe-area-inset-bottom,0px))] md:pb-0",
+      )}
+    >
       <div className="container-content section-padding grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
         <div className="space-y-4 lg:col-span-1">
           <Link href="/" aria-label={`${siteConfig.name} home`}>
