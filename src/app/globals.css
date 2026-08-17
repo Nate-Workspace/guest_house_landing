@@ -154,4 +154,17 @@
   .section-divider {
     border-top: 1px solid var(--color-border-subtle);
   }
+
+  /* Photo background overlays — single source of truth for SSR/client parity */
+  .overlay-home-hero {
+    @apply absolute inset-0 bg-linear-to-b from-text/65 via-text/50 to-text/75;
+  }
+
+  .overlay-page-hero {
+    @apply absolute inset-0 bg-linear-to-t from-text/80 via-text/55 to-text/40;
+  }
+
+  .overlay-section-bg {
+    @apply absolute inset-0 bg-linear-to-t from-text/75 via-text/55 to-text/35;
+  }
 }

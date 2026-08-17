@@ -112,6 +112,7 @@ export function getBatchImages(batchNumber: number): string[] {
 export const siteImages = {
   hero: {
     exterior: outsideImages[2] ?? outsideImages[0],
+    exteriorSlideshow: outsideImages,
     rooms: roomFolderImages[7]?.[0] ?? outsideImages[0],
     contact: outsideImages[0] ?? outsideImages[2],
     amenities: stairImages[0] ?? outsideImages[0],

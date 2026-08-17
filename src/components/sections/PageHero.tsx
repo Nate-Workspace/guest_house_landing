@@ -3,6 +3,7 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { useRef } from "react";
+import { pageHeroOverlay } from "@/lib/image-overlays";
 import { useMountAnimation } from "@/components/motion";
 import {
   heroDelayChildren,
@@ -74,12 +75,12 @@ export function PageHero({
           sizePreset="pageHero"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-linear-to-t from-text/70 via-text/40 to-text/25" />
+      <div className={pageHeroOverlay} />
 
       <motion.div
         className="relative z-10 container-content w-full pb-12 pt-28 md:pb-16 md:pt-32"
-        initial={false}
-        animate={mounted ? "visible" : false}
+        initial="hidden"
+        animate={mounted ? "visible" : "hidden"}
         variants={contentVariants}
       >
         {eyebrow ? (

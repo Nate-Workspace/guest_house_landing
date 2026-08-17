@@ -1,10 +1,7 @@
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
+import { sectionBackgroundOverlay } from "@/lib/image-overlays";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-
-/** Hero-style dark wash — image stays visible, text reads on top */
-export const sectionDarkOverlay =
-  "bg-linear-to-t from-text/65 via-text/40 to-text/20";
 
 type SectionBackgroundProps = {
   image: string;
@@ -38,13 +35,7 @@ export function SectionBackground({
           sizePreset="hero"
           loading="lazy"
         />
-        <div
-          className={cn(
-            "absolute inset-0",
-            sectionDarkOverlay,
-            overlayClassName,
-          )}
-        />
+        <div className={cn(sectionBackgroundOverlay, overlayClassName)} />
       </div>
 
       <div className="container-content relative z-10">{children}</div>
