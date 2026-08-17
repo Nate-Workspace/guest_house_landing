@@ -65,7 +65,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       </FadeIn>
 
       <FadeIn delay={0.08}>
-        <MapSection layout="fullWidth" showAddress={false} />
+        <MapSection mapOnly />
       </FadeIn>
     </>
   );

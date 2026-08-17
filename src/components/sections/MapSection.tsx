@@ -10,6 +10,8 @@ type MapSectionProps = {
   showAddress?: boolean;
   backgroundImage?: string;
   backgroundImageAlt?: string;
+  /** Full-bleed embed — no background image, heading, or address overlay. */
+  mapOnly?: boolean;
 };
 
 const splitBackground = gallery.find((item) => item.id === "gallery-village")!;
@@ -22,6 +24,7 @@ export function MapSection({
   showAddress = true,
   backgroundImage,
   backgroundImageAlt,
+  mapOnly = false,
 }: MapSectionProps) {
   const { address, mapEmbedUrl } = siteConfig.contact;
   const formattedAddress = [
@@ -30,6 +33,21 @@ export function MapSection({
     address.region,
     address.country,
   ].join("\n");
+
+  if (mapOnly) {
+    return (
+      <section className="section-divider relative w-full overflow-hidden">
+        <iframe
+          title={`Map showing location of ${siteConfig.name}`}
+          src={mapEmbedUrl}
+          className="block h-[min(72vh,820px)] w-full min-h-[420px] border-0 sm:min-h-[480px] md:min-h-[560px]"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+      </section>
+    );
+  }
 
   const bg =
     layout === "fullWidth" ? fullWidthBackground : splitBackground;
