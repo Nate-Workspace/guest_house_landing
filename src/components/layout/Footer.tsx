@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { BrandMark } from "./BrandMark";
 
 const exploreLinks = siteConfig.nav.filter((item) => item.href !== "/contact");
 const { address, phone, email } = siteConfig.contact;
@@ -19,14 +19,12 @@ export function Footer() {
     >
       <div className="container-content section-padding grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
         <div className="space-y-4 lg:col-span-1">
-          <Link href="/" aria-label={`${siteConfig.name} home`}>
-            <Image
-              src="/logo.svg"
-              alt={siteConfig.name}
-              width={140}
-              height={36}
-              className="h-8 w-auto"
-            />
+          <Link
+            href="/"
+            aria-label={`${siteConfig.name} home`}
+            className="inline-block text-accent transition-opacity hover:opacity-80"
+          >
+            <BrandMark size="md" />
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-muted">
             {siteConfig.tagline}

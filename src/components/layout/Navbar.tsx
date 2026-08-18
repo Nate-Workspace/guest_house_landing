@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -8,6 +7,7 @@ import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { isNavActive } from "@/lib/nav";
 import { cn } from "@/lib/utils";
+import { BrandMark } from "./BrandMark";
 import { MobileMenu } from "./MobileMenu";
 
 export function Navbar() {
@@ -60,20 +60,13 @@ export function Navbar() {
         <div className="container-content flex h-18 items-center justify-between gap-6">
           <Link
             href="/"
-            className="relative z-10 flex shrink-0 items-center gap-3"
+            className={cn(
+              "relative z-10 flex shrink-0 items-center transition-colors duration-300",
+              isSolid ? "text-accent" : "text-surface",
+            )}
             aria-label={`${siteConfig.name} home`}
           >
-            <Image
-              src="/logo.svg"
-              alt=""
-              width={120}
-              height={32}
-              className={cn(
-                "h-7 w-auto transition-[filter] duration-300",
-                isSolid ? "brightness-100" : "brightness-0 invert",
-              )}
-              priority
-            />
+            <BrandMark size="sm" />
           </Link>
 
           <nav
