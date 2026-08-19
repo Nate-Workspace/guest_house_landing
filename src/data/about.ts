@@ -14,7 +14,7 @@ export const about = {
     eyebrow: "How it began",
     title: "A home away from home",
     paragraphs: [
-      "Alem Guesthouse was founded in 2018 E.C. with a simple vision: to create a true home away from home for every traveller who walks through our doors. What began as a dream to offer peaceful, secure, and comfortable accommodation has grown into a trusted address for both local and international visitors.",
+      "Alem Guesthouse was founded in 2008 E.C. with a simple vision: to create a true home away from home for every traveller who walks through our doors. What began as a dream to offer peaceful, secure, and comfortable accommodation has grown into a trusted address for both local and international visitors.",
       "From the start, we built Alem around the essentials that matter most — spotless rooms, reliable hot water, comfortable beds with fresh linen, and a team that greets every guest like family. Our location in Menahria puts you steps from the city's key centres while keeping your stay quiet and restful.",
       "Today, we continue to welcome guests into our extended family with the same commitment to cleanliness, warmth, and exceptional service. Whether you are visiting Hawassa for business, family, or leisure, our goal is simple: a relaxing and memorable stay every time.",
     ],

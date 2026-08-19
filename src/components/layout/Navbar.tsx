@@ -66,7 +66,7 @@ export function Navbar() {
             )}
             aria-label={`${siteConfig.name} home`}
           >
-            <BrandMark size="sm" />
+            <BrandMark size="md" />
           </Link>
 
           <nav

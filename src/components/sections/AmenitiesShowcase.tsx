@@ -137,7 +137,7 @@ function AmenityCategorySection({
           className={cn(
             isWideLayout &&
               hasImage &&
-              "grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16",
+              "grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16",
           )}
         >
           <div>
@@ -150,10 +150,13 @@ function AmenityCategorySection({
             />
 
             {isWideLayout && hasImage ? (
-              <StaggerChildren className="mt-10 space-y-1 lg:hidden">
+              <StaggerChildren className="mt-10 space-y-1">
                 {items.map((amenity, itemIndex) => (
                   <StaggerItem key={amenity.id} index={itemIndex}>
-                    <AmenityListItem amenity={amenity} tone={isDark ? "onDark" : "default"} />
+                    <AmenityListItem
+                      amenity={amenity}
+                      tone={isDark ? "onDark" : "default"}
+                    />
                   </StaggerItem>
                 ))}
               </StaggerChildren>
@@ -177,22 +180,11 @@ function AmenityCategorySection({
 
           {isWideLayout && hasImage ? (
             <div className="hidden lg:block">
-              <div className="sticky top-28 space-y-8">
+              <div className="sticky top-28">
                 <PropertyHighlightImage
                   src={meta.image!}
                   alt={meta.imageAlt ?? category}
                 />
-                <StaggerChildren className="space-y-1">
-                  {items.map((amenity, itemIndex) => (
-                    <StaggerItem key={amenity.id} index={itemIndex}>
-                      <AmenityListItem
-                        amenity={amenity}
-                        compact
-                        tone={isDark ? "onDark" : "default"}
-                      />
-                    </StaggerItem>
-                  ))}
-                </StaggerChildren>
               </div>
             </div>
           ) : null}
@@ -268,11 +260,9 @@ function CategoryHeader({
 
 function AmenityListItem({
   amenity,
-  compact = false,
   tone = "default",
 }: {
   amenity: Amenity;
-  compact?: boolean;
   tone?: "default" | "onDark";
 }) {
   const onDark = tone === "onDark";
@@ -280,8 +270,8 @@ function AmenityListItem({
   return (
     <div
       className={cn(
-        "group flex gap-4 rounded-lg border-b transition-colors last:border-0",
-        compact ? "py-4" : "py-5 md:py-6",
+        "group flex gap-4 rounded-lg border-b px-3 transition-colors last:border-0 sm:px-4 md:px-5",
+        "py-5 md:py-6",
         onDark
           ? "border-surface/15 hover:bg-surface/5"
           : "border-text/10 hover:bg-bg/50",
@@ -289,8 +279,7 @@ function AmenityListItem({
     >
       <div
         className={cn(
-          "inline-flex shrink-0 items-center justify-center rounded-full ring-1 transition-colors",
-          compact ? "h-10 w-10" : "h-11 w-11",
+          "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full ring-1 transition-colors",
           onDark
             ? "bg-surface/15 text-surface ring-surface/20 group-hover:bg-surface group-hover:text-accent"
             : "bg-accent/10 text-accent ring-accent/10 group-hover:bg-accent group-hover:text-surface",
@@ -301,8 +290,7 @@ function AmenityListItem({
       <div className="min-w-0">
         <h4
           className={cn(
-            "font-medium",
-            compact ? "text-sm" : "text-base",
+            "text-base font-medium",
             onDark ? "text-surface" : "text-text",
           )}
         >
@@ -310,8 +298,7 @@ function AmenityListItem({
         </h4>
         <p
           className={cn(
-            "mt-1.5 leading-relaxed",
-            compact ? "text-xs" : "text-sm",
+            "mt-1.5 text-sm leading-relaxed",
             onDark ? "text-surface/75" : "text-muted",
           )}
         >
