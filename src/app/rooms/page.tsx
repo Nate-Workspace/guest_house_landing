@@ -23,7 +23,7 @@ const totalRooms = getTotalRoomCount();
 export const metadata = buildPageMetadata({
   title: "Rooms",
   description:
-    `${totalRooms} comfortable rooms across 7 room types at Alem Guesthouse — singles and doubles with balconies, Wi-Fi, breakfast, and secure parking in Hawassa.`,
+    `${totalRooms} comfortable rooms across 7 room types at Alem Pension — singles and doubles with balconies, Wi-Fi, and secure parking in Hawassa.`,
   path: "/rooms",
   image: heroImage,
 });
@@ -36,7 +36,7 @@ export default function RoomsPage() {
         title="Our rooms"
         description={`${totalRooms} rooms across 7 designs — from compact singles to doubles with balcony views. Browse by room type, then inquire and we'll confirm availability.`}
         image={heroImage}
-        imageAlt="Guest room interior at Alem Guesthouse, Hawassa"
+        imageAlt="Guest room interior at Alem Pension, Hawassa"
       />
 
       <FadeIn>

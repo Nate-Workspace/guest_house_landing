@@ -9,7 +9,7 @@ const heroImage = gallery[0].src;
 export const metadata = buildPageMetadata({
   title: "Gallery",
   description:
-    "Explore Alem Guesthouse through our comfortable rooms, welcoming spaces, and the Hawassa surroundings that make every stay memorable.",
+    "Explore Alem Pension through our comfortable rooms, welcoming spaces, and the Hawassa surroundings that make every stay memorable.",
   path: "/gallery",
   image: heroImage,
 });
@@ -20,7 +20,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Visual tour"
         title="Gallery"
-        description="Explore Alem Guesthouse through our comfortable rooms, clean interiors, and the peaceful Hawassa setting we call home."
+        description="Explore Alem Pension through our comfortable rooms, clean interiors, and the peaceful Hawassa setting we call home."
         image={heroImage}
         imageAlt={gallery[0].alt}
       />

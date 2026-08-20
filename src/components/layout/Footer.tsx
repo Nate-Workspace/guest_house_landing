@@ -29,30 +29,6 @@ export function Footer() {
           <p className="max-w-xs text-sm leading-relaxed text-muted">
             {siteConfig.tagline}
           </p>
-          <div className="flex items-center gap-4">
-            {siteConfig.social.instagram ? (
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted transition-colors hover:text-accent"
-                aria-label="Instagram"
-              >
-                <InstagramIcon />
-              </a>
-            ) : null}
-            {siteConfig.social.facebook ? (
-              <a
-                href={siteConfig.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted transition-colors hover:text-accent"
-                aria-label="Facebook"
-              >
-                <FacebookIcon />
-              </a>
-            ) : null}
-          </div>
         </div>
 
         <div>
@@ -128,35 +104,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function InstagramIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      className="h-5 w-5"
-      aria-hidden="true"
-    >
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function FacebookIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="h-5 w-5"
-      aria-hidden="true"
-    >
-      <path d="M14 8.5h2.5V5h-3c-2.8 0-4.5 1.7-4.5 4.5V12H7v3.5h2V22h3.5v-6.5H16l.5-3.5h-3v-2c0-.8.7-1.5 1.5-1.5z" />
-    </svg>
   );
 }

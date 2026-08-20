@@ -150,7 +150,7 @@ export function LuxuryHero() {
           variants={itemVariants}
           className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-surface/80 lg:text-sm lg:font-semibold"
         >
-          Luxurious Comfortable Guesthouse · Hawassa
+          Luxurious Comfortable Pension · Hawassa
         </motion.p>
         <motion.h1
           variants={itemVariants}

@@ -3,9 +3,7 @@ import { getBatchImages } from "./site-images";
 
 const sharedAmenities = [
   "Fresh linen & daily housekeeping",
-  "24/7 hot water",
   "High-speed Wi-Fi",
-  "Complimentary breakfast",
   "Secure on-site parking",
 ] as const;
 
@@ -77,17 +75,17 @@ export const roomBatches = [
   {
     slug: "batch-4",
     name: "Batch 4",
-    subtitle: "Single bed · balcony & TV",
+    subtitle: "Single bed · balcony",
     description:
-      "Everything you need for a comfortable stay — a single bed, private balcony, and in-room TV for evenings in. Popular with guests who stay a little longer and appreciate the extra amenities without stepping up to a double room.",
+      "Everything you need for a comfortable stay — a single bed and a private balcony with an open outlook. Popular with guests who stay a little longer and appreciate the extra space without stepping up to a double room.",
     shortDescription:
-      "Single room with balcony, TV, and private ensuite.",
+      "Single room with balcony and private ensuite.",
     capacity: 1,
     bedType: "Single bed",
     bathroom: "Private ensuite with shower",
     price: 2000,
     images: getBatchImages(4),
-    amenities: [...sharedAmenities, "Private balcony", "In-room TV"],
+    amenities: [...sharedAmenities, "Private balcony"],
     units: [
       { number: 17, floor: 2 },
       { number: 24, floor: 3 },

@@ -2,7 +2,7 @@ import type { SiteConfig } from "@/lib/types";
 import { siteImages } from "@/data/site-images";
 
 export const siteConfig = {
-  name: "Alem Guesthouse",
+  name: "Alem Pension",
   tagline: "Your peaceful home away from home in Hawassa",
   contact: {
     phone: "+251 921 04 44 57",
@@ -20,10 +20,7 @@ export const siteConfig = {
     hours:
       "Check-in from 2:00 PM · Check-out by 9:00 AM · Reception available daily",
   },
-  social: {
-    instagram: "https://instagram.com/alemguesthouse",
-    facebook: "https://facebook.com/alemguesthouse",
-  },
+  social: {},
   nav: [
     { label: "Home", href: "/" },
     { label: "Rooms", href: "/rooms" },
@@ -34,9 +31,9 @@ export const siteConfig = {
     { label: "Contact", href: "/contact" },
   ],
   seo: {
-    defaultTitle: "Alem Guesthouse",
+    defaultTitle: "Alem Pension",
     description:
-      "A clean, secure, and comfortable guesthouse in the heart of Hawassa. Warm hospitality, complimentary breakfast, free Wi-Fi, and secure parking — inquire for availability.",
+      "A clean, secure, and comfortable pension in the heart of Hawassa. Warm hospitality, free Wi-Fi, and secure parking — inquire for availability.",
     ogImage: siteImages.og,
   },
   features: {

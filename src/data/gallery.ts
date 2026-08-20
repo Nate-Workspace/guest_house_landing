@@ -10,25 +10,25 @@ export const gallery = [
   {
     id: "gallery-hero-exterior",
     src: outsideImages[0],
-    alt: "Alem Guesthouse exterior in Hawassa",
+    alt: "Alem Pension exterior in Hawassa",
     category: "Property",
   },
   {
     id: "gallery-terrace",
     src: outsideImages[1],
-    alt: "Front view of Alem Guesthouse building",
+    alt: "Front view of Alem Pension building",
     category: "Property",
   },
   {
     id: "gallery-lavender",
     src: outsideImages[3],
-    alt: "Alem Guesthouse from the street",
+    alt: "Alem Pension from the street",
     category: "Property",
   },
   {
     id: "gallery-bedroom",
     src: roomFolderImages[7][0],
-    alt: "Bright guest room with wide window at Alem Guesthouse",
+    alt: "Bright guest room with wide window at Alem Pension",
     category: "Rooms",
   },
   {
@@ -38,15 +38,15 @@ export const gallery = [
     category: "Rooms",
   },
   {
-    id: "gallery-breakfast",
+    id: "gallery-stairwell",
     src: stairImages[0],
-    alt: "Guesthouse corridor and stairwell",
+    alt: "Pension corridor and stairwell",
     category: "Property",
   },
   {
     id: "gallery-garden",
     src: balconyImages[0],
-    alt: "Private balcony at Alem Guesthouse",
+    alt: "Private balcony at Alem Pension",
     category: "Outdoor",
   },
   {
@@ -70,13 +70,13 @@ export const gallery = [
   {
     id: "gallery-village",
     src: outsideImages[4],
-    alt: "Another view of the guesthouse building",
+    alt: "Another view of the pension building",
     category: "Property",
   },
   {
     id: "gallery-terrace-room",
     src: roomFolderImages[4][0],
-    alt: "Single room with balcony and in-room TV",
+    alt: "Single room with private balcony",
     category: "Rooms",
   },
   {
@@ -94,7 +94,7 @@ export const gallery = [
   {
     id: "gallery-corridor",
     src: stairImages[4],
-    alt: "Room doors along the guesthouse corridor",
+    alt: "Room doors along the pension corridor",
     category: "Property",
   },
 ] satisfies GalleryImage[];

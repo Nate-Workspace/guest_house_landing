@@ -14,8 +14,8 @@ export function GalleryPreview() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             eyebrow="Gallery"
-            title="Moments of Alem Guesthouse"
-            description="Clean rooms, welcoming spaces, and the calm atmosphere that makes Alem Guesthouse feel like home."
+            title="Moments of Alem Pension"
+            description="Clean rooms, welcoming spaces, and the calm atmosphere that makes Alem Pension feel like home."
           />
           <FadeIn delay={0.22} className="shrink-0 self-start md:self-auto">
             <Button href="/gallery" variant="outline">

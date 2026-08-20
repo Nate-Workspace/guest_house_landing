@@ -24,14 +24,6 @@ export const amenities = [
     icon: "home",
   },
   {
-    id: "accommodation-water",
-    name: "24/7 water supply",
-    description:
-      "Reliable hot and cold water around the clock — consistently available whenever you need it.",
-    category: "Accommodation",
-    icon: "bath",
-  },
-  {
     id: "accommodation-climate",
     name: "Comfortable room environment",
     description:
@@ -41,9 +33,9 @@ export const amenities = [
   },
   {
     id: "accommodation-toiletries",
-    name: "Quality restrooms & showers",
+    name: "Private restrooms & showers",
     description:
-      "Carefully maintained bathrooms with quality showers, fresh towels, and essential toiletries.",
+      "Ensuite bathrooms with showers, fresh towels, and essential toiletries — maintained with care throughout your stay.",
     category: "Accommodation",
     icon: "sparkles",
   },
@@ -87,9 +79,9 @@ export const amenities = [
   // Laundry
   {
     id: "laundry-service",
-    name: "Laundry services",
+    name: "Paid laundry service",
     description:
-      "Laundry service available for guests who need fresh clothes during a longer stay or busy trip.",
+      "Laundry available as a paid service for guests on longer stays or busy trips — ask our team for rates.",
     category: "Laundry",
     icon: "shirt",
   },
@@ -97,7 +89,7 @@ export const amenities = [
     id: "laundry-ironing",
     name: "Ironing on request",
     description:
-      "Ironing assistance available upon request — just ask our team at reception.",
+      "Paid ironing assistance available upon request — ask our team at reception for rates.",
     category: "Laundry",
     icon: "iron",
   },
@@ -115,7 +107,7 @@ export const amenities = [
     id: "family-quiet",
     name: "Peaceful surroundings",
     description:
-      "A quiet guesthouse setting where families and couples can rest without unnecessary noise or bustle.",
+      "A quiet pension setting where families and couples can rest without unnecessary noise or bustle.",
     category: "Family",
     icon: "trees",
   },
@@ -171,50 +163,50 @@ export const amenityCategoryMeta = {
   Accommodation: {
     tagline: "Rest easy",
     description:
-      "From fresh linen and quality beds to round-the-clock hot water — your room is prepared with the same care we would want for our own guests.",
+      "From fresh linen and quality beds to private ensuite showers — your room is prepared with the same care we would want for our own guests.",
     image: roomFolderImages[1]?.[0],
-    imageAlt: "Comfortable guest room at Alem Guesthouse",
+    imageAlt: "Comfortable guest room at Alem Pension",
   },
   Internet: {
     tagline: "Stay connected",
     description:
       "Reliable Wi-Fi and quiet corners when you need to work, study, or catch up from the road.",
     image: roomFolderImages[6]?.[0] ?? stairImages[0],
-    imageAlt: "Quiet workspace at Alem Guesthouse",
+    imageAlt: "Quiet workspace at Alem Pension",
   },
   Parking: {
     tagline: "Arrive with ease",
     description:
       "Secure on-site parking so you can come and go without worry — included for every guest.",
     image: outsideImages[1] ?? outsideImages[0],
-    imageAlt: "Exterior of Alem Guesthouse with parking",
+    imageAlt: "Exterior of Alem Pension with parking",
   },
   Laundry: {
     tagline: "Fresh & ready",
     description:
-      "Practical laundry support for longer stays and busy itineraries — just ask our team.",
+      "Paid laundry and ironing available on request — our team will share rates when you inquire.",
     image: roomFolderImages[5]?.[0],
-    imageAlt: "Guest room details at Alem Guesthouse",
+    imageAlt: "Guest room details at Alem Pension",
   },
   Family: {
     tagline: "Welcome for everyone",
     description:
       "A peaceful setting for families and couples, with local tips from hosts who know Hawassa well.",
     image: outsideImages[3] ?? outsideImages[0],
-    imageAlt: "Peaceful surroundings at Alem Guesthouse",
+    imageAlt: "Peaceful surroundings at Alem Pension",
   },
   Accessibility: {
     tagline: "Here to help",
     description:
       "Attentive staff and accessible common areas — let us know if you have any specific needs when you inquire.",
     image: stairImages[2] ?? stairImages[0],
-    imageAlt: "Accessible common areas at Alem Guesthouse",
+    imageAlt: "Accessible common areas at Alem Pension",
   },
 } satisfies Record<AmenityCategory, AmenityCategoryMeta>;
 
 export const amenityQuickStats = [
   { label: "Thoughtful touches", value: `${amenities.length}` },
   { label: "Housekeeping", value: "Daily" },
-  { label: "Water supply", value: "24/7" },
+  { label: "Wi-Fi", value: "Free" },
   { label: "Secure parking", value: "Free" },
 ] as const;

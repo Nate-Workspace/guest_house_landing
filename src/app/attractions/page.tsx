@@ -13,7 +13,7 @@ const heroImage = attractions[0].image;
 export const metadata = buildPageMetadata({
   title: "Nearby Attractions",
   description:
-    "Lake Hawassa, local markets, and the city's best sights — all within easy reach of Alem Guesthouse.",
+    "Lake Hawassa, local markets, and the city's best sights — all within easy reach of Alem Pension.",
   path: "/attractions",
   image: heroImage,
 });
@@ -24,7 +24,7 @@ export default function AttractionsPage() {
       <PageHero
         eyebrow="Explore Hawassa"
         title="Nearby Attractions"
-        description="Lake Hawassa, local markets, and the city's best sights — all within easy reach of Alem Guesthouse."
+        description="Lake Hawassa, local markets, and the city's best sights — all within easy reach of Alem Pension."
         image={heroImage}
         imageAlt={attractions[0].name}
       />
@@ -42,7 +42,7 @@ export default function AttractionsPage() {
       </section>
 
       <MapSection
-        title="Start from Alem Guesthouse"
+        title="Start from Alem Pension"
         description="We're positioned above Menahria with quick access to the Sumuda, Piassa, Atote, and Hawassa Lake. Your ideal base for exploring Hawassa."
       />
 

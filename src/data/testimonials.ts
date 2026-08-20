@@ -20,7 +20,7 @@ export const testimonials = [
   {
     id: "testimonial-3",
     quote:
-      "Exceptional value for money. The Wi-Fi was fast, hot water was consistently available, and the room cleanliness was impressive. Highly recommended!",
+      "Exceptional value for money. The Wi-Fi was fast, the room cleanliness was impressive, and the team was always helpful. Highly recommended!",
     author: "Dawit A.",
     location: "Hawassa, Ethiopia",
     rating: 5,

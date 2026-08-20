@@ -9,7 +9,7 @@ const valueProps = [
   {
     title: "Clean & secure",
     description:
-      "Spotlessly clean rooms, 24/7 water supply, and secure on-site parking. A peaceful sanctuary where families and solo travellers feel safe and at ease.",
+      "Spotlessly clean rooms, private ensuite showers, and secure on-site parking. A peaceful sanctuary where families and solo travellers feel safe and at ease.",
     icon: "home",
   },
   {
@@ -21,7 +21,7 @@ const valueProps = [
   {
     title: "Refined comfort",
     description:
-      "Comfortable beds, quality showers, carefully crafted restrooms, and fine furnishings. Every detail considered.",
+      "Comfortable beds, private ensuite showers, carefully maintained restrooms, and fine furnishings. Every detail considered.",
     icon: "sparkles",
   },
   {
@@ -39,7 +39,7 @@ export function WhyStayHere() {
       imageAlt={backgroundImage.alt}
     >
       <SectionHeading
-        eyebrow="Why Alem Guesthouse"
+        eyebrow="Why Alem Pension"
         title="A stay that feels effortlessly special"
         description="We believe true comfort is found in cleanliness, security, and the warm gestures that make you feel completely at home."
         align="center"

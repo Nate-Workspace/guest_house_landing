@@ -31,7 +31,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         title="Contact & Inquiries"
         description="Tell us your dates and preferred room type — we'll confirm availability by phone or email."
         image={heroImage}
-        imageAlt="Alem Guesthouse exterior in Hawassa"
+        imageAlt="Alem Pension exterior in Hawassa"
       />
 
       <FadeIn>

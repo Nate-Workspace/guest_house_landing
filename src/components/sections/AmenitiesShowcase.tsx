@@ -32,7 +32,7 @@ function AmenitiesIntro() {
         <SectionHeading
           eyebrow="At your service"
           title="Every comfort, considered"
-          description="From the moment you arrive — fresh linen, reliable Wi-Fi, secure parking, and a team ready to help — Alem Guesthouse is designed so you can focus on your stay, not the details."
+          description="From the moment you arrive — fresh linen, reliable Wi-Fi, secure parking, and a team ready to help — Alem Pension is designed so you can focus on your stay, not the details."
           align="center"
           className="mx-auto max-w-3xl"
         />

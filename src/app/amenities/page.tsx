@@ -8,7 +8,7 @@ const heroImage = siteImages.hero.amenities;
 export const metadata = buildPageMetadata({
   title: "Amenities",
   description:
-    "High-speed Wi-Fi, 24/7 water, secure parking, daily housekeeping, laundry service, and quiet workspaces at Alem Guesthouse.",
+    "High-speed Wi-Fi, secure parking, daily housekeeping, paid laundry service, and quiet workspaces at Alem Pension.",
   path: "/amenities",
   image: heroImage,
 });
@@ -19,9 +19,9 @@ export default function AmenitiesPage() {
       <PageHero
         eyebrow="Comfort & convenience"
         title="Amenities"
-        description="From high-speed Wi-Fi and secure parking to daily housekeeping, laundry service, and quiet workspaces — comfort is built into every stay."
+        description="From high-speed Wi-Fi and secure parking to daily housekeeping, paid laundry service, and quiet workspaces — comfort is built into every stay."
         image={heroImage}
-        imageAlt="Amenities at Alem Guesthouse, Hawassa"
+        imageAlt="Amenities at Alem Pension, Hawassa"
       />
 
       <FadeIn>

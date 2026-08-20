@@ -26,20 +26,20 @@ export const faq = [
       "Yes, we provide high-speed complimentary Wi-Fi throughout the property and secure on-site parking free of charge for all our guests.",
   },
   {
-    id: "faq-breakfast",
-    question: "Is breakfast included in the room rate?",
+    id: "faq-laundry",
+    question: "Do you offer laundry service?",
     answer:
-      "Yes, a delicious complimentary breakfast is included with your stay and served each morning for all guests.",
+      "Yes. Laundry and ironing are available as paid services — ask our team for current rates when you arrive or mention it in your inquiry.",
   },
   {
     id: "faq-families",
-    question: "Is the guesthouse suitable for families?",
+    question: "Is the pension suitable for families?",
     answer:
-      "Absolutely. Alem Guesthouse is a secure and comfortable choice for family stays. Our quiet environment and convenient location near key city centres make daily activities easy to manage for guests of all ages.",
+      "Absolutely. Alem Pension is a secure and comfortable choice for family stays. Our quiet environment and convenient location near key city centres make daily activities easy to manage for guests of all ages.",
   },
   {
     id: "faq-location",
-    question: "Where is Alem Guesthouse located?",
+    question: "Where is Alem Pension located?",
     answer:
       "We are in Menahria, in the heart of Hawassa — steps from the neighbourhood and minutes from Sumuda, Piassa, Atote, and Hawassa Lake. Contact us for directions or local travel tips.",
   },

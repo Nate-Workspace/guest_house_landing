@@ -20,7 +20,7 @@ export function RelatedBatches({ currentSlug }: RelatedBatchesProps) {
         <SectionHeading
           eyebrow="More room types"
           title="You may also like"
-          description="Explore other room designs at Alem Guesthouse — each batch shares the same layout across multiple room numbers."
+          description="Explore other room designs at Alem Pension — each batch shares the same layout across multiple room numbers."
         />
 
         <StaggerChildren className="mt-10 grid gap-8 sm:grid-cols-2">
